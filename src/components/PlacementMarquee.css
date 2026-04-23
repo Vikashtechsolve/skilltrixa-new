@@ -1,0 +1,196 @@
+.placement-section {
+  padding: clamp(2.5rem, 4.5vw, 3.5rem) 0 clamp(2.75rem, 5.5vw, 4rem);
+  background: linear-gradient(180deg, var(--color-white) 0%, var(--color-surface) 55%, var(--color-white) 100%);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.placement-section-head {
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: clamp(1.35rem, 3vw, 1.85rem);
+}
+
+.placement-section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.45rem, 1.2vw + 1.1rem, 1.85rem);
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+  margin: 0 0 0.5rem;
+}
+
+.placement-section-lead {
+  margin: 0 auto;
+  max-width: 36rem;
+  font-size: var(--text-body);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.placement-marquees {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.placement-marquee-viewport {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 4%,
+    #000 96%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    #000 4%,
+    #000 96%,
+    transparent 100%
+  );
+}
+
+.placement-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 0;
+}
+
+.placement-marquee-chunk {
+  display: flex;
+  align-items: center;
+  gap: clamp(2.75rem, 4.5vw, 4rem);
+  padding-inline: clamp(1.75rem, 3.25vw, 2.5rem);
+  flex-shrink: 0;
+}
+
+.placement-marquee--left .placement-marquee-track {
+  animation: placement-scroll-left var(--marquee-duration, 92s) linear infinite;
+}
+
+.placement-marquee--right .placement-marquee-track {
+  animation: placement-scroll-right var(--marquee-duration, 118s) linear infinite;
+}
+
+.placement-marquee.is-paused .placement-marquee-track {
+  animation-play-state: paused;
+}
+
+.placement-marquee.is-static .placement-marquee-track {
+  animation: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  row-gap: 1rem;
+}
+
+.placement-marquee.is-static .placement-marquee-chunk:last-child {
+  display: none;
+}
+
+.placement-marquee.is-static .placement-marquee-viewport {
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+
+@keyframes placement-scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes placement-scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.placement-logo {
+  flex-shrink: 0;
+  width: clamp(136px, 17vw, 172px);
+  height: clamp(56px, 7.5vw, 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.85rem;
+  border-radius: 12px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 10px rgba(13, 13, 13, 0.04);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.placement-logo:hover {
+  border-color: rgba(231, 33, 11, 0.35);
+  box-shadow: 0 6px 20px rgba(231, 33, 11, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Simple Icons are black SVGs; we render brand color via mask + background */
+.placement-icon {
+  display: block;
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.placement-logo:hover .placement-icon {
+  transform: scale(1.06);
+}
+
+.placement-logo--fallback {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--color-primary);
+}
+
+.placement-logo-initials {
+  pointer-events: none;
+}
+
+.placement-static-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 1.35rem;
+  padding-bottom: 0.5rem;
+}
+
+.placement-static-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 156px;
+}
+
+.placement-static-name {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.25;
+}
