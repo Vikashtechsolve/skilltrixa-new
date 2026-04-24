@@ -84,17 +84,22 @@ export default function Blog() {
     }
   }, [])
 
+  /* normalize text for fuzzy matching: strip hyphens, slashes, extra spaces */
+  const normalize = (str) =>
+    str.toLowerCase().replace(/[-/:.]/g, ' ').replace(/\s+/g, ' ').trim()
+
   const filteredPosts = useMemo(() => {
     let posts = ALL_BLOGS
     if (activeCategory !== 'all') {
       posts = posts.filter((p) => p.category === activeCategory)
     }
     if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase()
+      const q = normalize(searchQuery)
       posts = posts.filter(
         (p) =>
-          p.title.toLowerCase().includes(q) ||
-          p.excerpt.toLowerCase().includes(q)
+          normalize(p.title).includes(q) ||
+          normalize(p.excerpt).includes(q) ||
+          p.tags.some((tag) => normalize(tag).includes(q))
       )
     }
     return posts
