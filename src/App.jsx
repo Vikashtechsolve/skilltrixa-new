@@ -5,6 +5,7 @@ import ProgramsIndex from './pages/ProgramsIndex'
 import ProgramPage from './pages/ProgramPage'
 import About from './pages/About'
 import Blog from './pages/Blog'
+import BlogDetail from './pages/BlogDetail'
 import PlaceholderPage from './pages/PlaceholderPage'
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
           }
         />
         <Route path="/blogs" element={<Blog />} />
+        <Route path="/blogs/:slug" element={<BlogDetail />} />
         <Route path="/about" element={<About />} />
         <Route
           path="/login"

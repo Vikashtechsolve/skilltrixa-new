@@ -4,6 +4,7 @@ import {
   BLOG_CATEGORIES,
   FEATURED_BLOG,
   BLOG_POSTS,
+  ALL_BLOGS,
 } from '../data/blogPosts'
 import './Blog.css'
 
@@ -84,7 +85,7 @@ export default function Blog() {
   }, [])
 
   const filteredPosts = useMemo(() => {
-    let posts = BLOG_POSTS
+    let posts = ALL_BLOGS
     if (activeCategory !== 'all') {
       posts = posts.filter((p) => p.category === activeCategory)
     }
@@ -93,7 +94,7 @@ export default function Blog() {
       posts = posts.filter(
         (p) =>
           p.title.toLowerCase().includes(q) ||
-          p.description.toLowerCase().includes(q)
+          p.excerpt.toLowerCase().includes(q)
       )
     }
     return posts
@@ -104,8 +105,8 @@ export default function Blog() {
     !searchQuery.trim() 
 
   /* sidebar data */
-  const recentPosts = BLOG_POSTS.slice(0, 4)
-  const popularPosts = [...BLOG_POSTS]
+  const recentPosts = ALL_BLOGS.slice(0, 4)
+  const popularPosts = [...ALL_BLOGS]
     .sort((a, b) => a.title.localeCompare(b.title))
     .slice(0, 4)
 
@@ -177,7 +178,7 @@ export default function Blog() {
                 </span>
                 <h2 className="blog-featured-title">{FEATURED_BLOG.title}</h2>
                 <p className="blog-featured-desc">
-                  {FEATURED_BLOG.description}
+                  {FEATURED_BLOG.excerpt}
                 </p>
                 <div className="blog-featured-meta">
                   <span>
@@ -220,7 +221,7 @@ export default function Blog() {
                 </div>
                 <div className="blog-card-body">
                   <h3 className="blog-card-title">{post.title}</h3>
-                  <p className="blog-card-desc">{post.description}</p>
+                  <p className="blog-card-desc">{post.excerpt}</p>
                   <div className="blog-card-footer">
                     <span className="blog-card-date">
                       <CalendarIcon /> {formatDate(post.date)}
@@ -296,34 +297,6 @@ export default function Blog() {
         </aside>
       </div>
 
-      {/* ═══ 6  NEWSLETTER ═══ */}
-      <section className="blog-newsletter" aria-labelledby="newsletter-heading">
-        <div className="blog-newsletter-inner">
-          <h2 id="newsletter-heading">Stay Updated with Career Insights</h2>
-          <p className="blog-newsletter-text">
-            Get the latest articles on career growth, skill development, and
-            placement tips delivered straight to your inbox.
-          </p>
-          <form
-            className="newsletter-form"
-            onSubmit={(e) => {
-              e.preventDefault()
-              alert('Thank you for subscribing!')
-            }}
-          >
-            <input
-              type="email"
-              className="newsletter-input"
-              placeholder="Enter your email"
-              required
-              aria-label="Email address"
-            />
-            <button type="submit" className="newsletter-btn">
-              Subscribe
-            </button>
-          </form>
-        </div>
-      </section>
 
       {/* ═══ 7  CTA ═══ */}
       <section className="blog-cta" aria-labelledby="blog-cta-heading">
