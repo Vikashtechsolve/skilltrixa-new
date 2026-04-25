@@ -10,6 +10,22 @@ function ArrowRightIcon() {
   )
 }
 
+function ChevronLeftIcon() {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M10 3.5L5.5 8l4.5 4.5" />
+    </svg>
+  )
+}
+
+function ChevronRightIcon() {
+  return (
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M6 3.5L10.5 8 6 12.5" />
+    </svg>
+  )
+}
+
 function CheckIcon() {
   return (
     <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -169,10 +185,132 @@ function GlobeIcon() {
   )
 }
 
-const HERO_IMAGES = [
-  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=85',
-  'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=85',
-  'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=85',
+/**
+ * Cut-out PNG portraits (transparent backgrounds) — they sit IN FRONT of
+ * the pink circle backdrop, exactly like the reference design.
+ * Drop additional PNGs into /public/hero/ to extend the rotation.
+ */
+const FSD_HERO_IMAGES = [
+  '/hero/fsd-hero-1.png',
+  '/hero/fsd-hero-2.png',
+  '/hero/fsd-hero-3.png',
+]
+
+const FSD_TESTIMONIALS = [
+  {
+    id: 'riya',
+    name: 'Riya Sharma',
+    role: 'Junior Full Stack Developer',
+    company: 'Rocket',
+    photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=240&q=85',
+    program: 'MERN Mini Program',
+    duration: '3 months',
+    salaryHike: '+62%',
+    quote:
+      'I went from basic HTML and CSS to shipping full-stack MERN projects in just three months. The hands-on practice and DSA sessions made my first interview feel familiar, not scary.',
+  },
+  {
+    id: 'rohit',
+    name: 'Rohit Verma',
+    role: 'Frontend Developer',
+    company: 'Microsoft',
+    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=240&q=85',
+    program: 'Macro Program + Internship',
+    duration: '6 months',
+    salaryHike: 'First job',
+    quote:
+      'I joined with zero backend knowledge. The structured learning, live projects, and internship gave me real production experience — I cleared a frontend role within weeks of finishing.',
+  },
+  {
+    id: 'chiya',
+    name: 'Chiya Pandey',
+    role: 'Software Engineer (MERN)',
+    company: 'Deloitte',
+    photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=240&q=85',
+    program: 'Macro Program',
+    duration: '6 months',
+    salaryHike: '+85%',
+    quote:
+      'The advanced curriculum and mentorship were the differentiators. From scalable backend systems to real-time features, every module mapped to what teams actually build.',
+  },
+]
+
+/* Admission process — used by redesigned admission section */
+const FSD_ADMISSION_STEPS = [
+  {
+    n: 1,
+    title: 'Qualifier Test',
+    text: 'Appear for a short aptitude and programming readiness test to evaluate logical thinking and commitment.',
+  },
+  {
+    n: 2,
+    title: 'Complete Counselling',
+    text: 'Attend a one-on-one counselling session to understand your goals, choose the right program (Mini or Macro), and set clear career expectations.',
+  },
+  {
+    n: 3,
+    title: 'Start Learning',
+    text: 'Enroll in the selected program and begin your structured, mentor-led journey toward becoming a job-ready full-stack MERN developer.',
+  },
+]
+
+function AdmissionStepIcon({ index }) {
+  if (index === 0) {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+        <path d="M9 11l3 3L22 4" />
+        <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
+      </svg>
+    )
+  }
+  if (index === 1) {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+        <polyline points="23 4 23 10 17 10" />
+        <polyline points="1 20 1 14 7 14" />
+        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+      </svg>
+    )
+  }
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+    </svg>
+  )
+}
+
+const FSD_HERO_FEATURES = [
+  { title: 'Industry-aligned curriculum', value: 'Modules mapped to what product teams build today' },
+  { title: 'Real-world projects', value: 'Ship portfolio apps, not just tutorial drills' },
+  { title: 'Placement preparation', value: 'Resumes, mocks, and interview-focused coaching' },
+  { title: 'Mentorship support', value: 'Guidance from experienced full-stack developers' },
+  { title: 'MERN & APIs', value: 'MongoDB, Express, React & Node end-to-end' },
+  { title: 'Job-ready output', value: 'Git, testing habits, and deploy-ready code' },
+]
+
+const FSD_ABOUT_PILLARS = [
+  {
+    id: 'industry',
+    title: 'Industry-Focused Learning',
+    text: 'We bridge the gap between academics and industry with a job-ready full stack curriculum built for real-world development roles.',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'Team collaborating in a learning environment',
+  },
+  {
+    id: 'expert',
+    title: 'Expert-Led Training',
+    text: 'Learn directly from experienced professionals working at top tech companies and building products at scale.',
+    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'Mentor with students in a live session',
+  },
+  {
+    id: 'placement',
+    title: 'Strong Placement Support',
+    text: 'From career mentoring to industry connections and alumni support, we help you move from learning to earning.',
+    image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=900&q=80',
+    imageAlt: 'Professional in a high-tech work environment',
+  },
 ]
 
 const FAQ_DATA = {
@@ -207,7 +345,9 @@ const FAQ_DATA = {
 }
 
 export default function FullStackDev() {
-  const [activeImage, setActiveImage] = useState(0)
+  const [heroImageIndex, setHeroImageIndex] = useState(0)
+  const [activeTestimonial, setActiveTestimonial] = useState(0)
+  const [activePillar, setActivePillar] = useState(0)
   const [faqCategory, setFaqCategory] = useState('overview')
   const [openFaq, setOpenFaq] = useState(0)
 
@@ -215,12 +355,34 @@ export default function FullStackDev() {
     setOpenFaq(openFaq === index ? -1 : index)
   }
 
+  const testimonialCount = FSD_TESTIMONIALS.length
+  const goTestimonialPrev = () => {
+    setActiveTestimonial((i) => (i - 1 + testimonialCount) % testimonialCount)
+  }
+  const goTestimonialNext = () => {
+    setActiveTestimonial((i) => (i + 1) % testimonialCount)
+  }
+
   useEffect(() => {
-    const id = setInterval(() => {
-      setActiveImage((prev) => (prev + 1) % HERO_IMAGES.length)
+    if (typeof window === 'undefined') return
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (reduceMotion.matches) return
+    const id = window.setInterval(() => {
+      setHeroImageIndex((prev) => (prev + 1) % FSD_HERO_IMAGES.length)
     }, 4000)
-    return () => clearInterval(id)
+    return () => window.clearInterval(id)
   }, [])
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    if (reduceMotion.matches) return
+    const id = window.setInterval(() => {
+      setActiveTestimonial((prev) => (prev + 1) % FSD_TESTIMONIALS.length)
+    }, 7000)
+    return () => window.clearInterval(id)
+  }, [])
+
   useEffect(() => {
     document.title = 'Full Stack Development Course | Skilltrixa'
     const meta = document.querySelector('meta[name="description"]')
@@ -241,65 +403,63 @@ export default function FullStackDev() {
       <section className="fsd-hero" aria-labelledby="fsd-hero-heading">
         <div className="fsd-hero-grid">
           <div className="fsd-hero-copy">
-            <p className="fsd-hero-eyebrow">Career-Ready Program</p>
+            <p className="fsd-hero-kicker">
+              <span className="fsd-hero-badge-pill">Career-Ready Program</span>
+            </p>
             <h1 id="fsd-hero-heading" className="fsd-hero-title">
               Full Stack MERN Development <span>Program</span>
             </h1>
             <p className="fsd-hero-subtitle">
-              Learn MongoDB, Express, React, and Node.js through structured training programs combined with hands-on internships, real project exposure, and mentor guidance designed to prepare you for real-world development roles.
+              Go deep on both frontend and backend with MongoDB, Express, React, and Node—so you can ship end-to-end features, not just static pages. Build real-world projects and a capstone for your portfolio. Graduate job-ready, with the workflows and skills hiring teams expect.
             </p>
-            <div className="fsd-hero-actions">
+
+            <div className="fsd-hero-cta-row" role="group" aria-label="Program actions">
               <button type="button" className="fsd-btn fsd-btn--primary">
                 Apply Now
               </button>
-              <p className="fsd-hero-batch">
-                Batch Starting on <strong>20th January, 2026</strong>
+              <a href="#curriculum" className="fsd-btn fsd-btn--outline">
+                View Curriculum
+              </a>
+            </div>
+
+            <div className="fsd-hero-meta" aria-label="Upcoming batch">
+              <p className="fsd-hero-meta-item">
+                Next batch starts <strong>20 January 2026</strong>
+              </p>
+              <span className="fsd-hero-meta-dot" aria-hidden />
+              <p className="fsd-hero-meta-item fsd-hero-meta-item--soft">
+                Limited seats · Mentor-led cohort
               </p>
             </div>
 
-            <div className="fsd-hero-badges">
-              <div className="fsd-hero-badge">
-                <p className="fsd-hero-badge-title">Mentor Credibility</p>
-                <p className="fsd-hero-badge-value">5+ Years Industry Experience</p>
-              </div>
-              <div className="fsd-hero-badge">
-                <p className="fsd-hero-badge-title">Job-Focused Curriculum</p>
-                <p className="fsd-hero-badge-value">90% Industry-Aligned Modules</p>
-              </div>
-              <div className="fsd-hero-badge">
-                <p className="fsd-hero-badge-title">Internship Assurance</p>
-                <p className="fsd-hero-badge-value">100% Internship Guarantee</p>
-              </div>
-              <div className="fsd-hero-badge">
-                <p className="fsd-hero-badge-title">Live Mentor-Led Training</p>
-                <p className="fsd-hero-badge-value">100+ Hours of Guided Sessions</p>
-              </div>
-              <div className="fsd-hero-badge">
-                <p className="fsd-hero-badge-title">Real-World Projects</p>
-                <p className="fsd-hero-badge-value">6–8 Real-World Apps</p>
-              </div>
-              <div className="fsd-hero-badge">
-                <p className="fsd-hero-badge-title">Placement Preparation</p>
-                <p className="fsd-hero-badge-value">50+ Mock Interviews</p>
-              </div>
-            </div>
+            <ul className="fsd-hero-badges">
+              {FSD_HERO_FEATURES.map((f) => (
+                <li key={f.title} className="fsd-hero-badge">
+                  <p className="fsd-hero-badge-title">{f.title}</p>
+                  <p className="fsd-hero-badge-value">{f.value}</p>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div className="fsd-hero-visual">
+          <div className="fsd-hero-visual" aria-label="Program photos, rotating">
             <div className="fsd-hero-visual-circle" aria-hidden />
-            <div className="fsd-hero-visual-placeholder" aria-hidden />
-            {HERO_IMAGES.map((img, i) => (
-              <img
-                key={img}
-                src={img}
-                alt={`Full Stack Development student ${i + 1}`}
-                width={600}
-                height={720}
-                className={`fsd-hero-img ${i === activeImage ? 'is-active' : ''}`}
-                loading={i === 0 ? 'eager' : 'lazy'}
-                fetchPriority={i === 0 ? 'high' : 'auto'}
-              />
-            ))}
+            <div className="fsd-hero-visual-photos">
+              <div className="fsd-hero-visual-sizer" aria-hidden />
+              {FSD_HERO_IMAGES.map((src, i) => (
+                <img
+                  key={src}
+                  className={`fsd-hero-img${i === heroImageIndex ? ' is-active' : ''}`}
+                  src={src}
+                  alt={`Skilltrixa Full Stack student ${i + 1} of ${FSD_HERO_IMAGES.length}`}
+                  width={700}
+                  height={700}
+                  sizes="(max-width: 880px) 80vw, 420px"
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  fetchPriority={i === 0 ? 'high' : 'auto'}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
@@ -325,40 +485,128 @@ export default function FullStackDev() {
         </div>
       </section>
 
-      {/* ═══ 2  ABOUT THE PROGRAM (What makes VTS Different) ═══ */}
-      <section className="fsd-section" aria-labelledby="fsd-about-heading">
-        <div className="fsd-section-inner">
-          <h2 id="fsd-about-heading" style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            What makes <span className="fsd-vts-text">Skilltrixa</span> Different
-          </h2>
-          
-          <div className="fsd-about-grid">
-            <div className="fsd-about-collage">
-              <div className="fsd-collage-col">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80" alt="Students learning" loading="lazy" />
-              </div>
-              <div className="fsd-collage-col">
-                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=400&q=80" alt="Mentor teaching" loading="lazy" />
-              </div>
-              <div className="fsd-collage-col">
-                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=400&q=80" alt="Job interview" loading="lazy" />
+      {/* ═══ 2  ABOUT — What makes Skilltrixa different (bento + pillars) ═══ */}
+      <section className="fsd-section fsd-different" aria-labelledby="fsd-about-heading">
+        <div className="fsd-section-inner fsd-different-inner">
+          <div className="fsd-different-header">
+            <p className="fsd-different-eyebrow">The Skilltrixa approach</p>
+            <h2 id="fsd-about-heading" className="fsd-different-title">
+              What makes <span className="fsd-different-title-accent">Skilltrixa</span> Different
+            </h2>
+            <p className="fsd-different-lead">
+              Three ways we go beyond theory — curriculum that maps to how teams build, training led by people who have shipped, and a path
+              to placement that does not end at the last lecture.
+            </p>
+          </div>
+
+          <div className="fsd-different-layout">
+            <div
+              className="fsd-bento"
+              role="group"
+              aria-label="Pillar visuals — select a focus area to highlight"
+            >
+              <div className="fsd-bento-glow" aria-hidden />
+              <button
+                type="button"
+                className={`fsd-bento-tile fsd-bento-tile--main${activePillar === 0 ? ' is-active' : ''}`}
+                onClick={() => setActivePillar(0)}
+                aria-pressed={activePillar === 0}
+                aria-label={`${FSD_ABOUT_PILLARS[0].title} — show story`}
+              >
+                <img
+                  src={FSD_ABOUT_PILLARS[0].image}
+                  alt={FSD_ABOUT_PILLARS[0].imageAlt}
+                  loading="lazy"
+                  width={800}
+                  height={1000}
+                />
+                <span className="fsd-bento-tile-pill" aria-hidden>
+                  01
+                </span>
+              </button>
+              <div className="fsd-bento-column">
+                <button
+                  type="button"
+                  className={`fsd-bento-tile fsd-bento-tile--sub${activePillar === 1 ? ' is-active' : ''}`}
+                  onClick={() => setActivePillar(1)}
+                  aria-pressed={activePillar === 1}
+                  aria-label={`${FSD_ABOUT_PILLARS[1].title} — show story`}
+                >
+                  <img
+                    src={FSD_ABOUT_PILLARS[1].image}
+                    alt={FSD_ABOUT_PILLARS[1].imageAlt}
+                    loading="lazy"
+                    width={640}
+                    height={480}
+                  />
+                  <span className="fsd-bento-tile-pill" aria-hidden>
+                    02
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  className={`fsd-bento-tile fsd-bento-tile--sub${activePillar === 2 ? ' is-active' : ''}`}
+                  onClick={() => setActivePillar(2)}
+                  aria-pressed={activePillar === 2}
+                  aria-label={`${FSD_ABOUT_PILLARS[2].title} — show story`}
+                >
+                  <img
+                    src={FSD_ABOUT_PILLARS[2].image}
+                    alt={FSD_ABOUT_PILLARS[2].imageAlt}
+                    loading="lazy"
+                    width={640}
+                    height={480}
+                  />
+                  <span className="fsd-bento-tile-pill" aria-hidden>
+                    03
+                  </span>
+                </button>
               </div>
             </div>
 
-            <div className="fsd-about-features">
-              <div className="fsd-about-card">
-                <h3>Industry-Focused Learning</h3>
-                <p>We bridge the gap between academics and industry with a job-ready full stack curriculum built for real-world development roles.</p>
-              </div>
-              <div className="fsd-about-card">
-                <h3>Expert-Led Training</h3>
-                <p>Learn directly from experienced professionals working at top tech companies and building products at scale.</p>
-              </div>
-              <div className="fsd-about-card">
-                <h3>Strong Placement Support</h3>
-                <p>From career mentoring to industry connections and alumni support, we help you move from learning to earning.</p>
-              </div>
-            </div>
+            <ol className="fsd-pillar-list">
+              {FSD_ABOUT_PILLARS.map((p, i) => (
+                <li key={p.id}>
+                  <button
+                    type="button"
+                    className={`fsd-pillar-card${activePillar === i ? ' is-active' : ''}`}
+                    onClick={() => setActivePillar(i)}
+                    aria-pressed={activePillar === i}
+                  >
+                    <span className="fsd-pillar-step" aria-hidden>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <div className="fsd-pillar-icon" aria-hidden>
+                      {i === 0 && (
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                          <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                          <path d="M8 7h8M8 11h5" />
+                        </svg>
+                      )}
+                      {i === 1 && (
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                          <circle cx="9" cy="7" r="4" />
+                          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                      )}
+                      {i === 2 && (
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                          <path d="m9 12 2 2 4-4" />
+                        </svg>
+                      )}
+                    </div>
+                    <div className="fsd-pillar-text">
+                      <h3 className="fsd-pillar-title">{p.title}</h3>
+                      <p className="fsd-pillar-body">{p.text}</p>
+                    </div>
+                  </button>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </section>
@@ -513,59 +761,59 @@ export default function FullStackDev() {
       </section>
 
       {/* ═══ 4  ADMISSION PROCESS ═══ */}
-      <section className="fsd-section" aria-labelledby="fsd-admission-heading">
-        <div className="fsd-section-inner">
-          <div className="fsd-admission-header">
-            <h2 id="fsd-admission-heading">
-              <span className="fsd-vts-text">Admission</span> Process
+      <section className="fsd-section fsd-adm" aria-labelledby="fsd-admission-heading">
+        <div className="fsd-section-inner fsd-adm-inner">
+          <header className="fsd-adm-head">
+            <p className="fsd-adm-eyebrow">From application to classroom</p>
+            <h2 id="fsd-admission-heading" className="fsd-adm-title">
+              <span className="fsd-adm-title-brand">Admission</span> <span>Process</span>
             </h2>
-          </div>
-          <div className="fsd-about-grid fsd-admission-grid">
-            <div className="fsd-admission-visual">
-              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Student typing on laptop" loading="lazy" />
-            </div>
-            
-            <div className="fsd-admission-features">
-              <div className="fsd-admission-card">
-                <div className="fsd-admission-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M9 11l3 3L22 4" />
-                    <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
-                  </svg>
-                </div>
-                <div className="fsd-admission-content">
-                  <h3>Qualifier Test</h3>
-                  <p>Appear for a short aptitude and programming readiness test to evaluate logical thinking and commitment.</p>
-                </div>
-              </div>
+            <p className="fsd-adm-deck">
+              A clear, three-step path: validate readiness, choose your track with a mentor, then start building with structure and support.
+            </p>
+          </header>
 
-              <div className="fsd-admission-card">
-                <div className="fsd-admission-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="23 4 23 10 17 10"></polyline>
-                    <polyline points="1 20 1 14 7 14"></polyline>
-                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
-                  </svg>
-                </div>
-                <div className="fsd-admission-content">
-                  <h3>Complete Counselling</h3>
-                  <p>Attend a one-on-one counselling session to understand your goals, choose the right program (Mini or Macro), and set clear career expectations.</p>
-                </div>
-              </div>
-
-              <div className="fsd-admission-card">
-                <div className="fsd-admission-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                  </svg>
-                </div>
-                <div className="fsd-admission-content">
-                  <h3>Start Learning</h3>
-                  <p>Enroll in the selected program and begin your structured, mentor-led journey toward becoming a job-ready full-stack MERN developer.</p>
-                </div>
+          <div className="fsd-adm-grid">
+            <div className="fsd-adm-hero">
+              <div className="fsd-adm-hero-blob" aria-hidden />
+              <div className="fsd-adm-hero-frame">
+                <img
+                  src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+                  alt="Learner on a device during the Skilltrixa application journey"
+                  loading="lazy"
+                  width={800}
+                  height={520}
+                />
+                <p className="fsd-adm-hero-badge" aria-label="Three simple steps in the process">
+                  3 <span>simple steps</span>
+                </p>
               </div>
             </div>
+
+            <ol className="fsd-adm-track" aria-label="Admission steps in order">
+              {FSD_ADMISSION_STEPS.map((step, i) => (
+                <li key={step.n} className="fsd-adm-item">
+                  <div className="fsd-adm-connector" aria-hidden>
+                    <div className="fsd-adm-connector-nub" />
+                    {i < FSD_ADMISSION_STEPS.length - 1 && <div className="fsd-adm-connector-join" />}
+                  </div>
+                  <div className="fsd-adm-card">
+                    <div className="fsd-adm-mono" aria-hidden>
+                      {String(step.n).padStart(2, '0')}
+                    </div>
+                    <div className="fsd-adm-top">
+                      <div className="fsd-adm-icon" aria-hidden>
+                        <AdmissionStepIcon index={i} />
+                      </div>
+                      <div className="fsd-adm-text">
+                        <h3 className="fsd-adm-h">{step.title}</h3>
+                        <p className="fsd-adm-p">{step.text}</p>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </section>
@@ -804,131 +1052,242 @@ export default function FullStackDev() {
       </section>
 
       {/* ═══ 8.5 TESTIMONIALS ═══ */}
-      <section className="fsd-section" aria-labelledby="fsd-testimonials-heading">
+      <section className="fsd-section fsd-stories" aria-labelledby="fsd-testimonials-heading">
         <div className="fsd-section-inner">
-          <div className="fsd-section-header" style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 id="fsd-testimonials-heading" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(2rem, 3.5vw, 2.5rem)', color: 'var(--color-black)', margin: '0 0 1rem', fontWeight: 700 }}>
-              Real <span style={{ color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>Results</span> Real <span style={{ color: 'var(--color-primary)', textDecoration: 'underline', textUnderlineOffset: '4px' }}>Careers</span>
+          <div className="fsd-stories-header">
+            <p className="fsd-stories-eyebrow">Student Outcomes</p>
+            <h2 id="fsd-testimonials-heading" className="fsd-stories-title">
+              Real <span>Results.</span> Real <span>Careers.</span>
             </h2>
-            <p style={{ fontSize: '1.1rem', color: 'var(--color-text)', maxWidth: '600px', margin: '0 auto' }}>
-              See how Skilltrixa learners transformed their skills into high-paying tech roles
+            <p className="fsd-stories-lead">
+              See how Skilltrixa learners turned skills into offers at product teams across India.
             </p>
           </div>
 
-          <div className="fsd-testimonials-wrapper">
-            <button className="fsd-testimonial-nav fsd-testimonial-prev" aria-label="Previous testimonial">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-            </button>
+          {(() => {
+            const t = FSD_TESTIMONIALS[activeTestimonial]
 
-            <div className="fsd-testimonials-grid">
-              <div className="fsd-testimonial-card">
-                <div className="fsd-testimonial-header">
-                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Riya Sharma" className="fsd-testimonial-avatar" />
-                  <div className="fsd-testimonial-company">
-                    <span>Placed at :</span>
-                    <div className="fsd-company-logo">Rocket</div>
+            return (
+              <div className="fsd-stories-stage">
+                <article
+                  key={t.id}
+                  className="fsd-stories-feature"
+                  aria-live="polite"
+                >
+                  <div className="fsd-stories-feature-photo">
+                    <img src={t.photo} alt={t.name} />
                   </div>
-                </div>
-                <div className="fsd-testimonial-body">
-                  <p className="fsd-testimonial-quote">"The Mini Program was exactly what I needed to start my tech career. In just 3 months, I went from basic HTML and CSS to building full-stack MERN projects. The hands-on practice and DSA sessions helped me crack my first interview with confidence."</p>
-                  <p className="fsd-testimonial-author">- Riya Sharma, Junior Full Stack Developer</p>
-                </div>
-              </div>
 
-              <div className="fsd-testimonial-card">
-                <div className="fsd-testimonial-header">
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Rohit Verma" className="fsd-testimonial-avatar" />
-                  <div className="fsd-testimonial-company">
-                    <span>Placed at :</span>
-                    <div className="fsd-company-logo">Microsoft</div>
+                  <div className="fsd-stories-feature-body">
+                    <p className="fsd-stories-quote">{t.quote}</p>
+
+                    <div className="fsd-stories-meta">
+                      <div className="fsd-stories-author">
+                        <p className="fsd-stories-name">{t.name}</p>
+                        <p className="fsd-stories-role">
+                          {t.role} · <span>{t.company}</span>
+                        </p>
+                      </div>
+
+                      <ul className="fsd-stories-stats" aria-label="Outcome highlights">
+                        <li>
+                          <span className="fsd-stories-stat-label">Program</span>
+                          <span className="fsd-stories-stat-value">{t.program}</span>
+                        </li>
+                        <li>
+                          <span className="fsd-stories-stat-label">Duration</span>
+                          <span className="fsd-stories-stat-value">{t.duration}</span>
+                        </li>
+                        <li>
+                          <span className="fsd-stories-stat-label">Outcome</span>
+                          <span className="fsd-stories-stat-value fsd-stories-stat-value--accent">
+                            {t.salaryHike}
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-                <div className="fsd-testimonial-body">
-                  <p className="fsd-testimonial-quote">"I had zero backend knowledge before joining VTS. The structured learning, live projects, and internship experience helped me understand real-world development. I secured a Frontend Developer role within weeks of completing the program."</p>
-                  <p className="fsd-testimonial-author">- Rohit Verma, Frontend Developer</p>
-                </div>
-              </div>
+                </article>
 
-              <div className="fsd-testimonial-card">
-                <div className="fsd-testimonial-header">
-                  <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&q=80" alt="Chiya Pandey" className="fsd-testimonial-avatar" />
-                  <div className="fsd-testimonial-company">
-                    <span>Placed at :</span>
-                    <div className="fsd-company-logo">Deloitte.</div>
+                <nav className="fsd-stories-controls" aria-label="Testimonial stories">
+                  <button
+                    type="button"
+                    className="fsd-stories-nav"
+                    onClick={goTestimonialPrev}
+                    aria-label="Previous story"
+                  >
+                    <ChevronLeftIcon />
+                  </button>
+                  <div
+                    className="fsd-stories-index"
+                    role="status"
+                    aria-live="polite"
+                    aria-atomic="true"
+                    aria-label={`Slide ${activeTestimonial + 1} of ${FSD_TESTIMONIALS.length}`}
+                    title={`Slide ${activeTestimonial + 1} of ${FSD_TESTIMONIALS.length}`}
+                  >
+                    {String(activeTestimonial + 1).padStart(2, '0')}
                   </div>
-                </div>
-                <div className="fsd-testimonial-body">
-                  <p className="fsd-testimonial-quote">"What stood out for me was the advanced curriculum and mentorship. From scalable backend systems to real-time features, everything was covered in detail. I moved from a fresher role to a mid-level MERN developer position."</p>
-                  <p className="fsd-testimonial-author">- Chiya Pandey, Software Engineer (MERN)</p>
-                </div>
+                  <button
+                    type="button"
+                    className="fsd-stories-nav"
+                    onClick={goTestimonialNext}
+                    aria-label="Next story"
+                  >
+                    <ChevronRightIcon />
+                  </button>
+                </nav>
               </div>
-            </div>
+            )
+          })()}
 
-            <button className="fsd-testimonial-nav fsd-testimonial-next" aria-label="Next testimonial">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </button>
-          </div>
+          <ul className="fsd-stories-rail" aria-label="Other student stories">
+            {FSD_TESTIMONIALS.map((t, i) => (
+              <li key={t.id}>
+                <button
+                  type="button"
+                  className={`fsd-stories-chip${i === activeTestimonial ? ' is-active' : ''}`}
+                  aria-pressed={i === activeTestimonial}
+                  onClick={() => setActiveTestimonial(i)}
+                >
+                  <img src={t.photo} alt="" aria-hidden />
+                  <span className="fsd-stories-chip-text">
+                    <span className="fsd-stories-chip-name">{t.name}</span>
+                    <span className="fsd-stories-chip-role">
+                      {t.role} · {t.company}
+                    </span>
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
       {/* ═══ 8.7 FAQ ═══ */}
       <section className="fsd-section fsd-faq-section" aria-labelledby="fsd-faq-heading">
-        <div className="fsd-section-inner">
-          <div className="fsd-faq-container">
-            {/* Left Column: Heading & Illustration */}
-            <div className="fsd-faq-left">
-              <h2 id="fsd-faq-heading">
-                Frequently Asked <span className="fsd-vts-text">Questions</span>
-              </h2>
-              <p className="fsd-faq-subtitle">Got questions? We've got clear answers</p>
-              
-              <div className="fsd-faq-illustration">
-                {/* SVG Illustration similar to the reference */}
-                <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M70 120 C40 120, 40 70, 70 50 C100 30, 140 50, 130 90 C125 110, 100 115, 100 135" stroke="var(--color-primary)" strokeWidth="24" strokeLinecap="round" fill="none" />
-                  <circle cx="100" cy="170" r="14" fill="var(--color-primary)" />
-                  <path d="M110 95 C110 95, 120 70, 105 55 C90 40, 65 55, 65 75" stroke="#fff" strokeWidth="8" strokeLinecap="round" fill="none" />
+        <div className="fsd-section-inner fsd-faq-outer">
+          <div className="fsd-faq-panel" role="region" aria-label="Frequently asked questions and answers">
+            <header className="fsd-faq-panel-head">
+              <div className="fsd-faq-panel-head-copy">
+                <p className="fsd-faq-eyebrow">Help &amp; clarity</p>
+                <h2 id="fsd-faq-heading" className="fsd-faq-title">
+                  Frequently asked <span>questions</span>
+                </h2>
+                <p className="fsd-faq-deck">Straight answers for choosing the right track, schedules, and outcomes—before you apply.</p>
+              </div>
+              <div className="fsd-faq-figure" aria-hidden>
+                <div className="fsd-faq-figure-glow" />
+                <div className="fsd-faq-figure-bubble">?</div>
+                <svg
+                  className="fsd-faq-figure-ring"
+                  viewBox="0 0 200 200"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="100"
+                    cy="100"
+                    r="90"
+                    stroke="url(#fsd-faq-ring-grad)"
+                    strokeWidth="2.5"
+                    strokeDasharray="4 8"
+                    opacity="0.55"
+                  />
+                  <defs>
+                    <linearGradient id="fsd-faq-ring-grad" x1="0" y1="0" x2="1" y2="1">
+                      <stop stopColor="var(--color-primary)" stopOpacity="0" />
+                      <stop offset="0.5" stopColor="var(--color-primary)" stopOpacity="0.4" />
+                      <stop offset="1" stopColor="var(--color-primary)" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
                 </svg>
+              </div>
+            </header>
+
+            <div className="fsd-faq-pills-wrap">
+              <div
+                className="fsd-faq-pills"
+                role="tablist"
+                aria-label="FAQ topic"
+              >
+                <button
+                  type="button"
+                  role="tab"
+                  id="fsd-faq-tab-overview"
+                  className={faqCategory === 'overview' ? 'is-active' : ''}
+                  aria-selected={faqCategory === 'overview'}
+                  tabIndex={faqCategory === 'overview' ? 0 : -1}
+                  onClick={() => { setFaqCategory('overview'); setOpenFaq(0) }}
+                >
+                  Program overview
+                </button>
+                <button
+                  type="button"
+                  role="tab"
+                  id="fsd-faq-tab-macro"
+                  className={faqCategory === 'macro' ? 'is-active' : ''}
+                  aria-selected={faqCategory === 'macro'}
+                  tabIndex={faqCategory === 'macro' ? 0 : -1}
+                  onClick={() => { setFaqCategory('macro'); setOpenFaq(0) }}
+                >
+                  Macro program
+                </button>
               </div>
             </div>
 
-            {/* Middle Column: Categories */}
-            <div className="fsd-faq-categories">
-              <button 
-                className={`fsd-faq-tab ${faqCategory === 'overview' ? 'active' : ''}`}
-                onClick={() => { setFaqCategory('overview'); setOpenFaq(0); }}
-              >
-                Program Overview
-              </button>
-              <button 
-                className={`fsd-faq-tab ${faqCategory === 'macro' ? 'active' : ''}`}
-                onClick={() => { setFaqCategory('macro'); setOpenFaq(0); }}
-              >
-                Macro Program
-              </button>
-            </div>
-
-            {/* Right Column: Accordion */}
-            <div className="fsd-faq-accordion">
+            <div
+              className="fsd-faq-list"
+              role="region"
+              aria-label={`${faqCategory === 'overview' ? 'Program overview' : 'Macro program'} questions`}
+            >
               {FAQ_DATA[faqCategory].map((faq, index) => {
-                const isOpen = openFaq === index;
+                const isOpen = openFaq === index
                 return (
-                  <div key={index} className={`fsd-faq-item ${isOpen ? 'open' : ''}`}>
-                    <button className="fsd-faq-question" onClick={() => toggleFaq(index)} aria-expanded={isOpen}>
-                      <span>{faq.q}</span>
-                      <div className="fsd-faq-toggle">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          {isOpen ? <line x1="5" y1="12" x2="19" y2="12" /> : <><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></>}
+                  <div
+                    key={`${faqCategory}-${index}`}
+                    className={`fsd-faq-block${isOpen ? ' is-open' : ''}`}
+                  >
+                    <button
+                      type="button"
+                      className="fsd-faq-open"
+                      onClick={() => toggleFaq(index)}
+                      aria-expanded={isOpen}
+                      id={`fsd-faq-h-${faqCategory}-${index}`}
+                      aria-controls={`fsd-faq-b-${faqCategory}-${index}`}
+                    >
+                      <span className="fsd-faq-q" aria-hidden>
+                        Q{index + 1}
+                      </span>
+                      <span className="fsd-faq-qtext">{faq.q}</span>
+                      <span className="fsd-faq-control" aria-hidden>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                          {isOpen ? (
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                          ) : (
+                            <>
+                              <line x1="12" y1="5" x2="12" y2="19" />
+                              <line x1="5" y1="12" x2="19" y2="12" />
+                            </>
+                          )}
                         </svg>
-                      </div>
+                      </span>
                     </button>
-                    <div className="fsd-faq-answer-wrapper" style={{ height: isOpen ? 'auto' : '0', overflow: 'hidden' }}>
-                      <div className="fsd-faq-answer">
-                        <p>{faq.a}</p>
+                    <div
+                      className="fsd-faq-drop"
+                      id={`fsd-faq-b-wrap-${faqCategory}-${index}`}
+                    >
+                      <div
+                        className="fsd-faq-drop-inner"
+                        id={`fsd-faq-b-${faqCategory}-${index}`}
+                        role="region"
+                        aria-labelledby={`fsd-faq-h-${faqCategory}-${index}`}
+                      >
+                        <p className="fsd-faq-atext">{faq.a}</p>
                       </div>
                     </div>
                   </div>
-                );
+                )
               })}
             </div>
           </div>
