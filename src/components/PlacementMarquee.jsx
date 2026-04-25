@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import {
   PLACEMENT_COMPANIES,
   getPlacementCompaniesRowB,
@@ -11,15 +11,6 @@ function LogoTile({ company }) {
   const [failed, setFailed] = useState(false)
   const iconUrl = placementIconUrl(company.iconSlug)
   const brandColor = placementBrandColor(company.iconSlug)
-
-  useEffect(() => {
-    setFailed(false)
-    const probe = new Image()
-    const fail = () => setFailed(true)
-    probe.addEventListener('error', fail)
-    probe.src = iconUrl
-    return () => probe.removeEventListener('error', fail)
-  }, [iconUrl])
 
   const initials = company.name
     .split(/\s+/)
@@ -40,6 +31,16 @@ function LogoTile({ company }) {
 
   return (
     <div className="placement-logo" title={company.name}>
+      <img
+        src={iconUrl}
+        alt=""
+        className="placement-probe"
+        width={1}
+        height={1}
+        loading="lazy"
+        decoding="async"
+        onError={() => setFailed(true)}
+      />
       <span
         className="placement-icon"
         style={{

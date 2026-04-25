@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import PlacementMarquee from '../components/PlacementMarquee'
+import ProgramsOverview from '../components/ProgramsOverview'
+import WhyChooseUs from '../components/WhyChooseUs'
+import TestPlatformShowcase from '../components/TestPlatformShowcase'
+import Testimonials from '../components/Testimonials'
+import PartnerWithUs from '../components/PartnerWithUs'
 import { HERO_SLIDES } from '../data/heroSlides'
 import { HERO_STATS } from '../data/heroStats'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 import './Home.css'
 
-const SLIDE_MS = 5200
+const SLIDE_MS = 5200;
 
 export default function Home() {
   const [active, setActive] = useState(0)
@@ -122,6 +127,16 @@ export default function Home() {
       </section>
 
       <PlacementMarquee reduceMotion={reduceMotion} />
+
+      <ProgramsOverview />
+
+      <WhyChooseUs />
+
+      <TestPlatformShowcase />
+
+      <Testimonials />
+
+      <PartnerWithUs />
     </main>
   )
 }
