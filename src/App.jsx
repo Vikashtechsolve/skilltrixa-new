@@ -3,6 +3,9 @@ import RootLayout from './layouts/RootLayout'
 import Home from './pages/Home'
 import ProgramsIndex from './pages/ProgramsIndex'
 import ProgramPage from './pages/ProgramPage'
+import About from './pages/About'
+import Blog from './pages/Blog'
+import BlogDetail from './pages/BlogDetail'
 import PlaceholderPage from './pages/PlaceholderPage'
 
 export default function App() {
@@ -21,24 +24,9 @@ export default function App() {
             />
           }
         />
-        <Route
-          path="/blogs"
-          element={
-            <PlaceholderPage
-              title="Blogs"
-              subtitle="Tips, career stories, and learning bytes — content coming up as we build section by section."
-            />
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <PlaceholderPage
-              title="About us"
-              subtitle="Who we are, why we do this, and how we support learners — details landing here soon."
-            />
-          }
-        />
+        <Route path="/blogs" element={<Blog />} />
+        <Route path="/blogs/:slug" element={<BlogDetail />} />
+        <Route path="/about" element={<About />} />
         <Route
           path="/login"
           element={
