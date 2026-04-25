@@ -1,0 +1,1352 @@
+/* ══════════════════════════════════════════════════
+   FULL STACK DEVELOPMENT PROGRAM PAGE
+   ══════════════════════════════════════════════════ */
+
+/* ─── Hero ─── */
+.fsd-hero {
+  position: relative;
+  background: linear-gradient(180deg, #fffcfc 0%, #fff0f0 100%);
+  border-bottom: none;
+  overflow: hidden;
+  padding-bottom: 4rem;
+}
+
+.fsd-hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 5vw, 4rem) 1.25rem clamp(2rem, 4vw, 3rem);
+}
+
+.fsd-hero-copy {
+  min-width: 0;
+}
+
+.fsd-hero-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin: 0 0 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.fsd-hero-eyebrow::before {
+  content: '🎓';
+  font-size: 1rem;
+}
+
+.fsd-hero-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.9rem, 3vw + 0.8rem, 2.65rem);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+  margin: 0 0 0.35rem;
+  max-width: 20ch;
+}
+
+.fsd-hero-title span {
+  color: var(--color-primary);
+}
+
+.fsd-hero-subtitle {
+  font-size: clamp(0.92rem, 0.3vw + 0.88rem, 1.02rem);
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  margin: 0 0 1.5rem;
+  max-width: 34rem;
+}
+
+.fsd-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.75rem;
+}
+
+.fsd-hero-batch {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.fsd-hero-batch strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* ── Hero feature badges ── */
+.fsd-hero-badges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+  margin-bottom: 0;
+}
+
+.fsd-hero-badge {
+  padding: 0.7rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  text-align: center;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fsd-hero-badge:hover {
+  border-color: rgba(231, 33, 11, 0.3);
+  box-shadow: 0 4px 16px rgba(231, 33, 11, 0.06);
+}
+
+.fsd-hero-badge-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--color-black);
+  margin: 0 0 0.25rem;
+}
+
+.fsd-hero-badge-value {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ── Hero image ── */
+.fsd-hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.fsd-hero-visual-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fce1e1 0%, #faebeb 70%);
+  z-index: 0;
+}
+
+.fsd-hero-visual-placeholder {
+  width: 85%;
+  max-width: 400px;
+  aspect-ratio: 1;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.fsd-hero-visual img.fsd-hero-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  bottom: auto;
+  z-index: 1;
+  width: 85%;
+  max-width: 400px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  box-shadow: 0 12px 40px rgba(13, 13, 13, 0.1);
+  mix-blend-mode: normal;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.98);
+  transform-origin: center;
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.fsd-hero-visual img.fsd-hero-img.is-active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 2;
+}
+
+/* ── Hero stats bar ── */
+.fsd-hero-stats-shell {
+  background: transparent;
+  padding: 0 1.25rem;
+  margin-top: 3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.fsd-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1000px;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+  background: var(--color-white);
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(13, 13, 13, 0.06);
+}
+
+.fsd-hero-stat {
+  padding: clamp(1.2rem, 2vw, 1.8rem) 1rem;
+  text-align: center;
+  border-right: 1px solid var(--color-border);
+}
+
+.fsd-hero-stat:last-child {
+  border-right: none;
+}
+
+.fsd-hero-stat-value {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.1rem, 1.2vw + 1rem, 1.4rem);
+  color: var(--color-primary);
+  margin: 0 0 0.35rem;
+}
+
+.fsd-hero-stat-label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ── Hero responsive ── */
+@media (max-width: 880px) {
+  .fsd-hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .fsd-hero-title {
+    max-width: none;
+  }
+
+  .fsd-hero-actions {
+    justify-content: center;
+  }
+
+  .fsd-hero-badges {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .fsd-hero-visual {
+    margin-top: 1.5rem;
+  }
+
+  .fsd-hero-visual img.fsd-hero-img,
+  .fsd-hero-visual-placeholder {
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .fsd-hero-visual-circle {
+    width: 100%;
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 640px) {
+  .fsd-hero-badges {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fsd-hero-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fsd-hero-stat:nth-child(2) {
+    border-right: none;
+  }
+
+  .fsd-hero-stat:nth-child(1),
+  .fsd-hero-stat:nth-child(2) {
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+
+@media (max-width: 400px) {
+  .fsd-hero-badges {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fsd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+}
+
+.fsd-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.fsd-btn--primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 20px rgba(231, 33, 11, 0.35);
+}
+
+.fsd-btn--primary:hover {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  box-shadow: 0 6px 28px rgba(231, 33, 11, 0.45);
+  transform: translateY(-1px);
+}
+
+.fsd-btn--ghost {
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: transparent;
+}
+
+.fsd-btn--ghost:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ─── Reusable Section Pattern ─── */
+.fsd-section {
+  padding: clamp(3rem, 6vw, 4.5rem) 0;
+}
+
+.fsd-section--alt {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.fsd-section-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.fsd-section-header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.fsd-section-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin: 0 0 0.5rem;
+}
+
+.fsd-section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.55rem, 1.5vw + 1rem, 2rem);
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+  margin: 0 0 0.65rem;
+}
+
+.fsd-section-lead {
+  font-size: var(--text-body);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0 auto;
+  max-width: 38rem;
+}
+
+/* ─── About the Program (VTS Different) ─── */
+.fsd-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.fsd-vts-text {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--color-primary);
+  text-underline-offset: 4px;
+}
+
+/* Image Collage */
+.fsd-about-collage {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  align-items: stretch;
+  height: 420px;
+}
+
+.fsd-collage-col {
+  flex: 1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.fsd-collage-col:nth-child(2) {
+  transform: translateY(-2rem);
+}
+.fsd-collage-col:nth-child(1),
+.fsd-collage-col:nth-child(3) {
+  transform: translateY(2rem);
+}
+
+.fsd-collage-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Feature Cards */
+.fsd-about-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.fsd-about-card {
+  background: var(--color-white);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  border: 1px solid var(--color-border);
+}
+
+.fsd-about-card h3 {
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.fsd-about-card p {
+  color: var(--color-text);
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ─── Why Choose This Program ─── */
+.fsd-why-section {
+  padding-top: 2rem;
+}
+
+.fsd-why-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.fsd-why-header h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  color: var(--color-black);
+  margin: 0;
+}
+
+.fsd-why-lead {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  max-width: 600px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.fsd-why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.fsd-why-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background: var(--color-white);
+  padding: 2rem 2.5rem;
+  border-radius: 60px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+  border: 1px solid var(--color-border);
+}
+
+.fsd-why-card-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 0.15rem;
+}
+
+.fsd-why-card-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin: 0 0 0.5rem;
+}
+
+.fsd-why-card-content p {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .fsd-about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .fsd-about-collage {
+    height: 300px;
+  }
+
+  .fsd-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fsd-why-card {
+    border-radius: 30px;
+    padding: 1.5rem;
+  }
+}
+
+/* ─── Tech Grid ─── */
+.fsd-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.fsd-tech-card {
+  padding: clamp(1.5rem, 2.5vw, 2rem);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  text-align: center;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.fsd-tech-card:hover {
+  border-color: rgba(231, 33, 11, 0.3);
+  box-shadow: 0 8px 28px rgba(231, 33, 11, 0.08);
+  transform: translateY(-3px);
+}
+
+.fsd-tech-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(231, 33, 11, 0.08) 0%, rgba(231, 33, 11, 0.03) 100%);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  transition: transform 0.2s ease;
+}
+
+.fsd-tech-card:hover .fsd-tech-card-icon {
+  transform: scale(1.08);
+}
+
+.fsd-tech-card-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.fsd-tech-card h3 {
+  font-size: 1.02rem;
+  margin: 0 0 0.65rem;
+}
+
+.fsd-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fsd-tech-tags li {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+  border-radius: 100px;
+  background: rgba(231, 33, 11, 0.06);
+  color: var(--color-primary);
+  border: 1px solid rgba(231, 33, 11, 0.1);
+}
+
+@media (max-width: 880px) {
+  .fsd-tech-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .fsd-tech-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Admission Process ─── */
+.fsd-admission-header {
+  margin-bottom: 3rem;
+}
+
+.fsd-admission-header h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--color-black);
+  margin: 0;
+}
+
+.fsd-admission-grid {
+  align-items: center;
+}
+
+.fsd-admission-visual img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.fsd-admission-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.fsd-admission-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background: var(--color-white);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  border: 1px solid var(--color-border);
+}
+
+.fsd-admission-icon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(231, 33, 11, 0.08);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fsd-admission-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.fsd-admission-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin: 0 0 0.4rem;
+}
+
+.fsd-admission-content p {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .fsd-projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Program Structure ─── */
+.fsd-program-card {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(2rem, 4vw, 3rem);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 24px rgba(13, 13, 13, 0.06);
+}
+
+.fsd-program-badge {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  margin-bottom: 1.25rem;
+}
+
+.fsd-program-card h3 {
+  font-size: clamp(1.25rem, 1vw + 1rem, 1.5rem);
+  margin: 0 0 1.25rem;
+}
+
+.fsd-program-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.fsd-program-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.fsd-program-detail-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: rgba(231, 33, 11, 0.08);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fsd-program-detail-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.fsd-program-detail-label {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.fsd-program-detail-value {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-black);
+  margin: 0;
+}
+
+.fsd-program-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.fsd-program-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.fsd-program-features li .check-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: rgba(231, 33, 11, 0.08);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fsd-program-features li .check-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+@media (max-width: 520px) {
+  .fsd-program-details {
+    grid-template-columns: 1fr;
+  }
+
+  .fsd-program-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Course Features ─── */
+.fsd-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.fsd-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: clamp(1.25rem, 2vw, 1.5rem);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.fsd-feature-item:hover {
+  background: var(--color-surface);
+  border-color: rgba(231, 33, 11, 0.2);
+}
+
+.fsd-feature-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: rgba(231, 33, 11, 0.08);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fsd-feature-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.fsd-feature-item h3 {
+  font-size: 0.95rem;
+  margin: 0 0 0.3rem;
+}
+
+.fsd-feature-item p {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .fsd-features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .fsd-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Career Cards ─── */
+.fsd-career-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.fsd-career-card {
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 12px rgba(13, 13, 13, 0.04);
+  text-align: center;
+  transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.fsd-career-card:hover {
+  box-shadow: 0 12px 40px rgba(231, 33, 11, 0.1);
+  transform: translateY(-4px);
+  border-color: rgba(231, 33, 11, 0.25);
+}
+
+.fsd-career-card-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(231, 33, 11, 0.1) 0%, rgba(231, 33, 11, 0.03) 100%);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  transition: transform 0.2s ease;
+}
+
+.fsd-career-card:hover .fsd-career-card-icon {
+  transform: scale(1.1);
+}
+
+.fsd-career-card-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.fsd-career-card h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+
+.fsd-career-card p {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+  margin: 0 0 1rem;
+}
+
+.fsd-career-salary {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  background: rgba(231, 33, 11, 0.06);
+  color: var(--color-primary);
+  border: 1px solid rgba(231, 33, 11, 0.12);
+}
+
+@media (max-width: 768px) {
+  .fsd-career-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+/* ─── Fee Structure ─── */
+.fsd-fee-card {
+  max-width: 480px;
+  margin: 0 auto;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 2px solid rgba(231, 33, 11, 0.2);
+  box-shadow: 0 8px 40px rgba(231, 33, 11, 0.08);
+  background: var(--color-white);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.fsd-fee-card:hover {
+  box-shadow: 0 16px 60px rgba(231, 33, 11, 0.14);
+  transform: translateY(-3px);
+}
+
+.fsd-fee-card-header {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  padding: clamp(1.5rem, 3vw, 2rem);
+  text-align: center;
+}
+
+.fsd-fee-card-header h3 {
+  font-size: 1.25rem;
+  color: var(--color-white);
+  margin: 0 0 0.5rem;
+}
+
+.fsd-fee-price {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 2vw + 1.5rem, 2.75rem);
+  color: var(--color-white);
+  margin: 0;
+  line-height: 1.1;
+}
+
+.fsd-fee-price span {
+  font-size: 0.9rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.fsd-fee-card-body {
+  padding: clamp(1.5rem, 3vw, 2rem);
+}
+
+.fsd-fee-includes {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.fsd-fee-includes li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.fsd-fee-includes .check-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: rgba(231, 33, 11, 0.08);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fsd-fee-includes .check-icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+.fsd-fee-card .fsd-btn--primary {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ─── Testimonials ─── */
+.fsd-testimonials-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fsd-testimonial-nav {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.2s ease;
+}
+
+.fsd-testimonial-nav:hover {
+  border-color: var(--color-primary);
+  background: rgba(231, 33, 11, 0.05);
+}
+
+.fsd-testimonial-nav svg {
+  width: 24px;
+  height: 24px;
+}
+
+.fsd-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.fsd-testimonial-card {
+  background: rgba(231, 33, 11, 0.04);
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.fsd-testimonial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.fsd-testimonial-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.fsd-testimonial-company {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.fsd-testimonial-company span {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.fsd-company-logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-black);
+}
+
+.fsd-testimonial-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.fsd-testimonial-quote {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0 0 1.5rem;
+}
+
+.fsd-testimonial-author {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .fsd-testimonials-wrapper {
+    flex-direction: column;
+  }
+  .fsd-testimonials-grid {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .fsd-testimonial-nav {
+    display: none;
+  }
+}
+
+/* ─── FAQ ─── */
+.fsd-faq-section {
+  padding: 4rem 0;
+  background: var(--color-white);
+}
+
+.fsd-faq-container {
+  display: grid;
+  grid-template-columns: 1fr 250px 1.5fr;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.fsd-faq-left h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+  color: var(--color-black);
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+
+.fsd-faq-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin: 0 0 2rem;
+}
+
+.fsd-faq-illustration {
+  width: 100%;
+  max-width: 220px;
+}
+
+.fsd-faq-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fsd-faq-tab {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  background: rgba(231, 33, 11, 0.08);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fsd-faq-tab.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 4px 12px rgba(231, 33, 11, 0.2);
+}
+
+.fsd-faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fsd-faq-item {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-white);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.fsd-faq-item.open {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border-color: rgba(231, 33, 11, 0.2);
+}
+
+.fsd-faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
+  color: var(--color-black);
+  font-weight: 500;
+}
+
+.fsd-faq-toggle {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  margin-left: 1rem;
+}
+
+.fsd-faq-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.fsd-faq-answer-wrapper {
+  transition: height 0.3s ease;
+}
+
+.fsd-faq-answer {
+  padding: 0 1.5rem 1.25rem;
+}
+
+.fsd-faq-answer p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .fsd-faq-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .fsd-faq-categories {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+  }
+  .fsd-faq-tab {
+    flex: 1;
+    min-width: 150px;
+    padding: 1rem;
+  }
+  .fsd-faq-illustration {
+    display: none;
+  }
+}
+
+/* ─── CTA ─── */
+.fsd-cta {
+  background: linear-gradient(160deg, var(--color-black) 0%, #1a1a2e 40%, #16213e 100%);
+  padding: clamp(3rem, 6vw, 4.5rem) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.fsd-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(231, 33, 11, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.fsd-cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.fsd-cta h2 {
+  font-size: clamp(1.55rem, 1.5vw + 1rem, 2.2rem);
+  color: var(--color-white);
+  margin: 0 0 0.75rem;
+}
+
+.fsd-cta p {
+  font-size: var(--text-body);
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 1.75rem;
+  line-height: 1.6;
+}

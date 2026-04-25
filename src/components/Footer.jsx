@@ -96,7 +96,7 @@ export default function Footer() {
             <h3 className="footer-col-title">Programs</h3>
             <ul className="footer-col-links">
               <li><Link to="/programs">All Programs</Link></li>
-              <li><Link to="/programs/full-stack-dev">Full-Stack Development</Link></li>
+              <li><Link to="/programs/full-stack">Full-Stack Development</Link></li>
               <li><Link to="/programs/data-science">Data Science</Link></li>
               <li><Link to="/programs/digital-marketing">Digital Marketing</Link></li>
             </ul>

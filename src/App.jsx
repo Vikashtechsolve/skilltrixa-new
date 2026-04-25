@@ -3,6 +3,7 @@ import RootLayout from './layouts/RootLayout'
 import Home from './pages/Home'
 import ProgramsIndex from './pages/ProgramsIndex'
 import ProgramPage from './pages/ProgramPage'
+import FullStackDev from './pages/FullStackDev'
 import About from './pages/About'
 import Blog from './pages/Blog'
 import BlogDetail from './pages/BlogDetail'
@@ -14,6 +15,7 @@ export default function App() {
       <Route element={<RootLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/programs" element={<ProgramsIndex />} />
+        <Route path="/programs/full-stack" element={<FullStackDev />} />
         <Route path="/programs/:programId" element={<ProgramPage />} />
         <Route
           path="/universities"
