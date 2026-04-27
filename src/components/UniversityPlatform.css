@@ -1,0 +1,421 @@
+/* Universities only — editorial rail + XL chrome-free preview (not the home scroll tour) */
+
+.uplat {
+  /* Matches `.u-sec-hd` badge column + gap on UniversitiesPage */
+  --uplat-text-indent: calc(2.75rem + 0.9rem);
+  position: relative;
+  overflow: hidden;
+  padding: var(--u-section-pad-y, clamp(2rem, 3.5vw, 2.75rem)) 0;
+  background: #060708;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.uplat-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.uplat-bg-slant {
+  position: absolute;
+  inset: -20% -10% 40% -30%;
+  background: linear-gradient(
+    118deg,
+    rgba(15, 23, 42, 0.95) 0%,
+    rgba(8, 10, 18, 0.4) 42%,
+    transparent 68%
+  );
+  transform: rotate(-2deg);
+}
+
+.uplat-bg-glow {
+  position: absolute;
+  width: min(90vw, 52rem);
+  height: min(70vh, 38rem);
+  right: -8%;
+  top: -5%;
+  background: radial-gradient(ellipse, rgba(231, 33, 11, 0.14) 0%, transparent 68%);
+  filter: blur(28px);
+}
+
+.uplat-bg-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 20%, transparent 75%);
+}
+
+/* Same content width as `.u-problem-inner` / `.u-solution-inner` / `.u-works-inner` (72rem) */
+.uplat-inner.page-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--u-inner-stack-gap, 1.05rem);
+}
+
+.uplat-head {
+  max-width: 46rem;
+  margin-bottom: 0;
+  padding-left: var(--uplat-text-indent);
+}
+
+.uplat-head-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 183, 172, 0.95);
+  margin-bottom: 0.55rem;
+}
+
+.uplat-title {
+  margin: 0 0 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.uplat-title-strong {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.85rem, 1.5vw + 1.15rem, 2.65rem);
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+  background: linear-gradient(120deg, #fff 0%, #ffc9c2 38%, #ff8a78 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@supports not (background-clip: text) {
+  .uplat-title-strong {
+    color: #fff;
+    background: none;
+    -webkit-text-fill-color: #fff;
+  }
+}
+
+.uplat-title-sub {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1rem, 0.45vw + 0.88rem, 1.22rem);
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.uplat-inner.page-inner .uplat-lead {
+  margin: 0 0 1rem;
+  font-size: clamp(0.92rem, 0.22vw + 0.88rem, 1.02rem);
+  line-height: 1.58;
+  color: rgba(255, 255, 255, 0.62);
+  max-width: 44rem;
+}
+
+.uplat-tags {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.5rem;
+}
+
+.uplat-tag {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.uplat-quote {
+  margin: 0 0 0 var(--uplat-text-indent);
+  padding: 0 0 0 1rem;
+  border-left: 4px solid var(--color-primary);
+  max-width: 40rem;
+  box-sizing: border-box;
+}
+
+.uplat-quote-main {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.15rem, 0.55vw + 1rem, 1.45rem);
+  font-style: italic;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.uplat-quote-q {
+  color: var(--color-primary);
+  font-style: normal;
+  font-weight: 800;
+  opacity: 0.85;
+}
+
+.uplat-quote-note {
+  margin: 0.55rem 0 0;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+/* Rail stays flush left; only intro + quote use `--uplat-text-indent` */
+.uplat-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 17.5rem) minmax(0, 1fr);
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+  align-items: start;
+}
+
+.uplat-rail-title {
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0 0 0.55rem 0.15rem;
+}
+
+.uplat-rail-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.uplat-rail-btn {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.35rem 1fr;
+  gap: 0.65rem;
+  align-items: start;
+  width: 100%;
+  margin: 0;
+  padding: 0.65rem 0.75rem 0.65rem 0.65rem;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: rgba(255, 255, 255, 0.88);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.uplat-rail-btn:hover {
+  border-color: rgba(231, 33, 11, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.uplat-rail-btn.is-active {
+  border-color: rgba(231, 33, 11, 0.55);
+  background: linear-gradient(135deg, rgba(231, 33, 11, 0.18) 0%, rgba(255, 255, 255, 0.05) 100%);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+.uplat-rail-btn.is-active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 55%;
+  border-radius: 0 3px 3px 0;
+  background: var(--color-primary);
+}
+
+.uplat-rail-idx {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: rgba(255, 180, 168, 0.9);
+  font-variant-numeric: tabular-nums;
+  padding-top: 0.12rem;
+}
+
+.uplat-rail-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.uplat-rail-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.uplat-rail-hint {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.uplat-focus {
+  min-width: 0;
+}
+
+.uplat-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.uplat-frame {
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #121214 0%, #0a0a0c 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset,
+    0 36px 90px rgba(0, 0, 0, 0.55);
+}
+
+.uplat-frame--live .uplat-shot {
+  animation: uplat-shot-in 0.45s ease both;
+}
+
+@keyframes uplat-shot-in {
+  from {
+    opacity: 0;
+    transform: scale(1.012);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.uplat-shot {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: min(82vh, 1280px);
+  object-fit: contain;
+  object-position: top center;
+}
+
+.uplat-readout {
+  padding: 0 0.15rem;
+  max-width: 44rem;
+}
+
+.uplat-readout-eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: rgba(255, 180, 168, 0.85);
+  margin-bottom: 0.35rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.uplat-readout-title {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.12rem, 0.35vw + 1rem, 1.35rem);
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.uplat-readout-body {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.58;
+  color: rgba(255, 255, 255, 0.52);
+}
+
+.uplat-hint {
+  margin: 0.85rem 0 0;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.28);
+}
+
+@media (max-width: 640px) {
+  .uplat {
+    --uplat-text-indent: 0rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .uplat-stage {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .uplat-rail-list {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0.45rem;
+    padding-bottom: 0.35rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .uplat-rail-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    max-width: 85vw;
+  }
+
+  .uplat-rail-btn {
+    grid-template-columns: auto 1fr;
+    min-width: 14rem;
+    padding: 0.55rem 0.65rem;
+  }
+
+  .uplat-shot {
+    max-height: min(68vh, 920px);
+  }
+
+  .uplat-hint {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uplat-frame--live .uplat-shot {
+    animation: none;
+  }
+
+  .uplat-rail-btn {
+    transition: none;
+  }
+}

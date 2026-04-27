@@ -35,6 +35,35 @@
   margin: 0 0 0.65rem;
 }
 
+.tp-showcase-title:not(.tp-showcase-title--split) .tp-showcase-title-main {
+  display: inline;
+}
+
+.tp-showcase-title--split {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  text-align: left;
+  max-width: 46rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tp-showcase-title--split .tp-showcase-title-main {
+  margin: 0;
+  line-height: 1.06;
+}
+
+.tp-showcase-title-accent {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1rem, 0.45vw + 0.88rem, 1.22rem);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--color-text-muted);
+}
+
 .tp-showcase-lead {
   font-family: var(--font-body);
   font-size: clamp(0.95rem, 0.25vw + 0.9rem, 1.05rem);

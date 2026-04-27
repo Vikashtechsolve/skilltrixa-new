@@ -28,27 +28,87 @@
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  margin-bottom: 1rem;
+  margin-bottom: 0.65rem;
+}
+
+/* Full-colour logo on a light tile — invert filter made the asset read as a flat white block */
+.footer-brand-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.75rem;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 .footer-brand-logo {
-  height: 40px;
+  display: block;
+  height: 42px;
   width: auto;
-  max-width: 150px;
+  max-width: min(200px, 100%);
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  object-position: left center;
+}
+
+.footer-brand-tagline {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .footer-brand-desc {
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.55);
-  margin: 0 0 1.25rem;
-  max-width: 28ch;
+  margin: 0 0 1rem;
+  max-width: 34rem;
+}
+
+.footer-contact-line {
+  margin: 0 0 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.footer-contact-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-contact-link {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  width: fit-content;
+  transition: color 0.15s ease;
+}
+
+.footer-contact-link:hover {
+  color: var(--color-primary);
+}
+
+.footer-social-label {
+  margin: 0 0 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .footer-socials {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.65rem;
 }
 
@@ -69,6 +129,11 @@
   background: var(--color-primary);
   color: var(--color-white);
   transform: translateY(-2px);
+}
+
+.footer-social-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .footer-social-link svg {
@@ -135,7 +200,8 @@
   transition: color 0.15s ease;
 }
 
-.footer-bottom-links a:hover {
+.footer-bottom-links a:hover,
+.footer-bottom-links a:focus-visible {
   color: rgba(255, 255, 255, 0.7);
 }
 

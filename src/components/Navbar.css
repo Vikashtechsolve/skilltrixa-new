@@ -6,6 +6,11 @@
   border-bottom: 1px solid var(--color-border);
 }
 
+.site-header a,
+.site-header button {
+  cursor: pointer;
+}
+
 .navbar-shell {
   max-width: 1200px;
   margin: 0 auto;
@@ -311,6 +316,7 @@
     background: rgba(13, 13, 13, 0.45);
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity 0.2s ease, visibility 0.2s;
     z-index: 205;
   }
@@ -318,6 +324,7 @@
   .nav-backdrop--visible {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
   }
 
   .nav-main {
@@ -337,10 +344,12 @@
     transition: transform 0.22s ease;
     z-index: 210;
     overflow-y: auto;
+    pointer-events: none;
   }
 
   .nav-main--open {
     transform: translateX(0);
+    pointer-events: auto;
   }
 
   .nav-close {

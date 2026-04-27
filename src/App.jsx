@@ -1,12 +1,26 @@
-import { Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Navigate, Routes, Route } from 'react-router-dom'
 import RootLayout from './layouts/RootLayout'
+import { SKILLTRIXA_LOGIN_URL } from './config/links'
 import Home from './pages/Home'
 import ProgramsIndex from './pages/ProgramsIndex'
 import ProgramPage from './pages/ProgramPage'
 import About from './pages/About'
 import Blog from './pages/Blog'
 import BlogDetail from './pages/BlogDetail'
-import PlaceholderPage from './pages/PlaceholderPage'
+import UniversitiesPage from './pages/UniversitiesPage'
+import ContactUsPage from './pages/ContactUsPage'
+
+function LoginRedirect() {
+  useEffect(() => {
+    window.location.replace(SKILLTRIXA_LOGIN_URL)
+  }, [])
+  return (
+    <main className="page-inner" style={{ paddingTop: '2rem' }}>
+      <p style={{ margin: 0, color: 'var(--color-text-muted)' }}>Opening Skilltrixa…</p>
+    </main>
+  )
+}
 
 export default function App() {
   return (
@@ -15,35 +29,15 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/programs" element={<ProgramsIndex />} />
         <Route path="/programs/:programId" element={<ProgramPage />} />
-        <Route
-          path="/universities"
-          element={
-            <PlaceholderPage
-              title="Universities"
-              subtitle="Partnerships that take your students from classroom to company — we will fill this section properly in the next step."
-            />
-          }
-        />
+        <Route path="/universities" element={<UniversitiesPage />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/blogs/:slug" element={<BlogDetail />} />
         <Route path="/about" element={<About />} />
-        <Route
-          path="/login"
-          element={
-            <PlaceholderPage
-              title="Login"
-              subtitle="Your login flow will connect to the backend when we wire the MERN stack."
-            />
-          }
-        />
+        <Route path="/contact-us" element={<ContactUsPage />} />
+        <Route path="/login" element={<LoginRedirect />} />
         <Route
           path="/signup"
-          element={
-            <PlaceholderPage
-              title="Sign up"
-              subtitle="Create your Skilltrixa account — form and API integration will follow."
-            />
-          }
+          element={<Navigate to="/contact-us" replace />}
         />
       </Route>
     </Routes>

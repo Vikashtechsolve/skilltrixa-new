@@ -67,3 +67,81 @@ export const TEST_PLATFORM_SHOWCASE = {
     },
   ],
 }
+
+/** Universities page — full platform story; screenshots live in `public/test/`. */
+export const UNIVERSITY_PLATFORM_SHOWCASE = {
+  eyebrow: 'The platform',
+  title: 'Skilltrixa Platform',
+  subtitle: 'This is your product edge.',
+  lead:
+    'Our core strength is the platform itself: one hub where every skill gap meets the right assessment—coding, aptitude, AI-led practice, design, databases, and project rubrics—so students graduate from practice to placement with evidence, not guesswork.',
+  quote: 'Practice until the interview feels effortless.',
+  quoteNote: 'That is the standard we ship against.',
+  highlights: [
+    'Coding tests',
+    'Aptitude tests',
+    'AI mock interviews',
+    'Leaderboards',
+    'System design',
+    'DBMS test',
+    'Project evaluations',
+  ],
+  features: [
+    {
+      id: 'coding',
+      title: 'Coding tests',
+      shortLabel: 'Coding',
+      body: 'Judge-style environments with visible cases and a firm clock—the same rhythm as real campus and company rounds.',
+      image: '/test/coding.png',
+      imageAlt: 'Skilltrixa coding test interface',
+    },
+    {
+      id: 'aptitude',
+      title: 'Aptitude tests',
+      shortLabel: 'Aptitude',
+      body: 'Quant, logic, and verbal blocks tuned for shortlist filters—so aptitude is not a surprise on drive day.',
+      image: '/test/aptitude.png',
+      imageAlt: 'Skilltrixa aptitude test screen',
+    },
+    {
+      id: 'ai-mock',
+      title: 'AI mock interviews',
+      shortLabel: 'AI interview',
+      body: 'Mic, camera, and AI-led prompts so students tighten answers before a human panel sees them.',
+      image: '/test/aiinterview.png',
+      imageAlt: 'Skilltrixa AI mock interview screen',
+    },
+    {
+      id: 'leaderboards',
+      title: 'Leaderboards',
+      shortLabel: 'Leaderboards',
+      body: 'Cohort boards that create healthy competition and visibility for faculty and TPO before shortlists freeze.',
+      image: '/test/results.png',
+      imageAlt: 'Skilltrixa leaderboard and cohort rankings',
+    },
+    {
+      id: 'system-design',
+      title: 'System design',
+      shortLabel: 'System design',
+      body: 'Canvas-style workspace for sketches, notes, and trade-offs—the shape system rounds actually take.',
+      image: '/test/systemdesign.png',
+      imageAlt: 'Skilltrixa system design workspace',
+    },
+    {
+      id: 'dbms',
+      title: 'DBMS test',
+      shortLabel: 'DBMS',
+      body: 'SQL editor and schema checks aligned with what technical interviewers still ask on the day.',
+      image: '/test/sql.png',
+      imageAlt: 'Skilltrixa DBMS and SQL test screen',
+    },
+    {
+      id: 'project-eval',
+      title: 'Project evaluations',
+      shortLabel: 'Projects',
+      body: 'Rubrics for demos and code paths so portfolio work gets the same honest scoring as timed tests.',
+      image: '/test/projectevaluation.png',
+      imageAlt: 'Skilltrixa project evaluation screen',
+    },
+  ],
+}

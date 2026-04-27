@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, startTransition } from 'react'
 import { NavLink, Link, useLocation } from 'react-router-dom'
+import { SKILLTRIXA_LOGIN_URL } from '../config/links'
 import { PROGRAMS } from '../data/programs'
 import './Navbar.css'
 
@@ -162,11 +163,11 @@ export default function Navbar() {
           </ul>
 
           <div className="nav-actions">
-            <Link to="/login" className="btn btn-ghost">
+            <a href={SKILLTRIXA_LOGIN_URL} className="btn btn-ghost">
               Login
-            </Link>
-            <Link to="/signup" className="btn btn-primary">
-              Sign up
+            </a>
+            <Link to="/contact-us" className="btn btn-primary">
+              Contact us
             </Link>
           </div>
         </nav>

@@ -7,8 +7,8 @@ function clamp(n, min, max) {
   return Math.min(max, Math.max(min, n))
 }
 
-export default function TestPlatformShowcase() {
-  const d = TEST_PLATFORM_SHOWCASE
+export default function TestPlatformShowcase({ data = TEST_PLATFORM_SHOWCASE }) {
+  const d = data
   const n = d.features.length
   const [active, setActive] = useState(0)
   const panelId = useId()
@@ -76,8 +76,14 @@ export default function TestPlatformShowcase() {
       <div className="tp-showcase-inner page-inner">
         <header className="tp-showcase-head">
           <p className="tp-showcase-eyebrow">{d.eyebrow}</p>
-          <h2 id="tp-showcase-heading" className="tp-showcase-title">
-            {d.title}
+          <h2
+            id="tp-showcase-heading"
+            className={`tp-showcase-title${d.subtitle ? ' tp-showcase-title--split' : ''}`}
+          >
+            <span className="tp-showcase-title-main">{d.title}</span>
+            {d.subtitle ? (
+              <span className="tp-showcase-title-accent">{d.subtitle}</span>
+            ) : null}
           </h2>
           <p className="tp-showcase-lead">{d.lead}</p>
           <ul className="tp-showcase-highlights" aria-label="What the platform includes">

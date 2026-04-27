@@ -79,17 +79,14 @@ function MarqueeBand({ companies, directionLeft, durationSec, paused }) {
   )
 }
 
-export default function PlacementMarquee({ reduceMotion }) {
-  const [paused, setPaused] = useState(false)
+export default function PlacementMarquee({ reduceMotion, sectionClassName }) {
   const rowB = getPlacementCompaniesRowB()
   const names = PLACEMENT_COMPANIES.map((c) => c.name).join(', ')
 
   return (
     <section
-      className="placement-section"
+      className={['placement-section', sectionClassName].filter(Boolean).join(' ')}
       aria-labelledby="placement-heading"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
     >
       <div className="placement-section-head page-inner">
         <h2 id="placement-heading" className="placement-section-title">
@@ -114,8 +111,8 @@ export default function PlacementMarquee({ reduceMotion }) {
         </div>
       ) : (
         <div className="placement-marquees" aria-hidden="true">
-          <MarqueeBand companies={PLACEMENT_COMPANIES} directionLeft durationSec={92} paused={paused} />
-          <MarqueeBand companies={rowB} directionLeft={false} durationSec={118} paused={paused} />
+          <MarqueeBand companies={PLACEMENT_COMPANIES} directionLeft durationSec={92} paused={false} />
+          <MarqueeBand companies={rowB} directionLeft={false} durationSec={118} paused={false} />
         </div>
       )}
     </section>

@@ -1,5 +1,15 @@
 import { Link } from 'react-router-dom'
+import { SKILLTRIXA_LOGIN_URL } from '../config/links'
 import './Footer.css'
+
+const SOCIAL = {
+  instagram: 'https://www.instagram.com/skilltrixa/',
+  x: 'https://x.com/Skilltrixa01',
+  facebook: 'https://www.facebook.com/share/1BSscPwyaF/',
+  linkedin:
+    'https://www.linkedin.com/in/divya-ojha-566b6b403?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+  youtube: 'https://www.youtube.com/channel/UCV3E1SHQNFEnbiwl0Sre0AQ',
+}
 
 function LinkedInIcon() {
   return (
@@ -17,10 +27,18 @@ function InstagramIcon() {
   )
 }
 
-function TwitterIcon() {
+function XIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden>
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  )
+}
+
+function FacebookIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
     </svg>
   )
 }
@@ -40,21 +58,60 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand-col">
             <Link to="/" className="footer-brand-link">
-              <img
-                src="/skilltrixa.svg"
-                alt="Skilltrixa"
-                className="footer-brand-logo"
-                width={150}
-                height={40}
-                loading="lazy"
-              />
+              <span className="footer-brand-logo-wrap">
+                <img
+                  src="/skilltrixa.svg"
+                  alt="Skilltrixa"
+                  className="footer-brand-logo"
+                  width={180}
+                  height={48}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </span>
             </Link>
+            <p className="footer-brand-tagline">Learn skills. Get placed.</p>
             <p className="footer-brand-desc">
-              Empowering students with industry-ready skills for global careers. Learn skills. Get placed.
+              Skilltrixa helps learners build industry-ready skills—from foundations to placements—with
+              structured programs, assessments, and campus partnerships.
             </p>
+            <p className="footer-contact-line">
+              <span className="footer-contact-label">Partnerships</span>
+              <a href="mailto:partnerships@skilltrixa.com" className="footer-contact-link">
+                partnerships@skilltrixa.com
+              </a>
+            </p>
+            <p className="footer-social-label">Follow Skilltrixa</p>
             <div className="footer-socials">
               <a
-                href="https://linkedin.com"
+                href={SOCIAL.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-link"
+                aria-label="Skilltrixa on Instagram"
+              >
+                <InstagramIcon />
+              </a>
+              <a
+                href={SOCIAL.x}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-link"
+                aria-label="Skilltrixa on X"
+              >
+                <XIcon />
+              </a>
+              <a
+                href={SOCIAL.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-link"
+                aria-label="Skilltrixa on Facebook"
+              >
+                <FacebookIcon />
+              </a>
+              <a
+                href={SOCIAL.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-social-link"
@@ -63,29 +120,11 @@ export default function Footer() {
                 <LinkedInIcon />
               </a>
               <a
-                href="https://instagram.com"
+                href={SOCIAL.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-social-link"
-                aria-label="Instagram"
-              >
-                <InstagramIcon />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-social-link"
-                aria-label="X (Twitter)"
-              >
-                <TwitterIcon />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-social-link"
-                aria-label="YouTube"
+                aria-label="Skilltrixa on YouTube"
               >
                 <YouTubeIcon />
               </a>
@@ -95,30 +134,57 @@ export default function Footer() {
           <div>
             <h3 className="footer-col-title">Programs</h3>
             <ul className="footer-col-links">
-              <li><Link to="/programs">All Programs</Link></li>
-              <li><Link to="/programs/full-stack-dev">Full-Stack Development</Link></li>
-              <li><Link to="/programs/data-science">Data Science</Link></li>
-              <li><Link to="/programs/digital-marketing">Digital Marketing</Link></li>
+              <li>
+                <Link to="/programs">All programs</Link>
+              </li>
+              <li>
+                <Link to="/programs/full-stack-dev">Full-stack development</Link>
+              </li>
+              <li>
+                <Link to="/programs/data-science">Data science</Link>
+              </li>
+              <li>
+                <Link to="/programs/digital-marketing">Digital marketing</Link>
+              </li>
             </ul>
           </div>
 
           <div>
             <h3 className="footer-col-title">Company</h3>
             <ul className="footer-col-links">
-              <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/blogs">Blog</Link></li>
-              <li><Link to="/universities">Universities</Link></li>
-              <li><Link to="/login">Login</Link></li>
+              <li>
+                <Link to="/about">About us</Link>
+              </li>
+              <li>
+                <Link to="/blogs">Blog</Link>
+              </li>
+              <li>
+                <Link to="/universities">Universities</Link>
+              </li>
+              <li>
+                <Link to="/contact-us">Contact us</Link>
+              </li>
+              <li>
+                <a href={SKILLTRIXA_LOGIN_URL}>Login</a>
+              </li>
             </ul>
           </div>
 
           <div>
             <h3 className="footer-col-title">Support</h3>
             <ul className="footer-col-links">
-              <li><a href="mailto:contact@skilltrixa.com">Contact Us</a></li>
-              <li><Link to="/about">FAQ</Link></li>
-              <li><Link to="/about">Privacy Policy</Link></li>
-              <li><Link to="/about">Terms of Service</Link></li>
+              <li>
+                <Link to="/contact-us">Help &amp; enquiries</Link>
+              </li>
+              <li>
+                <Link to="/about">FAQ</Link>
+              </li>
+              <li>
+                <Link to="/about">Privacy policy</Link>
+              </li>
+              <li>
+                <Link to="/about">Terms of service</Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -128,9 +194,9 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Skilltrixa. All rights reserved.
           </p>
           <div className="footer-bottom-links">
-            <a href="/about">Privacy</a>
-            <a href="/about">Terms</a>
-            <a href="mailto:contact@skilltrixa.com">Contact</a>
+            <Link to="/about">Privacy</Link>
+            <Link to="/about">Terms</Link>
+            <Link to="/contact-us">Contact</Link>
           </div>
         </div>
       </div>
