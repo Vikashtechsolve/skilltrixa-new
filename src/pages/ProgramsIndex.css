@@ -1,0 +1,115 @@
+/* Matches Home.css hero + ProgramsOverview card language */
+.programs-index {
+  flex: 1;
+}
+
+.programs-index-hero {
+  position: relative;
+  background: linear-gradient(160deg, var(--color-white) 0%, var(--color-surface) 45%, var(--color-white) 100%);
+  border-bottom: 1px solid var(--color-border);
+  padding: clamp(2.25rem, 5vw, 3.25rem) 0 clamp(2rem, 4vw, 2.75rem);
+}
+
+.programs-index-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.programs-index-eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin: 0 0 0.75rem;
+}
+
+.programs-index-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 2.5vw + 1rem, 2.35rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+  margin: 0 0 0.85rem;
+  max-width: 20ch;
+}
+
+.programs-index-lead {
+  margin: 0;
+  max-width: 38rem;
+  font-size: var(--text-lead);
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.programs-index-list-wrap {
+  padding: clamp(2rem, 4vw, 3rem) 0 clamp(2.5rem, 5vw, 3.5rem);
+  background: var(--color-white);
+}
+
+.programs-index-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.85rem, 2vw, 1.15rem);
+}
+
+.programs-index-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.15rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: linear-gradient(165deg, #ffffff 0%, var(--color-surface) 100%);
+  text-decoration: none;
+  color: var(--color-black);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1rem, 0.5vw + 0.92rem, 1.1rem);
+  letter-spacing: -0.02em;
+  box-shadow: 0 2px 12px rgba(13, 13, 13, 0.04);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.programs-index-card:hover {
+  border-color: rgba(231, 33, 11, 0.28);
+  box-shadow: 0 10px 28px rgba(231, 33, 11, 0.08);
+  transform: translateY(-2px);
+}
+
+.programs-index-card-arrow {
+  flex-shrink: 0;
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .programs-index-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .programs-index-title {
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .programs-index-card {
+    transition: none;
+  }
+
+  .programs-index-card:hover {
+    transform: none;
+  }
+}

@@ -5,6 +5,10 @@ import { SKILLTRIXA_LOGIN_URL } from './config/links'
 import Home from './pages/Home'
 import ProgramsIndex from './pages/ProgramsIndex'
 import ProgramPage from './pages/ProgramPage'
+import FullStackDev from './pages/FullStackDev'
+import DataScience from './pages/DataScience'
+import AIML from './pages/AIML'
+import GenAI from './pages/GenAI'
 import About from './pages/About'
 import Blog from './pages/Blog'
 import BlogDetail from './pages/BlogDetail'
@@ -28,6 +32,10 @@ export default function App() {
       <Route element={<RootLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/programs" element={<ProgramsIndex />} />
+        <Route path="/programs/full-stack" element={<FullStackDev />} />
+        <Route path="/programs/data-science" element={<DataScience />} />
+        <Route path="/programs/ai-ml" element={<AIML />} />
+        <Route path="/programs/gen-ai" element={<GenAI />} />
         <Route path="/programs/:programId" element={<ProgramPage />} />
         <Route path="/universities" element={<UniversitiesPage />} />
         <Route path="/blogs" element={<Blog />} />

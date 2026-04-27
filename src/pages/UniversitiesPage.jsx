@@ -312,7 +312,7 @@ export default function UniversitiesPage() {
             </ul>
 
             <div className="u-hero-actions">
-              <a href={h.ctaHref} className="u-hero-btn">
+              <Link to="/contact-us" className="u-hero-btn">
                 {h.ctaLabel}
                 <span className="u-hero-btn-ic" aria-hidden>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -325,7 +325,7 @@ export default function UniversitiesPage() {
                     />
                   </svg>
                 </span>
-              </a>
+              </Link>
               <p className="u-hero-hint">Typical reply within 2 business days &middot; TPO &amp; placement teams</p>
             </div>
           </div>

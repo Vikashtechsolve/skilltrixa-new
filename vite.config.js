@@ -10,7 +10,11 @@ export default defineConfig({
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
           const url = req.url ?? ''
-          if (url.includes('skilltrixa-favicon') || url.includes('favicon')) {
+          if (
+            url.includes('skilltrixa.svg') ||
+            url.includes('skilltrixa-favicon') ||
+            url.includes('favicon')
+          ) {
             res.setHeader('Cache-Control', 'no-store, max-age=0')
           }
           next()

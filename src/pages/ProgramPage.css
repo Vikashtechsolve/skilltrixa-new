@@ -1,0 +1,51 @@
+/* Fallback / detail stub — aligned with ProgramsIndex + Home tokens */
+.program-page {
+  flex: 1;
+}
+
+.program-page-hero {
+  background: linear-gradient(160deg, var(--color-white) 0%, var(--color-surface) 45%, var(--color-white) 100%);
+  border-bottom: 1px solid var(--color-border);
+  padding: clamp(2rem, 4vw, 2.75rem) 0;
+}
+
+.program-page-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.program-page-back {
+  margin: 0 0 1rem;
+}
+
+.program-page-back a {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.program-page-back a:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.program-page-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 2vw + 1rem, 2.1rem);
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+  margin: 0 0 0.75rem;
+}
+
+.program-page-lead {
+  margin: 0;
+  max-width: 40rem;
+  font-size: var(--text-lead);
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}

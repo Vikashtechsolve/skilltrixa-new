@@ -1,6 +1,6 @@
 .programs-overview {
   padding: clamp(2.5rem, 5vw, 3.75rem) 0 clamp(3rem, 6vw, 4.25rem);
-  background: var(--color-white);
+  background: linear-gradient(160deg, var(--color-white) 0%, var(--color-surface) 35%, var(--color-white) 100%);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -19,7 +19,7 @@
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 0.8125rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--color-primary);
   margin: 0 0 0.65rem;
@@ -37,8 +37,8 @@
 
 .programs-overview-lead {
   margin: 0;
-  font-size: 1.02rem;
-  line-height: 1.45;
+  font-size: var(--text-lead);
+  line-height: 1.55;
   color: var(--color-text-muted);
 }
 
