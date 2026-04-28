@@ -59,7 +59,7 @@ export default function Navbar() {
       <div className="navbar-shell">
         <Link to="/" className="brand">
           <img
-            src="/skilltrixa.svg"
+            src="/skilltrixa.png"
             alt="Skilltrixa"
             className="brand-logo"
             width={180}
@@ -163,7 +163,12 @@ export default function Navbar() {
           </ul>
 
           <div className="nav-actions">
-            <a href={SKILLTRIXA_LOGIN_URL} className="btn btn-ghost">
+            <a
+              href={SKILLTRIXA_LOGIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-ghost"
+            >
               Login
             </a>
             <Link to="/contact-us" className="btn btn-primary">

@@ -60,7 +60,7 @@ export default function Footer() {
             <Link to="/" className="footer-brand-link">
               <span className="footer-brand-logo-wrap">
                 <img
-                  src="/skilltrixa.svg"
+                  src="/skilltrixa.png"
                   alt="Skilltrixa"
                   className="footer-brand-logo"
                   width={180}
@@ -74,12 +74,6 @@ export default function Footer() {
             <p className="footer-brand-desc">
               Skilltrixa helps learners build industry-ready skills—from foundations to placements—with
               structured programs, assessments, and campus partnerships.
-            </p>
-            <p className="footer-contact-line">
-              <span className="footer-contact-label">Partnerships</span>
-              <a href="mailto:partnerships@skilltrixa.com" className="footer-contact-link">
-                partnerships@skilltrixa.com
-              </a>
             </p>
             <p className="footer-social-label">Follow Skilltrixa</p>
             <div className="footer-socials">
@@ -165,7 +159,9 @@ export default function Footer() {
                 <Link to="/contact-us">Contact us</Link>
               </li>
               <li>
-                <a href={SKILLTRIXA_LOGIN_URL}>Login</a>
+                <a href={SKILLTRIXA_LOGIN_URL} target="_blank" rel="noopener noreferrer">
+                  Login
+                </a>
               </li>
             </ul>
           </div>
@@ -186,6 +182,29 @@ export default function Footer() {
                 <Link to="/about">Terms of service</Link>
               </li>
             </ul>
+          </div>
+
+          <div className="footer-contact-col">
+            <h3 className="footer-col-title">Contact us</h3>
+            <p className="footer-contact-line">
+              <span className="footer-contact-label">Support</span>
+              <a href="mailto:support@skilltrixa.com" className="footer-contact-link">
+                support@skilltrixa.com
+              </a>
+            </p>
+            <p className="footer-contact-line">
+              <span className="footer-contact-label">Phone</span>
+              <a href="tel:+919876543210" className="footer-contact-link">
+                +91 98765 43210
+              </a>
+            </p>
+            <p className="footer-contact-line footer-contact-line--address">
+              <span className="footer-contact-label">Address</span>
+              <span className="footer-contact-text">
+                Floor 4, Vikash Tech Solution, Pheenix Resicom, Waghodia Rd, Near Vaikunth Char
+                Rasta, Madhavpura, Vadodara - 390019
+              </span>
+            </p>
           </div>
         </div>
 
