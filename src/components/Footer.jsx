@@ -201,7 +201,7 @@ export default function Footer() {
             <p className="footer-contact-line footer-contact-line--address">
               <span className="footer-contact-label">Address</span>
               <span className="footer-contact-text">
-                Floor 4, Vikash Tech Solution, Pheenix Resicom, Waghodia Rd, Near Vaikunth Char
+               423,  Floor 4, Pheenix Resicom, Waghodia Rd, Near Vaikunth Char
                 Rasta, Madhavpura, Vadodara - 390019
               </span>
             </p>
