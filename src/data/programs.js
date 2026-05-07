@@ -4,4 +4,6 @@ export const PROGRAMS = [
   { id: 'data-science', label: 'Data Science' },
   { id: 'ai-ml', label: 'AI/ML' },
   { id: 'gen-ai', label: 'Gen AI' },
+  { id: 'aptitude-training', label: 'Aptitude Training' },
+  { id: 'competitive-coding', label: 'Competitive Coding' },
 ]
