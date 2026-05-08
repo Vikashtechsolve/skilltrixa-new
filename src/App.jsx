@@ -14,6 +14,8 @@ import Blog from './pages/Blog'
 import BlogDetail from './pages/BlogDetail'
 import UniversitiesPage from './pages/UniversitiesPage'
 import ContactUsPage from './pages/ContactUsPage'
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
+import TermsOfServicePage from './pages/TermsOfServicePage'
 
 function LoginRedirect() {
   useEffect(() => {
@@ -42,6 +44,8 @@ export default function App() {
         <Route path="/blogs/:slug" element={<BlogDetail />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact-us" element={<ContactUsPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms-of-service" element={<TermsOfServicePage />} />
         <Route path="/login" element={<LoginRedirect />} />
         <Route
           path="/signup"

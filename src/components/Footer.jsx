@@ -5,9 +5,8 @@ import './Footer.css'
 const SOCIAL = {
   instagram: 'https://www.instagram.com/skilltrixa/',
   x: 'https://x.com/Skilltrixa01',
-  facebook: 'https://www.facebook.com/share/1BSscPwyaF/',
-  linkedin:
-    'https://www.linkedin.com/in/divya-ojha-566b6b403?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+  facebook: 'https://www.facebook.com/profile.php?id=61564535232602',
+  linkedin: 'https://www.linkedin.com/company/113245218/admin/dashboard/',
   youtube: 'https://www.youtube.com/channel/UCV3E1SHQNFEnbiwl0Sre0AQ',
 }
 
@@ -132,13 +131,16 @@ export default function Footer() {
                 <Link to="/programs">All programs</Link>
               </li>
               <li>
-                <Link to="/programs/full-stack-dev">Full-stack development</Link>
+                <Link to="/programs/full-stack">Full Stack Development</Link>
               </li>
               <li>
-                <Link to="/programs/data-science">Data science</Link>
+                <Link to="/programs/data-science">Data Science</Link>
               </li>
               <li>
-                <Link to="/programs/digital-marketing">Digital marketing</Link>
+                <Link to="/programs/ai-ml">AI / Machine Learning</Link>
+              </li>
+              <li>
+                <Link to="/programs/gen-ai">Generative AI</Link>
               </li>
             </ul>
           </div>
@@ -173,13 +175,10 @@ export default function Footer() {
                 <Link to="/contact-us">Help &amp; enquiries</Link>
               </li>
               <li>
-                <Link to="/about">FAQ</Link>
+                <Link to="/privacy-policy">Privacy policy</Link>
               </li>
               <li>
-                <Link to="/about">Privacy policy</Link>
-              </li>
-              <li>
-                <Link to="/about">Terms of service</Link>
+                <Link to="/terms-of-service">Terms of service</Link>
               </li>
             </ul>
           </div>
@@ -213,8 +212,8 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Skilltrixa. All rights reserved.
           </p>
           <div className="footer-bottom-links">
-            <Link to="/about">Privacy</Link>
-            <Link to="/about">Terms</Link>
+            <Link to="/privacy-policy">Privacy policy</Link>
+            <Link to="/terms-of-service">Terms of service</Link>
             <Link to="/contact-us">Contact</Link>
           </div>
         </div>

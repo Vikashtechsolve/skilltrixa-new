@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import WhatsAppFloatButton from '../components/WhatsAppFloatButton'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -18,6 +19,7 @@ export default function RootLayout() {
       <Navbar />
       <Outlet />
       <Footer />
+      <WhatsAppFloatButton />
     </>
   )
 }

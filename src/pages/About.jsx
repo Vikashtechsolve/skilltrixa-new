@@ -1,5 +1,6 @@
-import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { useSeo } from '../hooks/useSeo'
+import { buildBreadcrumbsLd } from '../config/seo'
 import './About.css'
 
 /* ── Inline SVG icons ── */
@@ -129,29 +130,18 @@ function StarIcon() {
 }
 
 export default function About() {
-  useEffect(() => {
-    document.title =
-      'Skilltrixa | Global Training Institute for Skill Development & Placement'
-    const meta = document.querySelector('meta[name="description"]')
-    if (meta)
-      meta.setAttribute(
-        'content',
-        'Skilltrixa offers global training programs, placement preparation, and career-focused skill development courses.'
-      )
-
-    const metaKw = document.querySelector('meta[name="keywords"]')
-    if (!metaKw) {
-      const el = document.createElement('meta')
-      el.name = 'keywords'
-      el.content =
-        'training institute, skill development institute, placement training, global career training, job-ready programs'
-      document.head.appendChild(el)
-    }
-
-    return () => {
-      document.title = 'Skilltrixa — Learn skills. Get job-ready.'
-    }
-  }, [])
+  useSeo({
+    title: 'About Skilltrixa | Global Training Institute for Skill Development & Placement',
+    description:
+      'Skilltrixa is a global training institute focused on industry-ready skill development and placement preparation, partnering with universities and offering career-focused programs.',
+    keywords:
+      'about Skilltrixa, training institute, skill development institute, placement training, global career training, job-ready programs',
+    path: '/about',
+    jsonLd: buildBreadcrumbsLd([
+      { name: 'Home', path: '/' },
+      { name: 'About', path: '/about' },
+    ]),
+  })
 
   return (
     <main className="about-page">

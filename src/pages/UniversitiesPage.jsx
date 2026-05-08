@@ -1,8 +1,11 @@
+import CompanyTrainingSection from '../components/CompanyTrainingSection'
 import PlacementMarquee from '../components/PlacementMarquee'
 import UniversityClientsSection from '../components/UniversityClientsSection'
 import UniversityPlatform from '../components/UniversityPlatform'
 import { Link } from 'react-router-dom'
 import { UNIVERSITY_HERO, UNIVERSITY_HOW_WORKS, UNIVERSITY_PROBLEM, UNIVERSITY_SOLUTION } from '../data/universitiesPage'
+import { useSeo } from '../hooks/useSeo'
+import { buildBreadcrumbsLd } from '../config/seo'
 import './UniversitiesPage.css'
 
 const ic = {
@@ -269,6 +272,20 @@ function splitHeadline(headline) {
 }
 
 export default function UniversitiesPage() {
+  useSeo({
+    title: 'University Partnerships | Skilltrixa — Campus Training & Placements',
+    description:
+      'Skilltrixa partners with universities and colleges for on-campus training, assessments, real-world projects, mentoring and placement-ready outcomes for every student.',
+    keywords:
+      'Skilltrixa universities, university partnership, campus training program, college placement training, on-campus tech training',
+    path: '/universities',
+    image: UNIVERSITY_HERO?.image?.src,
+    jsonLd: buildBreadcrumbsLd([
+      { name: 'Home', path: '/' },
+      { name: 'Universities', path: '/universities' },
+    ]),
+  })
+
   const h = UNIVERSITY_HERO
   const prob = UNIVERSITY_PROBLEM
   const sol = UNIVERSITY_SOLUTION
@@ -466,6 +483,8 @@ export default function UniversitiesPage() {
           </p>
         </div>
       </section>
+
+      <CompanyTrainingSection />
 
       <UniversityClientsSection />
 

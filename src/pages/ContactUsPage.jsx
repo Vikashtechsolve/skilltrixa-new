@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { useSeo } from '../hooks/useSeo'
+import { buildBreadcrumbsLd } from '../config/seo'
 import './ContactUsPage.css'
 
 const INITIAL_FORM = {
@@ -54,6 +56,19 @@ function ArrowRightIcon() {
 }
 
 export default function ContactUsPage() {
+  useSeo({
+    title: 'Contact Skilltrixa | Talk to our Training & Placement Team',
+    description:
+      'Get in touch with Skilltrixa for student programs, university partnerships, training and placement support. Email, phone and office details for our Vadodara team.',
+    keywords:
+      'contact Skilltrixa, Skilltrixa support, training enquiry, university partnership enquiry, placement training contact',
+    path: '/contact-us',
+    jsonLd: buildBreadcrumbsLd([
+      { name: 'Home', path: '/' },
+      { name: 'Contact us', path: '/contact-us' },
+    ]),
+  })
+
   const [form, setForm] = useState(INITIAL_FORM)
   const [submitted, setSubmitted] = useState(false)
 

@@ -1,4 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useSeo } from '../hooks/useSeo'
+import { buildBreadcrumbsLd, buildCourseLd, buildFaqLd } from '../config/seo'
 import './ProgramTemplate.css'
 
 /* ── Inline SVG Icons (mirrors FullStackDev.jsx so the layout is pixel-identical) ── */
@@ -215,7 +217,34 @@ function AdmissionStepIcon({ index }) {
   )
 }
 
-export default function ProgramTemplate({ program }) {
+export default function ProgramTemplate({ program, path }) {
+  const programPath = path || (program?.id ? `/programs/${program.id}` : undefined)
+  const programLabel = useMemo(
+    () => program?.meta?.title?.replace(/\s*\|\s*Skilltrixa.*$/i, '').trim() || 'Program',
+    [program?.meta?.title],
+  )
+  const seoJsonLd = useMemo(() => {
+    const list = [buildCourseLd(program, programPath), buildFaqLd(program?.faq)]
+    if (programPath) {
+      list.push(
+        buildBreadcrumbsLd([
+          { name: 'Home', path: '/' },
+          { name: 'Programs', path: '/programs' },
+          { name: programLabel, path: programPath },
+        ]),
+      )
+    }
+    return list.filter(Boolean)
+  }, [program, programPath, programLabel])
+
+  useSeo({
+    title: program?.meta?.title,
+    description: program?.meta?.description,
+    path: programPath,
+    image: program?.hero?.images?.[0],
+    jsonLd: seoJsonLd,
+  })
+
   const [heroImageIndex, setHeroImageIndex] = useState(0)
   const [activeTestimonial, setActiveTestimonial] = useState(0)
   const [activePillar, setActivePillar] = useState(0)
@@ -271,17 +300,6 @@ export default function ProgramTemplate({ program }) {
     }, 7000)
     return () => window.clearInterval(id)
   }, [program.testimonials.length])
-
-  useEffect(() => {
-    document.title = program.meta.title
-    const meta = document.querySelector('meta[name="description"]')
-    if (meta) {
-      meta.setAttribute('content', program.meta.description)
-    }
-    return () => {
-      document.title = 'Skilltrixa — Learn skills. Get job-ready.'
-    }
-  }, [program.meta.title, program.meta.description])
 
   const closeApplyForm = useCallback(() => {
     if (applyCloseTimerRef.current) {

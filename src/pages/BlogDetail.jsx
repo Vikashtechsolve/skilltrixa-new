@@ -1,6 +1,8 @@
 import { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { ALL_BLOGS, BLOG_CATEGORIES } from '../data/blogPosts'
+import { useSeo } from '../hooks/useSeo'
+import { buildArticleLd, buildBreadcrumbsLd } from '../config/seo'
 import './BlogDetail.css'
 
 /* ── helpers ── */
@@ -90,27 +92,32 @@ export default function BlogDetail() {
     window.scrollTo(0, 0)
   }, [slug])
 
-  useEffect(() => {
-    if (!blog) {
-      document.title = 'Blog Not Found | Skilltrixa'
-      return
-    }
-    document.title = `${blog.title} | Skilltrixa Blog`
-    const meta = document.querySelector('meta[name="description"]')
-    if (meta) meta.setAttribute('content', blog.excerpt)
-
-    let metaKw = document.querySelector('meta[name="keywords"]')
-    if (!metaKw) {
-      metaKw = document.createElement('meta')
-      metaKw.name = 'keywords'
-      document.head.appendChild(metaKw)
-    }
-    metaKw.setAttribute('content', blog.tags.join(', '))
-
-    return () => {
-      document.title = 'Skilltrixa — Learn skills. Get job-ready.'
-    }
-  }, [blog])
+  const blogPath = `/blogs/${slug}`
+  useSeo(
+    blog
+      ? {
+          title: `${blog.title} | Skilltrixa Blog`,
+          description: blog.excerpt,
+          keywords: Array.isArray(blog.tags) ? blog.tags.join(', ') : undefined,
+          path: blogPath,
+          image: blog.image,
+          type: 'article',
+          jsonLd: [
+            buildArticleLd(blog, blogPath),
+            buildBreadcrumbsLd([
+              { name: 'Home', path: '/' },
+              { name: 'Blog', path: '/blogs' },
+              { name: blog.title, path: blogPath },
+            ]),
+          ],
+        }
+      : {
+          title: 'Blog Not Found | Skilltrixa',
+          description: "The article you're looking for doesn't exist or may have been moved.",
+          path: blogPath,
+          noindex: true,
+        },
+  )
 
   if (!blog) {
     return (

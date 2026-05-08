@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import {
   BLOG_CATEGORIES,
@@ -6,6 +6,8 @@ import {
   BLOG_POSTS,
   ALL_BLOGS,
 } from '../data/blogPosts'
+import { useSeo } from '../hooks/useSeo'
+import { buildBreadcrumbsLd, buildItemListLd } from '../config/seo'
 import './Blog.css'
 
 /* ── helpers ── */
@@ -61,28 +63,28 @@ export default function Blog() {
   const [activeCategory, setActiveCategory] = useState('all')
   const [searchQuery, setSearchQuery] = useState('')
 
-  useEffect(() => {
-    document.title = 'Skilltrixa Blog | Career Tips, Skills & Training Insights'
-    const meta = document.querySelector('meta[name="description"]')
-    if (meta)
-      meta.setAttribute(
-        'content',
-        'Read Skilltrixa blogs on career growth, skill development, placement training, and industry insights.'
-      )
-
-    const metaKw = document.querySelector('meta[name="keywords"]')
-    if (!metaKw) {
-      const el = document.createElement('meta')
-      el.name = 'keywords'
-      el.content =
-        'career blog, skill development blog, placement tips, training institute blog, global careers'
-      document.head.appendChild(el)
-    }
-
-    return () => {
-      document.title = 'Skilltrixa — Learn skills. Get job-ready.'
-    }
-  }, [])
+  useSeo({
+    title: 'Skilltrixa Blog | Career Tips, Skills & Training Insights',
+    description:
+      'Read Skilltrixa blogs on career growth, skill development, placement training and industry insights across Full Stack, Data Science, AI/ML and Generative AI.',
+    keywords:
+      'Skilltrixa blog, career blog, skill development blog, placement tips, training institute blog, full stack tutorials, AI ML blog',
+    path: '/blogs',
+    jsonLd: [
+      buildBreadcrumbsLd([
+        { name: 'Home', path: '/' },
+        { name: 'Blog', path: '/blogs' },
+      ]),
+      buildItemListLd(
+        'Skilltrixa Blog Posts',
+        ALL_BLOGS.slice(0, 10).map((p) => ({
+          name: p.title,
+          path: `/blogs/${p.id}`,
+          description: p.excerpt,
+        })),
+      ),
+    ],
+  })
 
   /* normalize text for fuzzy matching: strip hyphens, slashes, extra spaces */
   const normalize = (str) =>

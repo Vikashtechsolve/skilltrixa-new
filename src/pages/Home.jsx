@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import PlacementMarquee from '../components/PlacementMarquee'
+import PlacementAssistanceSection from '../components/PlacementAssistanceSection'
 import ProgramsOverview from '../components/ProgramsOverview'
 import WhyChooseUs from '../components/WhyChooseUs'
 import TestPlatformShowcase from '../components/TestPlatformShowcase'
@@ -9,11 +10,30 @@ import PartnerWithUs from '../components/PartnerWithUs'
 import { HERO_SLIDES } from '../data/heroSlides'
 import { HERO_STATS } from '../data/heroStats'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
+import { useSeo } from '../hooks/useSeo'
+import { buildItemListLd } from '../config/seo'
 import './Home.css'
 
 const SLIDE_MS = 5200;
 
+const HOME_PROGRAMS_LD = buildItemListLd('Skilltrixa Programs', [
+  { name: 'Full Stack Development', path: '/programs/full-stack', description: 'MERN-based full stack program with real projects and placement support.' },
+  { name: 'Data Science', path: '/programs/data-science', description: 'Python, Pandas, statistics and ML fundamentals with capstone projects.' },
+  { name: 'AI / Machine Learning', path: '/programs/ai-ml', description: 'Machine learning, deep learning, neural networks and modern AI tools.' },
+  { name: 'Generative AI', path: '/programs/gen-ai', description: 'Prompt engineering, LLMs, chatbots and AI automation.' },
+])
+
 export default function Home() {
+  useSeo({
+    title: 'Skilltrixa — Learn Skills. Get Job-Ready. | Training & Placement',
+    description:
+      'Skilltrixa offers job-ready training programs in Full Stack Development, Data Science, AI/ML and Generative AI, with mentorship, real projects, university partnerships and placement support.',
+    keywords:
+      'Skilltrixa, training institute, placement training, full stack course, data science course, AI ML course, generative AI course, university tie-ups',
+    path: '/',
+    jsonLd: HOME_PROGRAMS_LD,
+  })
+
   const [active, setActive] = useState(0)
   const [paused, setPaused] = useState(false)
   const reduceMotion = usePrefersReducedMotion()
@@ -133,6 +153,8 @@ export default function Home() {
       <WhyChooseUs />
 
       <TestPlatformShowcase />
+
+      <PlacementAssistanceSection />
 
       <Testimonials />
 
