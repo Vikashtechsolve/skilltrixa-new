@@ -204,11 +204,11 @@ export default function PlacementAssistanceSection() {
                   <span className="pa-journey-title-ic" aria-hidden>
                     <SparkIcon />
                   </span>
-                  Your Journey with TrainX360
+                  Your Journey with skilltrixa
                 </h3>
               </div>
 
-              <ol className="pa-steps" aria-label="TrainX360 journey steps">
+              <ol className="pa-steps" aria-label="skilltrixa journey steps">
                 <li className="pa-step">
                   <span className="pa-step-badge">1</span>
                   <div className="pa-step-body">
