@@ -486,7 +486,7 @@ export default function UniversitiesPage() {
 
       <CompanyTrainingSection />
 
-      <UniversityClientsSection />
+      {/* <UniversityClientsSection /> */}
 
       <section className="u-works" aria-labelledby="u-works-heading">
         <div className="u-works-canvas" aria-hidden>
