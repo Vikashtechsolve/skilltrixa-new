@@ -9,6 +9,8 @@ import FullStackDev from './pages/FullStackDev'
 import DataScience from './pages/DataScience'
 import AIML from './pages/AIML'
 import GenAI from './pages/GenAI'
+import AptitudeTraining from './pages/AptitudeTraining'
+import CompetitiveCoding from './pages/CompetitiveCoding'
 import About from './pages/About'
 import Blog from './pages/Blog'
 import BlogDetail from './pages/BlogDetail'
@@ -38,6 +40,8 @@ export default function App() {
         <Route path="/programs/data-science" element={<DataScience />} />
         <Route path="/programs/ai-ml" element={<AIML />} />
         <Route path="/programs/gen-ai" element={<GenAI />} />
+        <Route path="/programs/aptitude-training" element={<AptitudeTraining />} />
+        <Route path="/programs/competitive-coding" element={<CompetitiveCoding />} />
         <Route path="/programs/:programId" element={<ProgramPage />} />
         <Route path="/universities" element={<UniversitiesPage />} />
         <Route path="/blogs" element={<Blog />} />
