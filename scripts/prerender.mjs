@@ -3,7 +3,10 @@
  * that only read the first response get the correct <title>, canonical, and
  * body content (not an empty #root).
  *
- * Requires: npm install (puppeteer). Skip with SKIP_PRERENDER=1.
+ * - Local / CI: full `puppeteer` (bundled Chrome) or PUPPETEER_EXECUTABLE_PATH.
+ * - Vercel: `puppeteer-core` + `@sparticuz/chromium` (no system libnspr/nss on build image).
+ *
+ * Skip with SKIP_PRERENDER=1.
  */
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
@@ -16,17 +19,34 @@ const dist = join(root, 'dist')
 const port = 4179
 const origin = `http://127.0.0.1:${port}`
 
-async function launchBrowser(puppeteer) {
-  const common = {
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  }
+const isVercel = process.env.VERCEL === '1'
+
+async function launchBrowser() {
+  const baseArgs = ['--no-sandbox', '--disable-setuid-sandbox']
+
   if (process.env.PUPPETEER_EXECUTABLE_PATH) {
+    const puppeteer = (await import(isVercel ? 'puppeteer-core' : 'puppeteer')).default
     return puppeteer.launch({
-      ...common,
+      headless: true,
       executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
+      args: baseArgs,
     })
   }
+
+  if (isVercel) {
+    const puppeteer = (await import('puppeteer-core')).default
+    const chromium = (await import('@sparticuz/chromium')).default
+    const executablePath = await chromium.executablePath()
+    return puppeteer.launch({
+      args: [...chromium.args, ...baseArgs],
+      defaultViewport: chromium.defaultViewport,
+      executablePath,
+      headless: chromium.headless,
+    })
+  }
+
+  const { default: puppeteer } = await import('puppeteer')
+  const common = { headless: true, args: baseArgs }
   try {
     return await puppeteer.launch({ ...common, channel: 'chrome' })
   } catch {
@@ -65,14 +85,25 @@ async function main() {
     return
   }
 
-  let puppeteer
-  try {
-    ;({ default: puppeteer } = await import('puppeteer'))
-  } catch {
-    console.error(
-      '[prerender] Missing or broken "puppeteer" package. From client/: run `rm -rf node_modules && npm install`, then `npm run build` again.',
-    )
-    process.exit(1)
+  if (!isVercel) {
+    try {
+      await import('puppeteer')
+    } catch {
+      console.error(
+        '[prerender] Missing or broken "puppeteer" package. From client/: run `npm install`, then `npm run build` again.',
+      )
+      process.exit(1)
+    }
+  } else {
+    try {
+      await import('puppeteer-core')
+      await import('@sparticuz/chromium')
+    } catch {
+      console.error(
+        '[prerender] Vercel build needs puppeteer-core and @sparticuz/chromium. From client/: run `npm install`.',
+      )
+      process.exit(1)
+    }
   }
 
   const child = spawn('npx', ['vite', 'preview', '--port', String(port), '--strictPort'], {
@@ -86,7 +117,7 @@ async function main() {
     await waitForServer()
     console.info('[prerender] Preview up, launching browser…')
 
-    const browser = await launchBrowser(puppeteer)
+    const browser = await launchBrowser()
     const page = await browser.newPage()
 
     for (const route of ALL_PRERENDER_PATHS) {
