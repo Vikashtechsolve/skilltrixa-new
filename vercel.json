@@ -1,5 +1,4 @@
 {
-  "installCommand": "npm ci && npx puppeteer browsers install chrome",
   "redirects": [
     {
       "source": "/:path*",
