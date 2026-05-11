@@ -39,7 +39,7 @@ export const CONTACT = {
   phoneE164: '+919876543210',
   address: {
     streetAddress:
-      'Floor 4, Vikash Tech Solutions, Pheenix Resicom, Waghodia Rd, Near Vaikunth Char Rasta, Madhavpura',
+      '423, Floor 4, Phoenix Resicom, Waghodia Rd, Near Vaikunth Char Rasta, Madhavpura',
     addressLocality: 'Vadodara',
     addressRegion: 'Gujarat',
     postalCode: '390019',

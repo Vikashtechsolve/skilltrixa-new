@@ -145,7 +145,7 @@ export default function ContactUsPage() {
                 <div>
                   <p className="contact-detail-label">Office Address</p>
                   <p>
-                    Floor 4, Vikash Tech Solutions, Pheenix Resicom, Waghodia Rd, Near Vaikunth Char
+                    423, Floor 4, Phoenix Resicom, Waghodia Rd, Near Vaikunth Char
                     Rasta, Madhavpura, Vadodara - 390019
                   </p>
                 </div>
