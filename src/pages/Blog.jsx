@@ -1,12 +1,12 @@
-import { useState, useMemo } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, useMemo, useEffect } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
 import {
   BLOG_CATEGORIES,
   FEATURED_BLOG,
   BLOG_POSTS,
   ALL_BLOGS,
 } from '../data/blogPosts'
-import { useSeo } from '../hooks/useSeo'
+import SEO from '../components/SEO'
 import { buildBreadcrumbsLd, buildItemListLd } from '../config/seo'
 import './Blog.css'
 
@@ -60,33 +60,30 @@ function ClockIcon() {
 }
 
 export default function Blog() {
+  const [searchParams] = useSearchParams()
+
   const [activeCategory, setActiveCategory] = useState('all')
   const [searchQuery, setSearchQuery] = useState('')
 
-  useSeo({
-    title: 'Skilltrixa Blog | Career Tips, Skills & Training Insights',
-    description:
-      'Read Skilltrixa blogs on career growth, skill development, placement training and industry insights across Full Stack, Data Science, AI/ML and Generative AI.',
-    keywords:
-      'Skilltrixa blog, career blog, skill development blog, placement tips, training institute blog, full stack tutorials, AI ML blog',
-    path: '/blogs',
-    jsonLd: [
-      buildBreadcrumbsLd([
-        { name: 'Home', path: '/' },
-        { name: 'Blog', path: '/blogs' },
-      ]),
-      buildItemListLd(
-        'Skilltrixa Blog Posts',
-        ALL_BLOGS.slice(0, 10).map((p) => ({
-          name: p.title,
-          path: `/blogs/${p.id}`,
-          description: p.excerpt,
-        })),
-      ),
-    ],
-  })
+  useEffect(() => {
+    setSearchQuery(searchParams.get('q')?.trim() ?? '')
+  }, [searchParams])
 
-  /* normalize text for fuzzy matching: strip hyphens, slashes, extra spaces */
+  const blogIndexJsonLd = [
+    buildBreadcrumbsLd([
+      { name: 'Home', path: '/' },
+      { name: 'Blog', path: '/blogs' },
+    ]),
+    buildItemListLd(
+      'Skilltrixa Blog Posts',
+      ALL_BLOGS.slice(0, 10).map((p) => ({
+        name: p.title,
+        path: `/blogs/${p.id}`,
+        description: p.excerpt,
+      })),
+    ),
+  ]
+
   const normalize = (str) =>
     str.toLowerCase().replace(/[-/:.]/g, ' ').replace(/\s+/g, ' ').trim()
 
@@ -118,6 +115,14 @@ export default function Blog() {
     .slice(0, 4)
 
   return (
+    <>
+      <SEO
+        title="Skilltrixa Blog | Career Tips, Skills & Training Insights"
+        description="Read Skilltrixa blogs on career growth, skill development, placement training and industry insights across Full Stack, Data Science, AI/ML and Generative AI."
+        keywords="Skilltrixa blog, career blog, skill development blog, placement tips, training institute blog, full stack tutorials, AI ML blog"
+        path="/blogs"
+        jsonLd={blogIndexJsonLd}
+      />
     <main className="blog-page">
       {/* ═══ 1  HERO ═══ */}
       <section className="blog-hero" aria-labelledby="blog-hero-heading">
@@ -319,5 +324,6 @@ export default function Blog() {
         </div>
       </section>
     </main>
+    </>
   )
 }

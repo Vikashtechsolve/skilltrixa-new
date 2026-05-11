@@ -1,20 +1,19 @@
-import { useSeo } from '../hooks/useSeo'
+import SEO from '../components/SEO'
 import { buildBreadcrumbsLd } from '../config/seo'
 
 export default function PrivacyPolicyPage() {
-  useSeo({
-    title: 'Privacy Policy | Skilltrixa',
-    description:
-      'Read Skilltrixa’s Privacy Policy to understand how we collect, use, and protect information.',
-    keywords: 'Skilltrixa privacy policy, data protection, user information',
-    path: '/privacy-policy',
-    jsonLd: buildBreadcrumbsLd([
-      { name: 'Home', path: '/' },
-      { name: 'Privacy policy', path: '/privacy-policy' },
-    ]),
-  })
-
   return (
+    <>
+      <SEO
+        title="Privacy Policy | Skilltrixa"
+        description="Read Skilltrixa’s Privacy Policy to understand how we collect, use, and protect information."
+        keywords="Skilltrixa privacy policy, data protection, user information"
+        path="/privacy-policy"
+        jsonLd={buildBreadcrumbsLd([
+          { name: 'Home', path: '/' },
+          { name: 'Privacy policy', path: '/privacy-policy' },
+        ])}
+      />
     <main className="legal-page">
       <div className="page-inner">
         <h1>Privacy Policy</h1>
@@ -50,6 +49,7 @@ export default function PrivacyPolicyPage() {
         </section>
       </div>
     </main>
+    </>
   )
 }
 

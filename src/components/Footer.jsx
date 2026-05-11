@@ -6,7 +6,7 @@ const SOCIAL = {
   instagram: 'https://www.instagram.com/skilltrixa/',
   x: 'https://x.com/Skilltrixa01',
   facebook: 'https://www.facebook.com/profile.php?id=61564535232602',
-  linkedin: 'https://www.linkedin.com/company/113245218/admin/dashboard/',
+  linkedin: 'https://www.linkedin.com/company/113245218/',
   youtube: 'https://www.youtube.com/channel/UCV3E1SHQNFEnbiwl0Sre0AQ',
 }
 
@@ -200,7 +200,7 @@ export default function Footer() {
             <p className="footer-contact-line footer-contact-line--address">
               <span className="footer-contact-label">Address</span>
               <span className="footer-contact-text">
-               423,  Floor 4, Pheenix Resicom, Waghodia Rd, Near Vaikunth Char
+                Floor 4, Vikash Tech Solutions, Pheenix Resicom, Waghodia Rd, Near Vaikunth Char
                 Rasta, Madhavpura, Vadodara - 390019
               </span>
             </p>

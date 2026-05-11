@@ -1,14 +1,23 @@
 /**
  * Central SEO configuration for Skilltrixa.
  *
- * If you ever change the production domain, change SITE_URL here only —
- * canonical URLs, OpenGraph URLs, sitemap.xml, robots.txt and JSON-LD all
- * derive from this single source of truth.
+ * Set VITE_SITE_URL in `.env` / `.env.production` to your canonical origin
+ * (team standard: https://www.skilltrixa.com). Apex → www should be a 301 at
+ * the host (see vercel.json). All canonicals, OG URLs, JSON-LD and prerender
+ * output use this value.
  *
  * NOTE: replace /skilltrixa.png with a 1200x630 social-share image when you
  * have one. The current file works as a fallback but is larger than ideal.
  */
-export const SITE_URL = 'https://skilltrixa.com'
+import { resolveCanonicalSiteOrigin, absolutizeSkilltrixaHost } from './canonicalOrigin.js'
+
+const envSite =
+  typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_SITE_URL
+    ? String(import.meta.env.VITE_SITE_URL)
+    : undefined
+
+/** Always https://www.skilltrixa.com (apex env values normalized — matches vercel.json 301). */
+export const SITE_URL = resolveCanonicalSiteOrigin(envSite)
 export const SITE_NAME = 'Skilltrixa'
 export const SITE_TAGLINE = 'Learn skills. Get job-ready.'
 export const SITE_LOCALE = 'en_IN'
@@ -30,7 +39,7 @@ export const CONTACT = {
   phoneE164: '+919876543210',
   address: {
     streetAddress:
-      'Floor 4, Vikash Tech Solution, Pheenix Resicom, Waghodia Rd, Near Vaikunth Char Rasta, Madhavpura',
+      'Floor 4, Vikash Tech Solutions, Pheenix Resicom, Waghodia Rd, Near Vaikunth Char Rasta, Madhavpura',
     addressLocality: 'Vadodara',
     addressRegion: 'Gujarat',
     postalCode: '390019',
@@ -38,18 +47,29 @@ export const CONTACT = {
   },
 }
 
+/** Drop non-public URLs (e.g. admin dashboards) from schema.org sameAs. */
+export function filterPublicSameAs(urls) {
+  if (!urls?.length) return []
+  return urls.filter(
+    (u) => typeof u === 'string' && u.trim() && !/\badmin\b/i.test(u) && !/\/admin(?:\/|$)/i.test(u),
+  )
+}
+
+/** Public profile URLs only — curate here; filterPublicSameAs is a safety net. */
 export const SOCIAL_PROFILES = [
   'https://www.instagram.com/skilltrixa/',
   'https://x.com/Skilltrixa01',
   'https://www.facebook.com/profile.php?id=61564535232602',
-  'https://www.linkedin.com/company/113245218/admin/dashboard/',
+  'https://www.linkedin.com/company/113245218/',
   'https://www.youtube.com/channel/UCV3E1SHQNFEnbiwl0Sre0AQ',
 ]
 
 /** Build an absolute URL from a path or absolute URL. */
 export function absUrl(pathOrUrl) {
   if (!pathOrUrl) return SITE_URL
-  if (/^https?:\/\//i.test(pathOrUrl)) return pathOrUrl
+  if (/^https?:\/\//i.test(pathOrUrl)) {
+    return absolutizeSkilltrixaHost(pathOrUrl)
+  }
   const base = SITE_URL.endsWith('/') ? SITE_URL.slice(0, -1) : SITE_URL
   const p = pathOrUrl.startsWith('/') ? pathOrUrl : `/${pathOrUrl}`
   return `${base}${p}`
@@ -57,18 +77,18 @@ export function absUrl(pathOrUrl) {
 
 /* ───────────────── JSON-LD builders ───────────────── */
 
-/** Site-wide Organization (used in index.html and as provider for Course). */
+/** Site-wide Organization (HomepageSchema + Course provider @id). */
 export const ORGANIZATION_LD = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   '@id': `${SITE_URL}/#organization`,
   name: SITE_NAME,
   alternateName: 'SkillTrixa',
-  url: SITE_URL,
+  url: `${SITE_URL}/`,
   logo: absUrl('/skilltrixa.png'),
   email: CONTACT.email,
   telephone: CONTACT.phone,
-  sameAs: SOCIAL_PROFILES,
+  sameAs: filterPublicSameAs(SOCIAL_PROFILES),
   address: {
     '@type': 'PostalAddress',
     ...CONTACT.address,
@@ -76,20 +96,15 @@ export const ORGANIZATION_LD = {
   description: SITE_DEFAULT_DESCRIPTION,
 }
 
-/** Site-wide WebSite with sitelinks search box. */
+/** Site-wide WebSite (no SearchAction until /blogs?q= is prerendered with real result HTML for crawlers). */
 export const WEBSITE_LD = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   '@id': `${SITE_URL}/#website`,
   name: SITE_NAME,
-  url: SITE_URL,
+  url: `${SITE_URL}/`,
   inLanguage: SITE_LANG,
   publisher: { '@id': `${SITE_URL}/#organization` },
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: `${SITE_URL}/blogs?q={search_term_string}`,
-    'query-input': 'required name=search_term_string',
-  },
 }
 
 /** Build a BreadcrumbList from an ordered list of { name, path }. */
@@ -200,7 +215,7 @@ export function buildArticleLd(blog, path) {
     image: blog.image ? absUrl(blog.image) : absUrl(SITE_DEFAULT_OG_IMAGE),
     datePublished: blog.date,
     dateModified: blog.date,
-    author: { '@type': 'Organization', name: blog.author || SITE_NAME, url: SITE_URL },
+    author: { '@type': 'Organization', name: blog.author || SITE_NAME, url: `${SITE_URL}/` },
     publisher: { '@id': `${SITE_URL}/#organization` },
     mainEntityOfPage: { '@type': 'WebPage', '@id': absUrl(path) },
     keywords: Array.isArray(blog.tags) ? blog.tags.join(', ') : undefined,

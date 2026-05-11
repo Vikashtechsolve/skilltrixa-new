@@ -10,7 +10,7 @@ import PartnerWithUs from '../components/PartnerWithUs'
 import { HERO_SLIDES } from '../data/heroSlides'
 import { HERO_STATS } from '../data/heroStats'
 import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
-import { useSeo } from '../hooks/useSeo'
+import SEO from '../components/SEO'
 import { buildItemListLd } from '../config/seo'
 import './Home.css'
 
@@ -24,16 +24,6 @@ const HOME_PROGRAMS_LD = buildItemListLd('Skilltrixa Programs', [
 ])
 
 export default function Home() {
-  useSeo({
-    title: 'Skilltrixa — Learn Skills. Get Job-Ready. | Training & Placement',
-    description:
-      'Skilltrixa offers job-ready training programs in Full Stack Development, Data Science, AI/ML and Generative AI, with mentorship, real projects, university partnerships and placement support.',
-    keywords:
-      'Skilltrixa, training institute, placement training, full stack course, data science course, AI ML course, generative AI course, university tie-ups',
-    path: '/',
-    jsonLd: HOME_PROGRAMS_LD,
-  })
-
   const [active, setActive] = useState(0)
   const [paused, setPaused] = useState(false)
   const reduceMotion = usePrefersReducedMotion()
@@ -47,6 +37,14 @@ export default function Home() {
   }, [paused, reduceMotion])
 
   return (
+    <>
+      <SEO
+        title="Skilltrixa — Learn Skills. Get Job-Ready. | Training & Placement"
+        description="Skilltrixa offers job-ready training programs in Full Stack Development, Data Science, AI/ML and Generative AI, with mentorship, real projects, university partnerships and placement support."
+        keywords="Skilltrixa, training institute, placement training, full stack course, data science course, AI ML course, generative AI course, university tie-ups"
+        path="/"
+        jsonLd={HOME_PROGRAMS_LD}
+      />
     <main className="home">
       <section
         className="home-hero"
@@ -160,5 +158,6 @@ export default function Home() {
 
       <PartnerWithUs />
     </main>
+    </>
   )
 }

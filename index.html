@@ -7,8 +7,8 @@
     <meta name="theme-color" content="#0d0d0d" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary SEO -->
-    <title>Skilltrixa — Learn Skills. Get Job-Ready.</title>
+    <!-- Primary SEO — minimal shell fallbacks; per-route tags come from react-helmet-async (+ prerender). -->
+    <title>Skilltrixa</title>
     <meta
       name="description"
       content="Skilltrixa is a global training and placement institute offering job-ready programs in Full Stack Development, Data Science, AI/ML and Generative AI, with university partnerships, mentorship and placement support."
@@ -19,8 +19,6 @@
     />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <meta name="author" content="Skilltrixa" />
-    <link rel="canonical" href="https://skilltrixa.com/" />
-
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Skilltrixa" />
@@ -29,8 +27,8 @@
       property="og:description"
       content="Job-ready programs in Full Stack, Data Science, AI/ML and Generative AI — with mentorship, placement support, and university partnerships."
     />
-    <meta property="og:url" content="https://skilltrixa.com/" />
-    <meta property="og:image" content="https://skilltrixa.com/skilltrixa.png" />
+    <meta property="og:url" content="__SITE_URL__/" />
+    <meta property="og:image" content="__SITE_URL__/skilltrixa.png" />
     <meta property="og:locale" content="en_IN" />
 
     <!-- Twitter -->
@@ -41,7 +39,7 @@
       name="twitter:description"
       content="Job-ready programs in Full Stack, Data Science, AI/ML and Generative AI — with mentorship, placement support, and university partnerships."
     />
-    <meta name="twitter:image" content="https://skilltrixa.com/skilltrixa.png" />
+    <meta name="twitter:image" content="__SITE_URL__/skilltrixa.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -49,55 +47,7 @@
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Organization + WebSite JSON-LD (helps Google understand the brand
-         and may enable a sitelinks search box). -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "@id": "https://skilltrixa.com/#organization",
-        "name": "Skilltrixa",
-        "alternateName": "SkillTrixa",
-        "url": "https://skilltrixa.com",
-        "logo": "https://skilltrixa.com/skilltrixa.png",
-        "email": "support@skilltrixa.com",
-        "telephone": "+91 98765 43210",
-        "description": "Skilltrixa is a global training and placement institute offering job-ready programs in Full Stack Development, Data Science, AI/ML and Generative AI, with university partnerships, mentorship and placement support.",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Floor 4, Vikash Tech Solution, Pheenix Resicom, Waghodia Rd, Near Vaikunth Char Rasta, Madhavpura",
-          "addressLocality": "Vadodara",
-          "addressRegion": "Gujarat",
-          "postalCode": "390019",
-          "addressCountry": "IN"
-        },
-        "sameAs": [
-          "https://www.instagram.com/skilltrixa/",
-          "https://x.com/Skilltrixa01",
-          "https://www.facebook.com/profile.php?id=61564535232602",
-          "https://www.linkedin.com/company/113245218/admin/dashboard/",
-          "https://www.youtube.com/channel/UCV3E1SHQNFEnbiwl0Sre0AQ"
-        ]
-      }
-    </script>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "@id": "https://skilltrixa.com/#website",
-        "name": "Skilltrixa",
-        "url": "https://skilltrixa.com",
-        "inLanguage": "en",
-        "publisher": { "@id": "https://skilltrixa.com/#organization" },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://skilltrixa.com/blogs?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      }
-    </script>
+    <!-- Organization + WebSite JSON-LD: injected via HomepageSchema (react-helmet-async) after hydrate / prerender -->
   </head>
   <body>
     <div id="root"></div>

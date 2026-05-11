@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { ALL_BLOGS, BLOG_CATEGORIES } from '../data/blogPosts'
-import { useSeo } from '../hooks/useSeo'
+import SEO from '../components/SEO'
 import { buildArticleLd, buildBreadcrumbsLd } from '../config/seo'
 import './BlogDetail.css'
 
@@ -93,34 +93,39 @@ export default function BlogDetail() {
   }, [slug])
 
   const blogPath = `/blogs/${slug}`
-  useSeo(
-    blog
-      ? {
-          title: `${blog.title} | Skilltrixa Blog`,
-          description: blog.excerpt,
-          keywords: Array.isArray(blog.tags) ? blog.tags.join(', ') : undefined,
-          path: blogPath,
-          image: blog.image,
-          type: 'article',
-          jsonLd: [
-            buildArticleLd(blog, blogPath),
-            buildBreadcrumbsLd([
-              { name: 'Home', path: '/' },
-              { name: 'Blog', path: '/blogs' },
-              { name: blog.title, path: blogPath },
-            ]),
-          ],
-        }
-      : {
-          title: 'Blog Not Found | Skilltrixa',
-          description: "The article you're looking for doesn't exist or may have been moved.",
-          path: blogPath,
-          noindex: true,
-        },
-  )
 
-  if (!blog) {
-    return (
+  return (
+    <>
+      <SEO
+        title={
+          blog
+            ? `${blog.title} | Skilltrixa Blog`
+            : 'Blog Not Found | Skilltrixa'
+        }
+        description={
+          blog
+            ? blog.excerpt
+            : "The article you're looking for doesn't exist or may have been moved."
+        }
+        keywords={blog && Array.isArray(blog.tags) ? blog.tags.join(', ') : undefined}
+        path={blogPath}
+        image={blog?.image}
+        type={blog ? 'article' : 'website'}
+        jsonLd={
+          blog
+            ? [
+                buildArticleLd(blog, blogPath),
+                buildBreadcrumbsLd([
+                  { name: 'Home', path: '/' },
+                  { name: 'Blog', path: '/blogs' },
+                  { name: blog.title, path: blogPath },
+                ]),
+              ]
+            : undefined
+        }
+        noindex={!blog}
+      />
+    {!blog ? (
       <main className="blog-not-found">
         <h1>Blog Not Found</h1>
         <p>The article you're looking for doesn't exist or may have been moved.</p>
@@ -128,11 +133,8 @@ export default function BlogDetail() {
           <ArrowLeftIcon /> Back to Blog
         </Link>
       </main>
-    )
-  }
-
-  return (
-    <main className="blog-detail-page">
+    ) : (
+      <main className="blog-detail-page">
       {/* ═══ Header ═══ */}
       <header className="blog-detail-header">
         <div className="blog-detail-header-inner">
@@ -182,5 +184,7 @@ export default function BlogDetail() {
         </Link>
       </div>
     </main>
+    )}
+    </>
   )
 }

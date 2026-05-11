@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { useSeo } from '../hooks/useSeo'
-import { buildBreadcrumbsLd, buildCourseLd, buildFaqLd } from '../config/seo'
+import SEO from '../components/SEO'
+import CourseSchema from '../components/CourseSchema'
+import { buildBreadcrumbsLd, buildFaqLd } from '../config/seo'
 import './ProgramTemplate.css'
 
 /* ── Inline SVG Icons (mirrors FullStackDev.jsx so the layout is pixel-identical) ── */
@@ -224,7 +225,7 @@ export default function ProgramTemplate({ program, path }) {
     [program?.meta?.title],
   )
   const seoJsonLd = useMemo(() => {
-    const list = [buildCourseLd(program, programPath), buildFaqLd(program?.faq)]
+    const list = [buildFaqLd(program?.faq)]
     if (programPath) {
       list.push(
         buildBreadcrumbsLd([
@@ -236,14 +237,6 @@ export default function ProgramTemplate({ program, path }) {
     }
     return list.filter(Boolean)
   }, [program, programPath, programLabel])
-
-  useSeo({
-    title: program?.meta?.title,
-    description: program?.meta?.description,
-    path: programPath,
-    image: program?.hero?.images?.[0],
-    jsonLd: seoJsonLd,
-  })
 
   const [heroImageIndex, setHeroImageIndex] = useState(0)
   const [activeTestimonial, setActiveTestimonial] = useState(0)
@@ -366,6 +359,15 @@ export default function ProgramTemplate({ program, path }) {
   }
 
   return (
+    <>
+      <CourseSchema program={program} path={programPath} />
+      <SEO
+        title={program?.meta?.title}
+        description={program?.meta?.description}
+        path={programPath}
+        image={program?.hero?.images?.[0]}
+        jsonLd={seoJsonLd}
+      />
     <main className="fsd-page">
       {/* ═══ 1  HERO ═══ */}
       <section className="fsd-hero" aria-labelledby="fsd-hero-heading">
@@ -1191,5 +1193,6 @@ export default function ProgramTemplate({ program, path }) {
         </div>
       ) : null}
     </main>
+    </>
   )
 }

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useSeo } from '../hooks/useSeo'
+import SEO from '../components/SEO'
 import { buildBreadcrumbsLd } from '../config/seo'
 import './ContactUsPage.css'
 
@@ -56,19 +56,6 @@ function ArrowRightIcon() {
 }
 
 export default function ContactUsPage() {
-  useSeo({
-    title: 'Contact Skilltrixa | Talk to our Training & Placement Team',
-    description:
-      'Get in touch with Skilltrixa for student programs, university partnerships, training and placement support. Email, phone and office details for our Vadodara team.',
-    keywords:
-      'contact Skilltrixa, Skilltrixa support, training enquiry, university partnership enquiry, placement training contact',
-    path: '/contact-us',
-    jsonLd: buildBreadcrumbsLd([
-      { name: 'Home', path: '/' },
-      { name: 'Contact us', path: '/contact-us' },
-    ]),
-  })
-
   const [form, setForm] = useState(INITIAL_FORM)
   const [submitted, setSubmitted] = useState(false)
 
@@ -86,6 +73,17 @@ export default function ContactUsPage() {
   }
 
   return (
+    <>
+      <SEO
+        title="Contact Skilltrixa | Talk to our Training & Placement Team"
+        description="Get in touch with Skilltrixa for student programs, university partnerships, training and placement support. Email, phone and office details for our Vadodara team."
+        keywords="contact Skilltrixa, Skilltrixa support, training enquiry, university partnership enquiry, placement training contact"
+        path="/contact-us"
+        jsonLd={buildBreadcrumbsLd([
+          { name: 'Home', path: '/' },
+          { name: 'Contact us', path: '/contact-us' },
+        ])}
+      />
     <main className="contact-page">
       <section className="contact-hero">
         <div className="contact-inner page-inner">
@@ -147,7 +145,7 @@ export default function ContactUsPage() {
                 <div>
                   <p className="contact-detail-label">Office Address</p>
                   <p>
-                    Floor 4, Vikash Tech Solution, Pheenix Resicom, Waghodia Rd, Near Vaikunth Char
+                    Floor 4, Vikash Tech Solutions, Pheenix Resicom, Waghodia Rd, Near Vaikunth Char
                     Rasta, Madhavpura, Vadodara - 390019
                   </p>
                 </div>
@@ -260,5 +258,6 @@ export default function ContactUsPage() {
         </div>
       </section>
     </main>
+    </>
   )
 }

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { PROGRAMS } from '../data/programs'
-import { useSeo } from '../hooks/useSeo'
+import SEO from '../components/SEO'
 import { buildBreadcrumbsLd, buildItemListLd } from '../config/seo'
 import './ProgramsIndex.css'
 
@@ -20,30 +20,28 @@ const PROGRAM_DESCRIPTIONS = {
 }
 
 export default function ProgramsIndex() {
-  useSeo({
-    title: 'Programs | Skilltrixa — Full Stack, Data Science, AI/ML & Gen AI Courses',
-    description:
-      'Explore Skilltrixa career-ready programs: Full Stack Development, Data Science, AI / Machine Learning and Generative AI — with mentorship, projects and placement support.',
-    keywords:
-      'Skilltrixa programs, full stack development course, data science course, AI ML course, generative AI course, placement training',
-    path: '/programs',
-    jsonLd: [
-      buildItemListLd(
-        'Skilltrixa Programs',
-        PROGRAMS.map((p) => ({
-          name: p.label,
-          path: programHref(p.id),
-          description: PROGRAM_DESCRIPTIONS[p.id],
-        })),
-      ),
-      buildBreadcrumbsLd([
-        { name: 'Home', path: '/' },
-        { name: 'Programs', path: '/programs' },
-      ]),
-    ],
-  })
-
   return (
+    <>
+      <SEO
+        title="Programs | Skilltrixa — Full Stack, Data Science, AI/ML & Gen AI Courses"
+        description="Explore Skilltrixa career-ready programs: Full Stack Development, Data Science, AI / Machine Learning and Generative AI — with mentorship, projects and placement support."
+        keywords="Skilltrixa programs, full stack development course, data science course, AI ML course, generative AI course, placement training"
+        path="/programs"
+        jsonLd={[
+          buildItemListLd(
+            'Skilltrixa Programs',
+            PROGRAMS.map((p) => ({
+              name: p.label,
+              path: programHref(p.id),
+              description: PROGRAM_DESCRIPTIONS[p.id],
+            })),
+          ),
+          buildBreadcrumbsLd([
+            { name: 'Home', path: '/' },
+            { name: 'Programs', path: '/programs' },
+          ]),
+        ]}
+      />
     <main className="programs-index">
       <section className="programs-index-hero" aria-labelledby="programs-index-heading">
         <div className="programs-index-inner">
@@ -75,5 +73,6 @@ export default function ProgramsIndex() {
         </div>
       </section>
     </main>
+    </>
   )
 }

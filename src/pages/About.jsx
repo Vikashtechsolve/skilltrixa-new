@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useSeo } from '../hooks/useSeo'
+import SEO from '../components/SEO'
 import { buildBreadcrumbsLd } from '../config/seo'
 import './About.css'
 
@@ -130,20 +130,18 @@ function StarIcon() {
 }
 
 export default function About() {
-  useSeo({
-    title: 'About Skilltrixa | Global Training Institute for Skill Development & Placement',
-    description:
-      'Skilltrixa is a global training institute focused on industry-ready skill development and placement preparation, partnering with universities and offering career-focused programs.',
-    keywords:
-      'about Skilltrixa, training institute, skill development institute, placement training, global career training, job-ready programs',
-    path: '/about',
-    jsonLd: buildBreadcrumbsLd([
-      { name: 'Home', path: '/' },
-      { name: 'About', path: '/about' },
-    ]),
-  })
-
   return (
+    <>
+      <SEO
+        title="About Skilltrixa | Global Training Institute for Skill Development & Placement"
+        description="Skilltrixa is a global training institute focused on industry-ready skill development and placement preparation, partnering with universities and offering career-focused programs."
+        keywords="about Skilltrixa, training institute, skill development institute, placement training, global career training, job-ready programs"
+        path="/about"
+        jsonLd={buildBreadcrumbsLd([
+          { name: 'Home', path: '/' },
+          { name: 'About', path: '/about' },
+        ])}
+      />
     <main className="about-page">
       {/* ═══ 1  HERO ═══ */}
       <section className="about-hero" aria-labelledby="about-hero-heading">
@@ -542,5 +540,6 @@ export default function About() {
         </div>
       </section>
     </main>
+    </>
   )
 }

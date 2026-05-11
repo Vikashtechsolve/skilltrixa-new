@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
+import HomepageSchema from '../components/HomepageSchema'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import WhatsAppFloatButton from '../components/WhatsAppFloatButton'
@@ -15,6 +16,7 @@ function ScrollToTop() {
 export default function RootLayout() {
   return (
     <>
+      <HomepageSchema />
       <ScrollToTop />
       <Navbar />
       <Outlet />

@@ -1,20 +1,19 @@
-import { useSeo } from '../hooks/useSeo'
+import SEO from '../components/SEO'
 import { buildBreadcrumbsLd } from '../config/seo'
 
 export default function TermsOfServicePage() {
-  useSeo({
-    title: 'Terms of Service | Skilltrixa',
-    description:
-      'Read Skilltrixa’s Terms of Service to understand the rules for using our website and services.',
-    keywords: 'Skilltrixa terms of service, user agreement, website terms',
-    path: '/terms-of-service',
-    jsonLd: buildBreadcrumbsLd([
-      { name: 'Home', path: '/' },
-      { name: 'Terms of service', path: '/terms-of-service' },
-    ]),
-  })
-
   return (
+    <>
+      <SEO
+        title="Terms of Service | Skilltrixa"
+        description="Read Skilltrixa’s Terms of Service to understand the rules for using our website and services."
+        keywords="Skilltrixa terms of service, user agreement, website terms"
+        path="/terms-of-service"
+        jsonLd={buildBreadcrumbsLd([
+          { name: 'Home', path: '/' },
+          { name: 'Terms of service', path: '/terms-of-service' },
+        ])}
+      />
     <main className="legal-page">
       <div className="page-inner">
         <h1>Terms of Service</h1>
@@ -48,6 +47,7 @@ export default function TermsOfServicePage() {
         </section>
       </div>
     </main>
+    </>
   )
 }
 
