@@ -18,40 +18,46 @@ export default function ProgramsOverview() {
 
         <ul className="programs-overview-grid">
           {PROGRAM_OVERVIEW.map((program, index) => (
-            <li key={program.id} className="programs-overview-card">
-              <div className="programs-overview-card-media">
-                <img
-                  src={program.imageUrl}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  width="800"
-                  height="320"
-                  className="programs-overview-card-img"
-                />
-                <span className="programs-overview-index" aria-hidden>
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-              </div>
-              <div className="programs-overview-card-body">
-                <h3 className="programs-overview-card-title">{program.title}</h3>
-                <p className="programs-overview-tagline">{program.tagline}</p>
-                <ul className="programs-overview-highlights">
-                  {program.highlights.map((line, i) => (
-                    <li key={`${program.id}-h-${i}`}>{line}</li>
-                  ))}
-                </ul>
-                <p className="programs-overview-duration">
-                  <span className="programs-overview-duration-label">Typical length</span>
-                  <span className="programs-overview-duration-value">{program.durationLabel}</span>
-                </p>
-                <Link to={`/programs/${program.id}`} className="programs-overview-cta">
-                  View details
-                  <span className="programs-overview-cta-arrow" aria-hidden>
-                    →
+            <li key={program.id} className="programs-overview-cell">
+              <Link
+                to={`/programs/${program.id}`}
+                className="programs-overview-card"
+                aria-label={`${program.title}: view programme details`}
+              >
+                <div className="programs-overview-card-media">
+                  <img
+                    src={program.imageUrl}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="320"
+                    className="programs-overview-card-img"
+                  />
+                  <span className="programs-overview-index" aria-hidden>
+                    {String(index + 1).padStart(2, '0')}
                   </span>
-                </Link>
-              </div>
+                </div>
+                <div className="programs-overview-card-body">
+                  <h3 className="programs-overview-card-title">{program.title}</h3>
+                  <p className="programs-overview-tagline">{program.tagline}</p>
+                  <ul className="programs-overview-highlights">
+                    {program.highlights.map((line, i) => (
+                      <li key={`${program.id}-h-${i}`}>{line}</li>
+                    ))}
+                  </ul>
+                  <p className="programs-overview-duration">
+                    <span className="programs-overview-duration-label">Typical length</span>
+                    <span className="programs-overview-duration-value">{program.durationLabel}</span>
+                  </p>
+                  <span className="programs-overview-cta">
+                    View details
+                    <span className="programs-overview-cta-arrow" aria-hidden>
+                      →
+                    </span>
+                  </span>
+                </div>
+              </Link>
             </li>
           ))}
         </ul>

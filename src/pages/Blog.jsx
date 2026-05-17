@@ -3,7 +3,6 @@ import { Link, useSearchParams } from 'react-router-dom'
 import {
   BLOG_CATEGORIES,
   FEATURED_BLOG,
-  BLOG_POSTS,
   ALL_BLOGS,
 } from '../data/blogPosts'
 import SEO from '../components/SEO'
@@ -173,7 +172,12 @@ export default function Blog() {
         <div>
           {/* ── 2  FEATURED BLOG ── */}
           {showFeatured && (
-            <article className="blog-featured" id="featured-blog">
+            <Link
+              to={`/blogs/${FEATURED_BLOG.id}`}
+              className="blog-featured"
+              id="featured-blog"
+              aria-label={`Read article: ${FEATURED_BLOG.title}`}
+            >
               <div className="blog-featured-img">
                 <img
                   src={FEATURED_BLOG.image}
@@ -200,14 +204,11 @@ export default function Blog() {
                     <ClockIcon /> {FEATURED_BLOG.readTime}
                   </span>
                 </div>
-                <Link
-                  to={`/blogs/${FEATURED_BLOG.id}`}
-                  className="blog-read-more"
-                >
+                <span className="blog-read-more">
                   Read More <ArrowRightIcon />
-                </Link>
+                </span>
               </div>
-            </article>
+            </Link>
           )}
 
           {/* ── 3  BLOG GRID ── */}
@@ -218,7 +219,12 @@ export default function Blog() {
               </div>
             )}
             {filteredPosts.map((post) => (
-              <article key={post.id} className="blog-card">
+              <Link
+                key={post.id}
+                to={`/blogs/${post.id}`}
+                className="blog-card"
+                aria-label={`Read article: ${post.title}`}
+              >
                 <div className="blog-card-img">
                   <img
                     src={post.image}
@@ -238,15 +244,12 @@ export default function Blog() {
                     <span className="blog-card-date">
                       <CalendarIcon /> {formatDate(post.date)}
                     </span>
-                    <Link
-                      to={`/blogs/${post.id}`}
-                      className="blog-card-read-more"
-                    >
+                    <span className="blog-card-read-more">
                       Read More <ArrowRightIcon />
-                    </Link>
+                    </span>
                   </div>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
