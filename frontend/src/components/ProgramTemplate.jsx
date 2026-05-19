@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import SEO from '../components/SEO'
 import CourseSchema from '../components/CourseSchema'
 import { buildBreadcrumbsLd, buildFaqLd } from '../config/seo'
+import { API_BASE } from '../config/api'
 import './ProgramTemplate.css'
 
 /* ── Inline SVG Icons (mirrors FullStackDev.jsx so the layout is pixel-identical) ── */
@@ -344,18 +345,39 @@ export default function ProgramTemplate({ program, path }) {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const onApplySubmit = (event) => {
+  const onApplySubmit = async (event) => {
     event.preventDefault()
-    setApplySubmitted(true)
-    clearApplyFormFields()
-    if (applyCloseTimerRef.current) {
-      window.clearTimeout(applyCloseTimerRef.current)
+
+    try {
+      const res = await fetch(`${API_BASE}/applications`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          city: formData.city,
+          program: programLabel,
+          message: 'Applied from program page',
+        }),
+      })
+
+      if (!res.ok) throw new Error('Submission failed')
+      
+      setApplySubmitted(true)
+      clearApplyFormFields()
+      if (applyCloseTimerRef.current) {
+        window.clearTimeout(applyCloseTimerRef.current)
+      }
+      applyCloseTimerRef.current = window.setTimeout(() => {
+        applyCloseTimerRef.current = null
+        setApplySubmitted(false)
+        setApplyOpen(false)
+      }, 2000)
+    } catch (err) {
+      console.error('Form submission error:', err)
+      alert('Something went wrong. Please try again.')
     }
-    applyCloseTimerRef.current = window.setTimeout(() => {
-      applyCloseTimerRef.current = null
-      setApplySubmitted(false)
-      setApplyOpen(false)
-    }, 2000)
   }
 
   return (

@@ -1,9 +1,24 @@
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { ALL_BLOGS, BLOG_CATEGORIES } from '../data/blogPosts'
+import { API_BASE } from '../config/api'
 import SEO from '../components/SEO'
 import { buildArticleLd, buildBreadcrumbsLd } from '../config/seo'
 import './BlogDetail.css'
+
+/* ── categories (UI constant) ── */
+const BLOG_CATEGORIES = [
+  { id: 'all', label: 'All' },
+  { id: 'ai-ml', label: 'AI / Machine Learning' },
+  { id: 'mern', label: 'MERN Stack' },
+  { id: 'frontend', label: 'Frontend Frameworks' },
+  { id: 'backend', label: 'Backend Technologies' },
+  { id: 'devops', label: 'DevOps / Cloud' },
+  { id: 'mobile', label: 'Mobile Development' },
+  { id: 'web3', label: 'Web3 / Blockchain' },
+  { id: 'database', label: 'Database Design' },
+  { id: 'api', label: 'API Development' },
+  { id: 'webdev', label: 'Web Development' },
+]
 
 /* ── helpers ── */
 function categoryLabel(id) {
@@ -86,13 +101,45 @@ function ContentBlock({ block }) {
 
 export default function BlogDetail() {
   const { slug } = useParams()
-  const blog = ALL_BLOGS.find((b) => b.id === slug)
+  const [blog, setBlog] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    async function fetchBlog() {
+      try {
+        setLoading(true)
+        setError(null)
+        const res = await fetch(`${API_BASE}/blogs/${slug}`)
+        if (!res.ok) {
+          setBlog(null)
+          return
+        }
+        const data = await res.json()
+        setBlog(data)
+      } catch (err) {
+        setError(err.message)
+        setBlog(null)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchBlog()
   }, [slug])
 
   const blogPath = `/blogs/${slug}`
+
+  // Adapt blog data for SEO helpers that expect `image` field
+  const seoCompatBlog = blog ? { ...blog, image: blog.heroImage, id: blog.slug } : null
+
+  if (loading) {
+    return (
+      <main className="blog-detail-page" style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <p style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-display)', fontWeight: 500 }}>Loading article...</p>
+      </main>
+    )
+  }
 
   return (
     <>
@@ -109,12 +156,12 @@ export default function BlogDetail() {
         }
         keywords={blog && Array.isArray(blog.tags) ? blog.tags.join(', ') : undefined}
         path={blogPath}
-        image={blog?.image}
+        image={blog?.heroImage}
         type={blog ? 'article' : 'website'}
         jsonLd={
-          blog
+          seoCompatBlog
             ? [
-                buildArticleLd(blog, blogPath),
+                buildArticleLd(seoCompatBlog, blogPath),
                 buildBreadcrumbsLd([
                   { name: 'Home', path: '/' },
                   { name: 'Blog', path: '/blogs' },
@@ -154,7 +201,7 @@ export default function BlogDetail() {
       {/* ═══ Hero Image ═══ */}
       <div className="blog-detail-hero-img">
         <img
-          src={blog.image}
+          src={blog.heroImage}
           alt={blog.title}
           width={800}
           height={400}
