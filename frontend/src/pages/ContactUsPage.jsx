@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import SEO from '../components/SEO'
 import { buildBreadcrumbsLd } from '../config/seo'
+import { API_BASE } from '../config/api'
 import './ContactUsPage.css'
 
 const INITIAL_FORM = {
@@ -58,18 +59,38 @@ function ArrowRightIcon() {
 export default function ContactUsPage() {
   const [form, setForm] = useState(INITIAL_FORM)
   const [submitted, setSubmitted] = useState(false)
+  const [submitting, setSubmitting] = useState(false)
 
   function onChange(event) {
     const { name, value } = event.target
     setForm((prev) => ({ ...prev, [name]: value }))
   }
 
-  function onSubmit(event) {
+  async function onSubmit(event) {
     event.preventDefault()
-    setSubmitted(true)
-    // Frontend-only capture for now. Hook this to API when backend is ready.
-    console.info('Contact form submission', form)
-    setForm(INITIAL_FORM)
+    setSubmitting(true)
+    try {
+      const res = await fetch(`${API_BASE}/applications`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName: form.fullName,
+          email: form.email,
+          phone: form.phone,
+          city: form.institution,
+          program: form.role,
+          message: form.message,
+        }),
+      })
+      if (!res.ok) throw new Error('Submission failed')
+      setSubmitted(true)
+      setForm(INITIAL_FORM)
+    } catch (err) {
+      console.error('Form submission error:', err)
+      alert('Something went wrong. Please try again.')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (

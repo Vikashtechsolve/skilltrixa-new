@@ -19,6 +19,13 @@ import ContactUsPage from './pages/ContactUsPage'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import TermsOfServicePage from './pages/TermsOfServicePage'
 
+// Admin pages
+import AdminLogin from './pages/admin/AdminLogin'
+import AdminLayout from './pages/admin/AdminLayout'
+import AdminDashboard from './pages/admin/AdminDashboard'
+import AdminBlogs from './pages/admin/AdminBlogs'
+import AdminApplications from './pages/admin/AdminApplications'
+
 function LoginRedirect() {
   useEffect(() => {
     window.location.replace(SKILLTRIXA_LOGIN_URL)
@@ -33,6 +40,7 @@ function LoginRedirect() {
 export default function App() {
   return (
     <Routes>
+      {/* ── Main site (with navbar + footer) ── */}
       <Route element={<RootLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/programs" element={<ProgramsIndex />} />
@@ -55,6 +63,14 @@ export default function App() {
           path="/signup"
           element={<Navigate to="/contact-us" replace />}
         />
+      </Route>
+
+      {/* ── Admin panel (no main navbar/footer) ── */}
+      <Route path="/admin/login" element={<AdminLogin />} />
+      <Route element={<AdminLayout />}>
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/blogs" element={<AdminBlogs />} />
+        <Route path="/admin/applications" element={<AdminApplications />} />
       </Route>
     </Routes>
   )

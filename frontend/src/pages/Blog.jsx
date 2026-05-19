@@ -1,18 +1,24 @@
 import { useState, useMemo, useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import {
-  BLOG_CATEGORIES,
-  FEATURED_BLOG,
-  ALL_BLOGS,
-} from '../data/blogPosts'
+import { API_BASE } from '../config/api'
 import SEO from '../components/SEO'
 import { buildBreadcrumbsLd, buildItemListLd } from '../config/seo'
 import './Blog.css'
 
-/* ── helpers ── */
-function categoryLabel(id) {
-  return BLOG_CATEGORIES.find((c) => c.id === id)?.label ?? id
-}
+/* ── static categories (for backward compatibility) ── */
+const STATIC_CATEGORIES = [
+  { id: 'all', label: 'All' },
+  { id: 'ai-ml', label: 'AI / Machine Learning' },
+  { id: 'mern', label: 'MERN Stack' },
+  { id: 'frontend', label: 'Frontend Frameworks' },
+  { id: 'backend', label: 'Backend Technologies' },
+  { id: 'devops', label: 'DevOps / Cloud' },
+  { id: 'mobile', label: 'Mobile Development' },
+  { id: 'web3', label: 'Web3 / Blockchain' },
+  { id: 'database', label: 'Database Design' },
+  { id: 'api', label: 'API Development' },
+  { id: 'webdev', label: 'Web Development' },
+]
 
 function formatDate(iso) {
   return new Date(iso).toLocaleDateString('en-IN', {
@@ -61,12 +67,62 @@ function ClockIcon() {
 export default function Blog() {
   const [searchParams] = useSearchParams()
 
+  const [allBlogs, setAllBlogs] = useState([])
+  const [loading, setLoading] = useState(true)
   const [activeCategory, setActiveCategory] = useState('all')
   const [searchQuery, setSearchQuery] = useState('')
 
   useEffect(() => {
     setSearchQuery(searchParams.get('q')?.trim() ?? '')
   }, [searchParams])
+
+  // Fetch blogs from API
+  useEffect(() => {
+    async function fetchBlogs() {
+      try {
+        setLoading(true)
+        const res = await fetch(`${API_BASE}/blogs`)
+        if (!res.ok) throw new Error('Failed to fetch blogs')
+        const data = await res.json()
+        setAllBlogs(data)
+      } catch (err) {
+        console.error('Blog fetch error:', err)
+        setAllBlogs([])
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchBlogs()
+  }, [])
+
+  // Dynamically compute categories from fetched blogs
+  const dynamicCategories = useMemo(() => {
+    const cats = new Set(allBlogs.map((b) => b.category).filter(Boolean))
+    const categoriesList = [...STATIC_CATEGORIES]
+    
+    // Add any category that isn't in our static list
+    Array.from(cats).forEach((c) => {
+      if (!categoriesList.find((existing) => existing.id === c)) {
+        categoriesList.push({ id: c, label: c })
+      }
+    })
+    return categoriesList
+  }, [allBlogs])
+
+  function getCategoryLabel(id) {
+    return dynamicCategories.find((c) => c.id === id)?.label ?? id
+  }
+
+  // Map API data shape: use `slug` as link id and `heroImage` as image
+  const mappedBlogs = useMemo(
+    () =>
+      allBlogs.map((b) => ({
+        ...b,
+        id: b.slug,
+        image: b.heroImage,
+      })),
+    [allBlogs],
+  )
 
   const blogIndexJsonLd = [
     buildBreadcrumbsLd([
@@ -75,7 +131,7 @@ export default function Blog() {
     ]),
     buildItemListLd(
       'Skilltrixa Blog Posts',
-      ALL_BLOGS.slice(0, 10).map((p) => ({
+      mappedBlogs.slice(0, 10).map((p) => ({
         name: p.title,
         path: `/blogs/${p.id}`,
         description: p.excerpt,
@@ -87,7 +143,7 @@ export default function Blog() {
     str.toLowerCase().replace(/[-/:.]/g, ' ').replace(/\s+/g, ' ').trim()
 
   const filteredPosts = useMemo(() => {
-    let posts = ALL_BLOGS
+    let posts = mappedBlogs
     if (activeCategory !== 'all') {
       posts = posts.filter((p) => p.category === activeCategory)
     }
@@ -97,19 +153,21 @@ export default function Blog() {
         (p) =>
           normalize(p.title).includes(q) ||
           normalize(p.excerpt).includes(q) ||
-          p.tags.some((tag) => normalize(tag).includes(q))
+          (p.tags || []).some((tag) => normalize(tag).includes(q))
       )
     }
     return posts
-  }, [activeCategory, searchQuery])
+  }, [activeCategory, searchQuery, mappedBlogs])
 
+  const featuredBlog = mappedBlogs[0] || null
   const showFeatured =
     activeCategory === 'all' &&
-    !searchQuery.trim() 
+    !searchQuery.trim() &&
+    featuredBlog
 
   /* sidebar data */
-  const recentPosts = ALL_BLOGS.slice(0, 4)
-  const popularPosts = [...ALL_BLOGS]
+  const recentPosts = mappedBlogs.slice(0, 4)
+  const popularPosts = [...mappedBlogs]
     .sort((a, b) => a.title.localeCompare(b.title))
     .slice(0, 4)
 
@@ -151,7 +209,7 @@ export default function Blog() {
       {/* ═══ 4  CATEGORY FILTER ═══ */}
       <div className="blog-filters" role="navigation" aria-label="Blog categories">
         <div className="blog-filters-inner">
-          {BLOG_CATEGORIES.map((cat) => (
+          {dynamicCategories.map((cat) => (
             <button
               key={cat.id}
               type="button"
@@ -167,21 +225,29 @@ export default function Blog() {
         </div>
       </div>
 
+      {/* ═══ LOADING STATE ═══ */}
+      {loading && (
+        <div style={{ textAlign: 'center', padding: '4rem 1rem' }}>
+          <p style={{ color: 'var(--color-text-muted)', fontFamily: 'var(--font-display)', fontWeight: 500 }}>Loading blog posts...</p>
+        </div>
+      )}
+
       {/* ═══ CONTENT AREA with sidebar ═══ */}
+      {!loading && (
       <div className="blog-content">
         <div>
           {/* ── 2  FEATURED BLOG ── */}
           {showFeatured && (
             <Link
-              to={`/blogs/${FEATURED_BLOG.id}`}
+              to={`/blogs/${featuredBlog.id}`}
               className="blog-featured"
               id="featured-blog"
-              aria-label={`Read article: ${FEATURED_BLOG.title}`}
+              aria-label={`Read article: ${featuredBlog.title}`}
             >
               <div className="blog-featured-img">
                 <img
-                  src={FEATURED_BLOG.image}
-                  alt={FEATURED_BLOG.title}
+                  src={featuredBlog.image}
+                  alt={featuredBlog.title}
                   width={700}
                   height={420}
                   loading="eager"
@@ -190,18 +256,18 @@ export default function Blog() {
               </div>
               <div className="blog-featured-body">
                 <span className="blog-featured-tag">
-                  {categoryLabel(FEATURED_BLOG.category)}
+                  {getCategoryLabel(featuredBlog.category)}
                 </span>
-                <h2 className="blog-featured-title">{FEATURED_BLOG.title}</h2>
+                <h2 className="blog-featured-title">{featuredBlog.title}</h2>
                 <p className="blog-featured-desc">
-                  {FEATURED_BLOG.excerpt}
+                  {featuredBlog.excerpt}
                 </p>
                 <div className="blog-featured-meta">
                   <span>
-                    <CalendarIcon /> {formatDate(FEATURED_BLOG.date)}
+                    <CalendarIcon /> {formatDate(featuredBlog.date)}
                   </span>
                   <span>
-                    <ClockIcon /> {FEATURED_BLOG.readTime}
+                    <ClockIcon /> {featuredBlog.readTime}
                   </span>
                 </div>
                 <span className="blog-read-more">
@@ -213,14 +279,14 @@ export default function Blog() {
 
           {/* ── 3  BLOG GRID ── */}
           <div className="blog-grid">
-            {filteredPosts.length === 0 && (
+            {filteredPosts.length === 0 && !loading && (
               <div className="blog-no-results">
                 <p>No articles found. Try a different search or category.</p>
               </div>
             )}
             {filteredPosts.map((post) => (
               <Link
-                key={post.id}
+                key={post.id || post._id}
                 to={`/blogs/${post.id}`}
                 className="blog-card"
                 aria-label={`Read article: ${post.title}`}
@@ -234,7 +300,7 @@ export default function Blog() {
                     loading="lazy"
                   />
                   <span className="blog-card-tag">
-                    {categoryLabel(post.category)}
+                    {getCategoryLabel(post.category)}
                   </span>
                 </div>
                 <div className="blog-card-body">
@@ -261,7 +327,7 @@ export default function Blog() {
             <h3>Recent Posts</h3>
             <ul className="sidebar-list">
               {recentPosts.map((p) => (
-                <li key={p.id}>
+                <li key={p.id || p._id}>
                   <Link to={`/blogs/${p.id}`} className="sidebar-list-link">
                     {p.title}
                     <span className="sidebar-list-link-meta">
@@ -278,7 +344,7 @@ export default function Blog() {
             <h3>Popular Blogs</h3>
             <ul className="sidebar-list">
               {popularPosts.map((p) => (
-                <li key={p.id}>
+                <li key={p.id || p._id}>
                   <Link to={`/blogs/${p.id}`} className="sidebar-list-link">
                     {p.title}
                     <span className="sidebar-list-link-meta">
@@ -294,7 +360,7 @@ export default function Blog() {
           <div className="sidebar-card">
             <h3>Categories</h3>
             <div className="sidebar-categories">
-              {BLOG_CATEGORIES.filter((c) => c.id !== 'all').map((cat) => (
+              {dynamicCategories.filter((c) => c.id !== 'all').map((cat) => (
                 <button
                   key={cat.id}
                   type="button"
@@ -311,6 +377,7 @@ export default function Blog() {
           </div>
         </aside>
       </div>
+      )}
 
 
       {/* ═══ 7  CTA ═══ */}
