@@ -134,8 +134,8 @@ export default function About() {
     <>
       <SEO
         title="About Skilltrixa | Global Training Institute for Skill Development & Placement"
-        description="Skilltrixa is a global training institute focused on industry-ready skill development and placement preparation, partnering with universities and offering career-focused programs."
-        keywords="about Skilltrixa, training institute, skill development institute, placement training, global career training, job-ready programs"
+        description="Skilltrixa is a global training institute focused on industry ready skill development and placement preparation, partnering with universities and offering career focused programs."
+        keywords="about Skilltrixa, training institute, skill development institute, placement training, global career training, job ready programs"
         path="/about"
         jsonLd={buildBreadcrumbsLd([
           { name: 'Home', path: '/' },
@@ -148,15 +148,15 @@ export default function About() {
         <div className="about-hero-inner">
           <p className="about-hero-eyebrow">About Skilltrixa</p>
           <h1 id="about-hero-heading" className="about-hero-title">
-            Empowering Students with Industry-Ready Skills for Global Careers
+            Empowering Students with Industry Ready Skills for Global Careers
           </h1>
           <p className="about-hero-subtitle">
-            We bridge the gap between education and employment by delivering
-            world-class training experiences built for the modern workforce.
+            We bridge the gap between education and employment with practical
+            training built for the modern workforce.
           </p>
           <p className="about-hero-text">
             At Skilltrixa, we believe every learner deserves access to
-            career-focused education that is practical, globally aligned and
+            career focused education that is practical, globally aligned and
             prepares them for real industry challenges.
           </p>
           <Link to="/programs" className="about-hero-btn">
@@ -175,17 +175,17 @@ export default function About() {
               </h2>
               <p>
                 Skilltrixa is a globally focused training institute committed to
-                empowering students and professionals with industry-relevant
-                skills, practical knowledge, and career-ready expertise.
+                empowering students and professionals with industry relevant
+                skills, practical knowledge, and career ready expertise.
               </p>
               <p>
                 In today's rapidly evolving job market, theoretical knowledge
-                alone isn't enough. We emphasize hands-on, practical learning
-                that mirrors real workplace challenges — ensuring our learners
+                alone isn't enough. We emphasize hands on, practical learning
+                that mirrors real workplace challenges, ensuring our learners
                 are ready from day one.
               </p>
               <p>
-                With a career-focused approach aligned to global standards, we
+                With a career focused approach aligned to global standards, we
                 prepare students not just for local opportunities but for roles
                 anywhere in the world.
               </p>
@@ -217,14 +217,14 @@ export default function About() {
             </h2>
             <p className="about-section-lead">
               Skilltrixa is a modern skill development and placement training
-              institute focused on real-world skills and global opportunities.
+              institute focused on real world skills and global opportunities.
             </p>
           </div>
           <div className="who-we-are-content">
             <p>
               We partner with colleges and institutions to deliver training
-              programs that produce confident, industry-ready professionals. Our
-              curriculum is constantly updated to match the most in-demand skills
+              programs that produce confident, industry ready professionals. Our
+              curriculum is constantly updated to match the most in demand skills
               worldwide.
             </p>
             <ul className="who-we-are-bullets">
@@ -238,7 +238,7 @@ export default function About() {
               </li>
               <li>
                 <span className="bullet-icon"><CheckIcon /></span>
-                Career-focused skill courses
+                Career focused skill courses
               </li>
               <li>
                 <span className="bullet-icon"><CheckIcon /></span>
@@ -266,11 +266,11 @@ export default function About() {
               <h3>Our Mission</h3>
               <ul className="mv-list">
                 <li>
-                  Deliver high-quality training aligned with global industry
+                  Deliver high quality training aligned with global industry
                   standards
                 </li>
                 <li>
-                  Create job-ready professionals through practical, real-world
+                  Create job ready professionals through practical, real world
                   learning
                 </li>
                 <li>
@@ -294,7 +294,7 @@ export default function About() {
                   we teach
                 </li>
                 <li>
-                  Pioneer industry-ready education that transforms careers
+                  Pioneer industry ready education that transforms careers
                   worldwide
                 </li>
               </ul>
@@ -324,7 +324,7 @@ export default function About() {
               <div className="offer-card-icon"><GraduationIcon /></div>
               <h3>College Training Programs</h3>
               <p>
-                Partnership-based training delivered directly within university
+                Partnership based training delivered directly within university
                 campuses.
               </p>
             </div>
@@ -332,7 +332,7 @@ export default function About() {
               <div className="offer-card-icon"><UsersIcon /></div>
               <h3>Offline Training</h3>
               <p>
-                Instructor-led, classroom-based sessions for immersive, focused
+                Instructor led, classroom based sessions for immersive, focused
                 learning.
               </p>
             </div>
@@ -365,7 +365,7 @@ export default function About() {
             </h2>
             <p className="about-section-lead">
               Six pillars that make Skilltrixa the trusted choice for
-              career-focused education.
+              career focused education.
             </p>
           </div>
           <div className="why-grid">
@@ -382,7 +382,7 @@ export default function About() {
             <div className="why-item">
               <div className="why-item-icon"><AwardIcon /></div>
               <div>
-                <h3>Industry-Experienced Trainers</h3>
+                <h3>Industry Experienced Trainers</h3>
                 <p>
                   Learn from professionals with years of real industry practice.
                 </p>
@@ -391,7 +391,7 @@ export default function About() {
             <div className="why-item">
               <div className="why-item-icon"><CodeIcon /></div>
               <div>
-                <h3>Hands-On Learning</h3>
+                <h3>Hands On Learning</h3>
                 <p>
                   Every concept is reinforced through practical labs and
                   exercises.
@@ -401,18 +401,18 @@ export default function About() {
             <div className="why-item">
               <div className="why-item-icon"><LayersIcon /></div>
               <div>
-                <h3>Real-World Projects</h3>
+                <h3>Real World Projects</h3>
                 <p>
-                  Build portfolio-ready projects that showcase your abilities.
+                  Build portfolio ready projects that showcase your abilities.
                 </p>
               </div>
             </div>
             <div className="why-item">
               <div className="why-item-icon"><BriefcaseIcon /></div>
               <div>
-                <h3>Placement-Focused Training</h3>
+                <h3>Placement Focused Training</h3>
                 <p>
-                  End-to-end placement support from mock interviews to referrals.
+                  End to end placement support from mock interviews to referrals.
                 </p>
               </div>
             </div>
@@ -421,7 +421,7 @@ export default function About() {
               <div>
                 <h3>Personalized Mentorship</h3>
                 <p>
-                  One-on-one guidance tailored to your unique career path.
+                  One to one guidance tailored to your unique career path.
                 </p>
               </div>
             </div>
@@ -441,7 +441,7 @@ export default function About() {
               Our Approach
             </h2>
             <p className="about-section-lead">
-              A structured, five-step methodology that takes you from
+              A structured, five step methodology that takes you from
               fundamentals to placement.
             </p>
           </div>
@@ -450,7 +450,7 @@ export default function About() {
               <span className="approach-step-dot">1</span>
               <h3>Concept Mastery</h3>
               <p>
-                Build a rock-solid foundation with clear, structured learning of
+                Build a strong foundation with clear, structured learning of
                 core concepts and fundamentals.
               </p>
             </div>
@@ -459,14 +459,14 @@ export default function About() {
               <h3>Practical Implementation</h3>
               <p>
                 Apply theory to practice through guided labs, coding exercises,
-                and hands-on assignments.
+                and hands on assignments.
               </p>
             </div>
             <div className="approach-step">
               <span className="approach-step-dot">3</span>
-              <h3>Real-World Projects</h3>
+              <h3>Real World Projects</h3>
               <p>
-                Work on industry-grade projects that simulate actual work
+                Work on industry grade projects that simulate actual work
                 environments and challenges.
               </p>
             </div>
@@ -506,10 +506,10 @@ export default function About() {
           <div className="commitment-content">
             <div className="commitment-pills">
               <span className="commitment-pill">
-                <StarIcon /> High-Quality Education
+                <StarIcon /> High Quality Education
               </span>
               <span className="commitment-pill">
-                <StarIcon /> Career-Focused Training
+                <StarIcon /> Career Focused Training
               </span>
               <span className="commitment-pill">
                 <StarIcon /> Continuous Skill Development

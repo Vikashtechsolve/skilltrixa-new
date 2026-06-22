@@ -111,7 +111,7 @@ export default function ContactUsPage() {
           <div className="contact-hero-grid">
             <div className="contact-hero-copy">
               <p className="contact-eyebrow">Contact us</p>
-              <h1 className="contact-title">Let’s build job-ready outcomes together</h1>
+              <h1 className="contact-title">Let’s build Job Ready outcomes together</h1>
               <p className="contact-lead">
                 Whether you are a student, university partner, or placement team, reach out and we will
                 help you with programs, onboarding, and support.
@@ -167,7 +167,7 @@ export default function ContactUsPage() {
                   <p className="contact-detail-label">Office Address</p>
                   <p>
                     423, Floor 4, Phoenix Resicom, Waghodia Rd, Near Vaikunth Char
-                    Rasta, Madhavpura, Vadodara - 390019
+                    Rasta, Madhavpura, Vadodara 390019
                   </p>
                 </div>
               </div>
@@ -176,7 +176,7 @@ export default function ContactUsPage() {
                 <span className="contact-detail-icon"><ClockIcon /></span>
                 <div>
                   <p className="contact-detail-label">Working hours</p>
-                  <p>Mon - Sat · 10:00 AM - 7:00 PM</p>
+                  <p>Mon to Sat · 10:00 AM - 7:00 PM</p>
                 </div>
               </div>
             </aside>

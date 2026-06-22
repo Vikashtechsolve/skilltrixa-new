@@ -28,7 +28,7 @@ function seoDistFilesPlugin(siteUrl) {
             ? '1.0'
             : route.startsWith('/programs/')
               ? '0.9'
-              : route === '/programs' || route === '/universities'
+              : route === '/programs' || route === '/our-promise'
                 ? '0.9'
                 : '0.7'
         const changefreq = route === '/' || route === '/blogs' ? 'weekly' : 'monthly'

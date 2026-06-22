@@ -18,8 +18,8 @@ export default function TermsOfServicePage() {
       <div className="page-inner">
         <h1>Terms of Service</h1>
         <p>
-          This page is a placeholder. Replace this text with your official Terms of
-          Service (including any legal notices and dispute resolution details).
+          By using the Skilltrixa website, you agree to these Terms of Service.
+          Contact us if you have questions about your use of the site.
         </p>
 
         <section>

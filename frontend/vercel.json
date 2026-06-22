@@ -1,6 +1,11 @@
 {
   "redirects": [
     {
+      "source": "/universities",
+      "destination": "/our-promise",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "skilltrixa.com" }],
       "destination": "https://www.skilltrixa.com/:path*",

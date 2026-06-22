@@ -146,8 +146,8 @@ export default function Navbar() {
             </li>
 
             <li>
-              <NavLink to="/universities" className={navLinkClass}>
-                Universities
+              <NavLink to="/our-promise" className={navLinkClass}>
+                Our Promise
               </NavLink>
             </li>
             <li>

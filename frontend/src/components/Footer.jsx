@@ -71,7 +71,7 @@ export default function Footer() {
             </Link>
             <p className="footer-brand-tagline">Learn skills. Get placed.</p>
             <p className="footer-brand-desc">
-              Skilltrixa helps learners build industry-ready skills—from foundations to placements—with
+              Skilltrixa helps learners build industry ready skills, from foundations to placements, with
               structured programs, assessments, and campus partnerships.
             </p>
             <p className="footer-social-label">Follow Skilltrixa</p>
@@ -137,7 +137,7 @@ export default function Footer() {
                 <Link to="/programs/data-science">Data Science</Link>
               </li>
               <li>
-                <Link to="/programs/ai-ml">AI / Machine Learning</Link>
+                <Link to="/programs/ai-ml">AI and Machine Learning</Link>
               </li>
               <li>
                 <Link to="/programs/gen-ai">Generative AI</Link>
@@ -155,7 +155,7 @@ export default function Footer() {
                 <Link to="/blogs">Blog</Link>
               </li>
               <li>
-                <Link to="/universities">Universities</Link>
+                <Link to="/our-promise">Our Promise</Link>
               </li>
               <li>
                 <Link to="/contact-us">Contact us</Link>
@@ -172,7 +172,7 @@ export default function Footer() {
             <h3 className="footer-col-title">Support</h3>
             <ul className="footer-col-links">
               <li>
-                <Link to="/contact-us">Help &amp; enquiries</Link>
+                <Link to="/contact-us">Help and enquiries</Link>
               </li>
               <li>
                 <Link to="/privacy-policy">Privacy policy</Link>
@@ -201,7 +201,7 @@ export default function Footer() {
               <span className="footer-contact-label">Address</span>
               <span className="footer-contact-text">
                 423, Floor 4, Phoenix Resicom, Waghodia Rd, Near Vaikunth Char
-                Rasta, Madhavpura, Vadodara - 390019
+                Rasta, Madhavpura, Vadodara 390019
               </span>
             </p>
           </div>

@@ -14,7 +14,7 @@ import CompetitiveCoding from './pages/CompetitiveCoding'
 import About from './pages/About'
 import Blog from './pages/Blog'
 import BlogDetail from './pages/BlogDetail'
-import UniversitiesPage from './pages/UniversitiesPage'
+import OurPromisePage from './pages/UniversitiesPage'
 import ContactUsPage from './pages/ContactUsPage'
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage'
 import TermsOfServicePage from './pages/TermsOfServicePage'
@@ -51,7 +51,8 @@ export default function App() {
         <Route path="/programs/aptitude-training" element={<AptitudeTraining />} />
         <Route path="/programs/competitive-coding" element={<CompetitiveCoding />} />
         <Route path="/programs/:programId" element={<ProgramPage />} />
-        <Route path="/universities" element={<UniversitiesPage />} />
+        <Route path="/our-promise" element={<OurPromisePage />} />
+        <Route path="/universities" element={<Navigate to="/our-promise" replace />} />
         <Route path="/blogs" element={<Blog />} />
         <Route path="/blogs/:slug" element={<BlogDetail />} />
         <Route path="/about" element={<About />} />

@@ -66,11 +66,10 @@ export default function Testimonials() {
           <p className="ts-eyebrow">Placements</p>
           <div className="ts-head-row">
             <h2 id="ts-heading" className="ts-title">
-              Voices from students who made the shortlist
+              Students who made the shortlist
             </h2>
             <p className="ts-lead">
-              Real campus stories — not scripted ads. Tap a face to hear how they prepared and where
-              they landed.
+              Campus stories from students who prepared with us. Tap a profile to read how they got placed.
             </p>
           </div>
         </header>

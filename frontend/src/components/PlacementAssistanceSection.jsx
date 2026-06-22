@@ -129,8 +129,8 @@ export default function PlacementAssistanceSection() {
               Placement Assistance
             </h2>
             <p className="pa-subtitle">
-              End-to-end support that helps students convert preparation into selection — resume, mock interviews,
-              drive readiness, and continuous guidance.
+              Full support to help you move from preparation to selection: resume help, mock interviews,
+              drive preparation, and ongoing guidance.
             </p>
           </div>
 
@@ -144,11 +144,7 @@ export default function PlacementAssistanceSection() {
 
         <div className="pa-grid">
           <div className="pa-left">
-            <div className="pa-left-tabs" aria-label="Placement journey phases">
-              <span className="pa-tab pa-tab--resume">Resume</span>
-              <span className="pa-tab pa-tab--mock">Mock Interviews</span>
-              <span className="pa-tab pa-tab--drive">Drive Prep</span>
-            </div>
+            <p className="pa-left-label">What you get</p>
 
             <div className="pa-feature-list" role="list" aria-label="Placement assistance features">
               <div className="pa-feature" role="listitem">
@@ -156,8 +152,8 @@ export default function PlacementAssistanceSection() {
                   <SmallIcon variant="resume" />
                 </span>
                 <div className="pa-feature-body">
-                  <h3 className="pa-feature-title">Resume Building & Profile Optimization</h3>
-                  <p className="pa-feature-text">ATS-friendly structure, stronger project/skill framing, and interview-ready highlights.</p>
+                  <h3 className="pa-feature-title">Resume Building and Profile Optimisation</h3>
+                  <p className="pa-feature-text">ATS friendly structure, stronger project and skill framing, and interview ready highlights.</p>
                 </div>
               </div>
 
@@ -167,7 +163,7 @@ export default function PlacementAssistanceSection() {
                 </span>
                 <div className="pa-feature-body">
                   <h3 className="pa-feature-title">Mock Interviews with Feedback</h3>
-                  <p className="pa-feature-text">HR + technical mock rounds with actionable feedback to improve clarity and confidence.</p>
+                  <p className="pa-feature-text">HR and technical mock rounds with clear feedback to improve clarity and confidence.</p>
                 </div>
               </div>
 
@@ -177,7 +173,7 @@ export default function PlacementAssistanceSection() {
                 </span>
                 <div className="pa-feature-body">
                   <h3 className="pa-feature-title">Placement Drive Preparation</h3>
-                  <p className="pa-feature-text">Company-wise practice sets, mock tests, and final-week revision strategy.</p>
+                  <p className="pa-feature-text">Company wise practice sets, mock tests, and a final week revision plan.</p>
                 </div>
               </div>
 
@@ -186,8 +182,8 @@ export default function PlacementAssistanceSection() {
                   <SmallIcon variant="support" />
                 </span>
                 <div className="pa-feature-body">
-                  <h3 className="pa-feature-title">Continuous Updates & Support</h3>
-                  <p className="pa-feature-text">WhatsApp/Telegram groups for drive alerts, practice resources, and guidance.</p>
+                  <h3 className="pa-feature-title">Continuous Updates and Support</h3>
+                  <p className="pa-feature-text">WhatsApp and Telegram groups for drive alerts, practice resources, and guidance.</p>
                 </div>
               </div>
             </div>
@@ -204,37 +200,37 @@ export default function PlacementAssistanceSection() {
                   <span className="pa-journey-title-ic" aria-hidden>
                     <SparkIcon />
                   </span>
-                  Your Journey with skilltrixa
+                  Your Journey with Skilltrixa
                 </h3>
               </div>
 
-              <ol className="pa-steps" aria-label="skilltrixa journey steps">
+              <ol className="pa-steps" aria-label="Skilltrixa journey steps">
                 <li className="pa-step">
                   <span className="pa-step-badge">1</span>
                   <div className="pa-step-body">
-                    <h4 className="pa-step-title">Assessment & Roadmap</h4>
-                    <p className="pa-step-text">We evaluate your current level and plan what to focus on to match company patterns.</p>
+                    <h4 className="pa-step-title">Assessment and Roadmap</h4>
+                    <p className="pa-step-text">We check your current level and plan what to focus on to match company interview patterns.</p>
                   </div>
                 </li>
                 <li className="pa-step">
                   <span className="pa-step-badge">2</span>
                   <div className="pa-step-body">
-                    <h4 className="pa-step-title">Preparation &amp; Practice</h4>
-                    <p className="pa-step-text">Daily sets + weekly mocks to build accuracy, speed, and confidence.</p>
+                    <h4 className="pa-step-title">Preparation and Practice</h4>
+                    <p className="pa-step-text">Daily practice and weekly mocks to build accuracy, speed, and confidence.</p>
                   </div>
                 </li>
                 <li className="pa-step">
                   <span className="pa-step-badge">3</span>
                   <div className="pa-step-body">
-                    <h4 className="pa-step-title">Mock Interviews &amp; Improvement</h4>
-                    <p className="pa-step-text">HR + technical mock rounds to improve answers, delivery, and communication.</p>
+                    <h4 className="pa-step-title">Mock Interviews and Improvement</h4>
+                    <p className="pa-step-text">HR and technical mock rounds to improve answers, delivery, and communication.</p>
                   </div>
                 </li>
                 <li className="pa-step">
                   <span className="pa-step-badge">4</span>
                   <div className="pa-step-body">
                     <h4 className="pa-step-title">Drive Support</h4>
-                    <p className="pa-step-text">Final support with drive updates, revision guidance, and last-mile preparation.</p>
+                    <p className="pa-step-text">Final support with drive updates, revision guidance, and last mile preparation.</p>
                   </div>
                 </li>
               </ol>
@@ -244,7 +240,7 @@ export default function PlacementAssistanceSection() {
                   <CheckIcon />
                 </span>
                 <p className="pa-foot-text">
-                  We provide dedicated placement assistance and support through your corporate tie-ups.
+                  We provide dedicated placement assistance and support through your corporate tie ups.
                 </p>
               </div>
             </div>

@@ -13,7 +13,7 @@ export default function ProgramPage() {
       <>
         <SEO
           title="Programs | Skilltrixa"
-          description="Explore Skilltrixa career-ready programs in Full Stack, Data Science, AI/ML and Generative AI."
+          description="Explore Skilltrixa career ready programs in Full Stack, Data Science, AI and ML, and Generative AI."
           path="/programs"
           noindex
         />
@@ -26,7 +26,7 @@ export default function ProgramPage() {
     <>
       <SEO
         title={`${program.label} | Skilltrixa`}
-        description={`Learn ${program.label} with Skilltrixa — career-focused training, projects and placement support.`}
+        description={`Learn ${program.label} with Skilltrixa. Career focused training, projects and placement support.`}
         path={`/programs/${program.id}`}
         jsonLd={buildBreadcrumbsLd([
           { name: 'Home', path: '/' },

@@ -86,7 +86,7 @@ export default function PartnerWithUs() {
             <span className="pwu-kicker-ic" aria-hidden>
               <IconScreen />
             </span>
-            <span className="pwu-kicker-text">Tests &amp; mock interviews</span>
+            <span className="pwu-kicker-text">Tests and mock interviews</span>
           </li>
           <li className="pwu-kicker">
             <span className="pwu-kicker-ic" aria-hidden>
@@ -100,16 +100,15 @@ export default function PartnerWithUs() {
           <div className="pwu-copy">
             <p className="pwu-eyebrow">Partner with us</p>
             <h2 id="pwu-heading" className="pwu-title">
-              Bring Skilltrixa to your university placement story
+              Bring Skilltrixa to your university placement programme
             </h2>
             <p className="pwu-lead">
-              One platform for structured prep, assessments, and mock interviews — so students train
-              on what recruiters actually filter on, and your TPO sees signal before drive season.
+              One platform for structured prep, assessments, and mock interviews. Students train on
+              what recruiters actually test, and your TPO gets clear reports before drive season.
             </p>
             <p className="pwu-body">
-              Tie-ups include cohort onboarding, reporting that faculty can trust, and optional flows
-              aligned to your calendar. The universities page walks through models, timelines, and how
-              to reach our partnerships team.
+              We handle onboarding, reporting, and scheduling around your calendar. See Our Promise
+              for partnership models and timelines.
             </p>
           </div>
 
@@ -144,9 +143,9 @@ export default function PartnerWithUs() {
             <div className="pwu-feature-icon" aria-hidden>
               <IconTracks />
             </div>
-            <h3 className="pwu-feature-title">Department-mapped tracks</h3>
+            <h3 className="pwu-feature-title">Department mapped tracks</h3>
             <p className="pwu-feature-text">
-              Placement-ready paths tuned to how your programmes run — not generic one-size content.
+              Placement ready paths tuned to how your programmes run, not generic one size content.
             </p>
           </li>
           <li className="pwu-feature">
@@ -163,26 +162,26 @@ export default function PartnerWithUs() {
             <div className="pwu-feature-icon" aria-hidden>
               <IconUsers />
             </div>
-            <h3 className="pwu-feature-title">Pilot → rollout</h3>
+            <h3 className="pwu-feature-title">Pilot to rollout</h3>
             <p className="pwu-feature-text">
-              We stay beside you from pilot cohort to campus-wide launch — clear owners and
+              We stay with you from pilot cohort to campus wide launch, with clear owners and
               checkpoints.
             </p>
           </li>
         </ul>
 
         <div className="pwu-actions">
-          <Link to="/universities" className="pwu-cta">
+          <Link to="/our-promise" className="pwu-cta">
             <span className="pwu-cta-ic" aria-hidden>
               <IconBuilding />
             </span>
-            University partnerships
+            Our Promise
             <span className="pwu-cta-arrow" aria-hidden>
               →
             </span>
           </Link>
           <p className="pwu-actions-note">
-            Opens the universities section — tie-up models, timelines, and next steps.
+            Opens Our Promise: tie up models, timelines, and next steps.
           </p>
         </div>
       </div>

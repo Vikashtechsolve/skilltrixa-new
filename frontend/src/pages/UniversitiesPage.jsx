@@ -264,14 +264,14 @@ function IconPhoto() {
 }
 
 function splitHeadline(headline) {
-  const parts = headline.split(/\s*[—–]\s*/)
+  const parts = headline.split(/\s*[, –]\s*/)
   if (parts.length >= 2) {
-    return { first: parts[0].trim(), second: parts.slice(1).join(' — ').trim() }
+    return { first: parts[0].trim(), second: parts.slice(1).join(', ').trim() }
   }
   return { first: headline, second: null }
 }
 
-export default function UniversitiesPage() {
+export default function OurPromisePage() {
   const h = UNIVERSITY_HERO
   const prob = UNIVERSITY_PROBLEM
   const sol = UNIVERSITY_SOLUTION
@@ -281,14 +281,14 @@ export default function UniversitiesPage() {
   return (
     <>
       <SEO
-        title="University Partnerships | Skilltrixa — Campus Training & Placements"
-        description="Skilltrixa partners with universities and colleges for on-campus training, assessments, real-world projects, mentoring and placement-ready outcomes for every student."
-        keywords="Skilltrixa universities, university partnership, campus training program, college placement training, on-campus tech training"
-        path="/universities"
+        title="Our Promise | Skilltrixa | Campus Training & Placements"
+        description="Skilltrixa partners with universities and colleges for on-campus training, assessments, real world projects, mentoring and placement ready outcomes for every student."
+        keywords="Skilltrixa our promise, university partnership, campus training program, college placement training, on-campus tech training"
+        path="/our-promise"
         image={UNIVERSITY_HERO?.image?.src}
         jsonLd={buildBreadcrumbsLd([
           { name: 'Home', path: '/' },
-          { name: 'Universities', path: '/universities' },
+          { name: 'Our Promise', path: '/our-promise' },
         ])}
       />
     <main className="universities-page">
@@ -545,7 +545,7 @@ export default function UniversitiesPage() {
             Partner with Skilltrixa and transform your campus
           </h2>
           <p className="u-sec-lead u-final-cta-lead">
-            Build a measurable placement-ready journey for every student with assessments, projects,
+            Build a measurable placement ready journey for every student with assessments, projects,
             mentoring, and recruiter alignment.
           </p>
           <div className="u-final-cta-actions">

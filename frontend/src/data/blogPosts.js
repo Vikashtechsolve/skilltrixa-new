@@ -4,13 +4,13 @@
 
 export const BLOG_CATEGORIES = [
   { id: 'all', label: 'All' },
-  { id: 'ai-ml', label: 'AI / Machine Learning' },
+  { id: 'ai-ml', label: 'AI and Machine Learning' },
   { id: 'mern', label: 'MERN Stack' },
   { id: 'frontend', label: 'Frontend Frameworks' },
   { id: 'backend', label: 'Backend Technologies' },
-  { id: 'devops', label: 'DevOps / Cloud' },
+  { id: 'devops', label: 'DevOps and Cloud' },
   { id: 'mobile', label: 'Mobile Development' },
-  { id: 'web3', label: 'Web3 / Blockchain' },
+  { id: 'web3', label: 'Web3 and Blockchain' },
   { id: 'database', label: 'Database Design' },
   { id: 'api', label: 'API Development' },
   { id: 'webdev', label: 'Web Development' },
@@ -45,7 +45,7 @@ const blog1 = {
   title: 'Mastering Generative AI: From Prompt Engineering to Production',
   category: 'ai-ml',
   excerpt:
-    'Generative AI is transforming how developers build applications. This guide walks you from prompt engineering basics to deploying production-ready AI systems using modern tools and best practices.',
+    'Generative AI is transforming how developers build applications. This guide walks you from prompt engineering basics to deploying production ready AI systems using modern tools and best practices.',
   author: 'SkillTrixa',
   date: '2026-04-21',
   readTime: '8 min read',
@@ -54,9 +54,9 @@ const blog1 = {
     'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1400&q=88',
   content: [
     { type: 'heading', text: 'Introduction' },
-    { type: 'paragraph', text: 'Generative AI has rapidly evolved from an experimental technology into a powerful tool that is transforming modern software development. Today, developers are using AI to automate tasks, generate content, assist in coding, and build intelligent applications that can interact with users in natural language. However, while many developers experiment with AI tools, only a few successfully build scalable and production-ready systems.' },
-    { type: 'paragraph', text: 'This is where Skilltrixa plays a critical role. Skilltrixa provides a structured approach to learning and implementing generative AI, helping developers move beyond basic experimentation into real-world applications. With the right guidance from Skilltrixa, developers can understand not only how AI works but also how to use it effectively in production environments.' },
-    { type: 'paragraph', text: 'In this blog, we will explore the journey from prompt engineering to deploying production-ready generative AI systems using proven strategies and best practices inspired by Skilltrixa.' },
+    { type: 'paragraph', text: 'Generative AI has rapidly evolved from an experimental technology into a powerful tool that is transforming modern software development. Today, developers are using AI to automate tasks, generate content, assist in coding, and build intelligent applications that can interact with users in natural language. However, while many developers experiment with AI tools, only a few successfully build scalable and production ready systems.' },
+    { type: 'paragraph', text: 'This is where Skilltrixa plays a critical role. Skilltrixa provides a structured approach to learning and implementing generative AI, helping developers move beyond basic experimentation into real world applications. With the right guidance from Skilltrixa, developers can understand not only how AI works but also how to use it effectively in production environments.' },
+    { type: 'paragraph', text: 'In this blog, we will explore the journey from prompt engineering to deploying production ready generative AI systems using proven strategies and best practices inspired by Skilltrixa.' },
 
     { type: 'heading', text: 'Understanding Generative AI' },
     { type: 'paragraph', text: 'Generative AI refers to systems that can create new content such as text, images, code, or audio based on input prompts. These systems are powered by large language models (LLMs) trained on massive datasets.' },
@@ -70,12 +70,12 @@ const blog1 = {
     { type: 'bold', text: 'Basic Prompt:' },
     { type: 'code', language: 'text', text: 'Explain APIs' },
     { type: 'bold', text: 'Optimized Prompt:' },
-    { type: 'code', language: 'text', text: 'Explain REST APIs with real-world examples and best practices for scalability in modern web applications' },
+    { type: 'code', language: 'text', text: 'Explain REST APIs with real world examples and best practices for scalability in modern web applications' },
     { type: 'paragraph', text: 'The second prompt provides context, clarity, and direction, leading to a significantly better response.' },
-    { type: 'paragraph', text: 'Skilltrixa teaches developers that prompt engineering is not just about asking questions—it is about designing instructions that produce consistent and useful results.' },
+    { type: 'paragraph', text: 'Skilltrixa teaches developers that prompt engineering is not just about asking questions, it is about designing instructions that produce consistent and useful results.' },
 
     { type: 'heading', text: 'Advanced Prompt Engineering Techniques' },
-    { type: 'paragraph', text: 'To achieve high-quality outputs, developers need to apply structured techniques. Skilltrixa highlights several proven strategies:' },
+    { type: 'paragraph', text: 'To achieve high quality outputs, developers need to apply structured techniques. Skilltrixa highlights several proven strategies:' },
     { type: 'subheading', text: 'Role-Based Prompting' },
     { type: 'paragraph', text: 'Assigning a role to the AI helps shape the tone and depth of the response.' },
     { type: 'code', language: 'text', text: '"Act as a senior software engineer and explain microservices architecture."' },
@@ -91,36 +91,36 @@ const blog1 = {
     { type: 'paragraph', text: 'By practicing these techniques on Skilltrixa, developers can significantly improve the performance and reliability of AI outputs.' },
 
     { type: 'heading', text: 'Moving from Prototype to Production' },
-    { type: 'paragraph', text: 'Building a simple AI demo is relatively easy, but deploying a production-ready system introduces new challenges. Skilltrixa focuses on helping developers overcome these real-world issues.' },
+    { type: 'paragraph', text: 'Building a simple AI demo is relatively easy, but deploying a production ready system introduces new challenges. Skilltrixa focuses on helping developers overcome these real world issues.' },
     { type: 'subheading', text: 'Key Challenges' },
     { type: 'list', items: ['Latency: AI responses can be slow, especially for complex prompts, affecting user experience.', 'Cost Management: Most AI services charge based on usage, making inefficient prompts expensive.', 'Output Reliability: AI models can sometimes generate inconsistent or incorrect responses.', 'Security: Handling user data securely is critical when deploying AI applications.'] },
 
     { type: 'heading', text: 'Best Practices for Production Systems' },
     { type: 'paragraph', text: 'To address these challenges, Skilltrixa recommends several best practices:' },
-    { type: 'list', items: ['Optimize Prompts — Short, clear, and structured prompts reduce cost and improve response quality.', 'Implement Caching — Store frequently used responses to reduce API calls and improve speed.', 'Use Fine-Tuning — Customize models for specific use cases to improve accuracy and consistency.', 'Monitor Performance — Track metrics such as response time, cost, and error rates to continuously improve your system.', 'Add Fallback Mechanisms — Always include backup logic in case the AI produces unexpected results.'] },
+    { type: 'list', items: ['Optimize Prompts, Short, clear, and structured prompts reduce cost and improve response quality.', 'Implement Caching, Store frequently used responses to reduce API calls and improve speed.', 'Use Fine-Tuning, Customize models for specific use cases to improve accuracy and consistency.', 'Monitor Performance, Track metrics such as response time, cost, and error rates to continuously improve your system.', 'Add Fallback Mechanisms, Always include backup logic in case the AI produces unexpected results.'] },
     { type: 'paragraph', text: 'These strategies ensure that your generative AI application is not only functional but also scalable and efficient.' },
 
-    { type: 'heading', text: 'Real-World Use Case' },
+    { type: 'heading', text: 'Real World Use Case' },
     { type: 'paragraph', text: 'Consider a customer support chatbot built using generative AI.' },
     { type: 'bold', text: 'Before Optimization:' },
     { type: 'list', items: ['Slow responses', 'High operational costs', 'Inconsistent answers'] },
     { type: 'bold', text: 'After Applying Skilltrixa Strategies:' },
     { type: 'list', items: ['60% faster response time', 'Reduced API costs', 'Improved answer accuracy'] },
-    { type: 'paragraph', text: 'This example shows how applying structured learning from Skilltrixa can transform a basic AI project into a production-ready solution.' },
+    { type: 'paragraph', text: 'This example shows how applying structured learning from Skilltrixa can transform a basic AI project into a production ready solution.' },
 
     { type: 'heading', text: 'Why Skilltrixa is Essential for Developers' },
-    { type: 'paragraph', text: 'Skilltrixa stands out because it focuses on practical, real-world skills rather than just theory. It provides developers with a clear roadmap to mastering generative AI.' },
-    { type: 'list', items: ['Hands-on projects', 'Industry-relevant workflows', 'Step-by-step guidance', 'Real-world problem-solving experience'] },
+    { type: 'paragraph', text: 'Skilltrixa stands out because it focuses on practical, real world skills rather than just theory. It provides developers with a clear roadmap to mastering generative AI.' },
+    { type: 'list', items: ['Hands on projects', 'Industry relevant workflows', 'Step by step guidance', 'Real world problem solving experience'] },
     { type: 'paragraph', text: 'By learning through Skilltrixa, developers gain confidence in building scalable AI systems that meet real business needs.' },
 
     { type: 'heading', text: 'Actionable Takeaways' },
     { type: 'paragraph', text: 'If you want to master generative AI, follow these steps:' },
-    { type: 'list', items: ['Learn the fundamentals of prompt engineering', 'Practice structured prompting techniques', 'Build small AI-powered applications', 'Optimize prompts for performance and cost', 'Focus on real-world production challenges', 'Use Skilltrixa for guided and practical learning'] },
-    { type: 'paragraph', text: 'Consistency and hands-on experience are key to success.' },
+    { type: 'list', items: ['Learn the fundamentals of prompt engineering', 'Practice structured prompting techniques', 'Build small AI powered applications', 'Optimize prompts for performance and cost', 'Focus on real world production challenges', 'Use Skilltrixa for guided and practical learning'] },
+    { type: 'paragraph', text: 'Consistency and hands on experience are key to success.' },
 
     { type: 'heading', text: 'Conclusion' },
     { type: 'paragraph', text: 'Generative AI is one of the most powerful technologies shaping the future of software development. However, its true potential can only be unlocked with the right skills and strategies. From crafting effective prompts to deploying scalable systems, every step requires careful planning and execution.' },
-    { type: 'paragraph', text: 'With platforms like Skilltrixa, developers can move beyond experimentation and build real-world AI applications with confidence. Skilltrixa provides the tools, knowledge, and structure needed to succeed in this rapidly evolving field.' },
+    { type: 'paragraph', text: 'With platforms like Skilltrixa, developers can move beyond experimentation and build real world AI applications with confidence. Skilltrixa provides the tools, knowledge, and structure needed to succeed in this rapidly evolving field.' },
     { type: 'paragraph', text: 'If you are serious about building intelligent applications and advancing your career, now is the perfect time to start your journey with Skilltrixa.' },
   ],
 }
@@ -131,7 +131,7 @@ const blog2 = {
   title: 'Building Scalable MERN Stack Applications in 2026',
   category: 'mern',
   excerpt:
-    'The MERN stack remains a top choice for full-stack developers. Learn how to architect scalable applications using MongoDB, Express, React, and Node.js.',
+    'The MERN stack remains a top choice for full stack developers. Learn how to architect scalable applications using MongoDB, Express, React, and Node.js.',
   author: 'SkillTrixa',
   date: '2026-04-21',
   readTime: '7 min read',
@@ -140,12 +140,12 @@ const blog2 = {
     'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=88',
   content: [
     { type: 'heading', text: 'Introduction' },
-    { type: 'paragraph', text: 'The MERN stack continues to be one of the most popular and powerful choices for full-stack development in 2026. Combining MongoDB, Express.js, React, and Node.js, MERN offers a unified JavaScript-based ecosystem that allows developers to build end-to-end applications efficiently.' },
-    { type: 'paragraph', text: 'However, building a simple MERN app is very different from building a scalable, production-ready system. Many developers struggle when their applications start handling real users, large datasets, and complex business logic.' },
-    { type: 'paragraph', text: 'This is where Skilltrixa plays a crucial role. Skilltrixa provides structured guidance and real-world strategies that help developers move beyond basic projects and build scalable MERN applications confidently.' },
+    { type: 'paragraph', text: 'The MERN stack continues to be one of the most popular and powerful choices for full stack development in 2026. Combining MongoDB, Express.js, React, and Node.js, MERN offers a unified JavaScript-based ecosystem that allows developers to build end to end applications efficiently.' },
+    { type: 'paragraph', text: 'However, building a simple MERN app is very different from building a scalable, production ready system. Many developers struggle when their applications start handling real users, large datasets, and complex business logic.' },
+    { type: 'paragraph', text: 'This is where Skilltrixa plays a crucial role. Skilltrixa provides structured guidance and real world strategies that help developers move beyond basic projects and build scalable MERN applications confidently.' },
 
     { type: 'heading', text: 'Why MERN Still Dominates in 2026' },
-    { type: 'paragraph', text: 'The MERN stack remains dominant because it simplifies development by using a single programming language—JavaScript—across the entire application.' },
+    { type: 'paragraph', text: 'The MERN stack remains dominant because it simplifies development by using a single programming language, JavaScript, across the entire application.' },
     { type: 'list', items: ['Unified development environment', 'Strong community support', 'High flexibility and scalability', 'Seamless frontend and backend integration'] },
     { type: 'paragraph', text: 'Skilltrixa emphasizes that this consistency reduces context switching, making development faster and more efficient.' },
 
@@ -172,11 +172,11 @@ const blog2 = {
     { type: 'list', items: ['Use indexing', 'Avoid unnecessary data duplication', 'Optimize queries'] },
 
     { type: 'heading', text: 'Performance Optimization Techniques' },
-    { type: 'list', items: ['Lazy Loading in React — Load components only when needed to reduce initial load time.', 'API Caching — Cache frequently requested data using tools like Redis.', 'Efficient Queries — Avoid heavy database operations and use optimized queries.', 'Load Balancing — Distribute traffic across multiple servers for better performance.', 'Asynchronous Processing — Use queues for background tasks like emails or notifications.'] },
+    { type: 'list', items: ['Lazy Loading in React, Load components only when needed to reduce initial load time.', 'API Caching, Cache frequently requested data using tools like Redis.', 'Efficient Queries, Avoid heavy database operations and use optimized queries.', 'Load Balancing, Distribute traffic across multiple servers for better performance.', 'Asynchronous Processing, Use queues for background tasks like emails or notifications.'] },
 
     { type: 'heading', text: 'Security Best Practices' },
     { type: 'list', items: ['Use JWT for authentication', 'Validate all user inputs', 'Protect APIs from attacks (rate limiting)', 'Use HTTPS for secure communication'] },
-    { type: 'paragraph', text: 'Security should never be an afterthought—it must be integrated from the beginning.' },
+    { type: 'paragraph', text: 'Security should never be an afterthought, it must be integrated from the beginning.' },
 
     { type: 'heading', text: 'Deployment and DevOps Considerations' },
     { type: 'list', items: ['Docker for containerization', 'CI/CD pipelines for automated deployment', 'Cloud platforms like AWS or Azure'] },
@@ -189,8 +189,8 @@ const blog2 = {
 
     { type: 'heading', text: 'Conclusion' },
     { type: 'paragraph', text: 'The MERN stack continues to be a powerful choice for building modern web applications. However, true success lies in building applications that are scalable, maintainable, and efficient.' },
-    { type: 'paragraph', text: 'With the right approach and guidance from platforms like Skilltrixa, developers can confidently build production-ready MERN applications that handle real-world challenges.' },
-    { type: 'paragraph', text: 'If you want to grow as a full-stack developer and build scalable systems, mastering MERN with Skilltrixa is one of the smartest decisions you can make in 2026.' },
+    { type: 'paragraph', text: 'With the right approach and guidance from platforms like Skilltrixa, developers can confidently build production ready MERN applications that handle real world challenges.' },
+    { type: 'paragraph', text: 'If you want to grow as a full stack developer and build scalable systems, mastering MERN with Skilltrixa is one of the smartest decisions you can make in 2026.' },
   ],
 }
 
@@ -210,7 +210,7 @@ const blog3 = {
   content: [
     { type: 'heading', text: 'Overview' },
     { type: 'paragraph', text: 'Choosing the right frontend framework is one of the most important decisions in modern web development. It directly affects your application\'s performance, scalability, maintainability, and developer experience. With multiple frameworks available, developers often find it challenging to decide which one best fits their needs.' },
-    { type: 'paragraph', text: 'Among the most popular options today are React, Vue, and Angular. Each of these frameworks has its own strengths, use cases, and learning curves. Platforms like Skilltrixa help developers understand these differences in depth and make informed decisions based on real-world requirements.' },
+    { type: 'paragraph', text: 'Among the most popular options today are React, Vue, and Angular. Each of these frameworks has its own strengths, use cases, and learning curves. Platforms like Skilltrixa help developers understand these differences in depth and make informed decisions based on real world requirements.' },
 
     { type: 'heading', text: 'Why Choosing the Right Framework Matters' },
     { type: 'list', items: ['Development speed', 'Application performance', 'Scalability', 'Team productivity', 'Long-term maintenance'] },
@@ -236,7 +236,7 @@ const blog3 = {
 
     { type: 'heading', text: 'Performance Comparison' },
     { type: 'list', items: ['React uses a virtual DOM to efficiently update the UI', 'Vue also uses a virtual DOM with optimized rendering', 'Angular uses real DOM but compensates with advanced optimization techniques'] },
-    { type: 'paragraph', text: 'In most real-world applications, performance differences are minimal if best practices are followed. Skilltrixa emphasizes optimizing code rather than relying solely on framework performance.' },
+    { type: 'paragraph', text: 'In most real world applications, performance differences are minimal if best practices are followed. Skilltrixa emphasizes optimizing code rather than relying solely on framework performance.' },
 
     { type: 'heading', text: 'Learning Curve' },
     { type: 'list', items: ['React: Moderate (requires understanding of additional tools)', 'Vue: Easy (ideal for beginners)', 'Angular: Steep (requires knowledge of TypeScript and architecture concepts)'] },
@@ -250,7 +250,7 @@ const blog3 = {
 
     { type: 'heading', text: 'Conclusion' },
     { type: 'paragraph', text: 'React, Vue, and Angular are all powerful frontend technologies, each with its own strengths and use cases. The key is not to find the "best" framework but to find the right one for your specific needs.' },
-    { type: 'paragraph', text: 'With guidance from platforms like Skilltrixa, developers can make informed decisions, learn efficiently, and build high-quality applications. Whether you are a beginner or an experienced developer, understanding these frameworks deeply will help you grow in your frontend development journey.' },
+    { type: 'paragraph', text: 'With guidance from platforms like Skilltrixa, developers can make informed decisions, learn efficiently, and build high quality applications. Whether you are a beginner or an experienced developer, understanding these frameworks deeply will help you grow in your frontend development journey.' },
   ],
 }
 
@@ -270,7 +270,7 @@ const blog4 = {
   content: [
     { type: 'heading', text: 'Introduction' },
     { type: 'paragraph', text: 'Node.js has become one of the most powerful technologies for building scalable and high-performance backend systems. Its non-blocking, event-driven architecture makes it ideal for modern web applications, APIs, and real-time services. However, simply using Node.js does not guarantee optimal performance. Developers must understand how to fine-tune their applications to achieve maximum efficiency.' },
-    { type: 'paragraph', text: 'Platforms like Skilltrixa help developers go beyond basic implementation and focus on real-world optimization strategies. By learning performance techniques, developers can build faster, more reliable, and scalable backend systems that meet production-level demands.' },
+    { type: 'paragraph', text: 'Platforms like Skilltrixa help developers go beyond basic implementation and focus on real world optimization strategies. By learning performance techniques, developers can build faster, more reliable, and scalable backend systems that meet production-level demands.' },
 
     { type: 'heading', text: 'Why Performance Optimization Matters' },
     { type: 'list', items: ['Faster response times', 'Better scalability', 'Reduced server costs', 'Improved user experience', 'Higher reliability in production'] },
@@ -307,7 +307,7 @@ const blog4 = {
     { type: 'heading', text: 'Monitoring and Profiling' },
     { type: 'list', items: ['Performance monitoring tools', 'Logging systems', 'Profiling tools like Node.js inspector'] },
 
-    { type: 'heading', text: 'Real-World Use Case' },
+    { type: 'heading', text: 'Real World Use Case' },
     { type: 'paragraph', text: 'Consider an e-commerce backend handling thousands of users simultaneously. Without optimization, users may experience slow page loads and failed transactions.' },
     { type: 'bold', text: 'After applying techniques taught by Skilltrixa:' },
     { type: 'list', items: ['API response time improved by 50%', 'Server load reduced significantly', 'User experience became smoother'] },
@@ -316,8 +316,8 @@ const blog4 = {
     { type: 'list', items: ['Node.js performance depends on proper optimization techniques', 'Avoid blocking the event loop', 'Use clustering and load balancing', 'Optimize database queries and caching', 'Monitor and test performance continuously', 'Follow structured learning approaches like Skilltrixa'] },
 
     { type: 'heading', text: 'Conclusion' },
-    { type: 'paragraph', text: 'Node.js is a powerful tool for backend development, but its true potential is unlocked only through effective performance optimization. Developers must adopt best practices, continuously monitor their systems, and refine their approach to handle real-world challenges.' },
-    { type: 'paragraph', text: 'With platforms like Skilltrixa, developers gain practical knowledge and hands-on experience in building high-performance applications. Performance is not a one-time task—it is an ongoing process. By applying the right techniques and continuously improving, developers can ensure their Node.js applications remain fast, scalable, and reliable in any environment.' },
+    { type: 'paragraph', text: 'Node.js is a powerful tool for backend development, but its true potential is unlocked only through effective performance optimization. Developers must adopt best practices, continuously monitor their systems, and refine their approach to handle real world challenges.' },
+    { type: 'paragraph', text: 'With platforms like Skilltrixa, developers gain practical knowledge and hands on experience in building high-performance applications. Performance is not a one-time task, it is an ongoing process. By applying the right techniques and continuously improving, developers can ensure their Node.js applications remain fast, scalable, and reliable in any environment.' },
   ],
 }
 
@@ -336,8 +336,8 @@ const blog5 = {
     'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?auto=format&fit=crop&w=1400&q=88',
   content: [
     { type: 'heading', text: 'Introduction' },
-    { type: 'paragraph', text: 'DevOps has become the backbone of modern software development, enabling teams to build, test, and deploy applications faster than ever before. In 2026, the demand for efficient and reliable CI/CD pipelines is higher than ever, as businesses strive to deliver continuous updates without compromising quality. However, building a pipeline that actually works in production requires more than just tools—it requires strategy, automation, and discipline.' },
-    { type: 'paragraph', text: 'This is where platforms like Skilltrixa play a vital role. By focusing on practical DevOps workflows and real-world implementations, Skilltrixa helps developers and teams understand how to build CI/CD pipelines that are scalable, efficient, and production-ready.' },
+    { type: 'paragraph', text: 'DevOps has become the backbone of modern software development, enabling teams to build, test, and deploy applications faster than ever before. In 2026, the demand for efficient and reliable CI/CD pipelines is higher than ever, as businesses strive to deliver continuous updates without compromising quality. However, building a pipeline that actually works in production requires more than just tools, it requires strategy, automation, and discipline.' },
+    { type: 'paragraph', text: 'This is where platforms like Skilltrixa play a vital role. By focusing on practical DevOps workflows and real world implementations, Skilltrixa helps developers and teams understand how to build CI/CD pipelines that are scalable, efficient, and production ready.' },
 
     { type: 'heading', text: 'What is CI/CD?' },
     { type: 'paragraph', text: 'CI/CD stands for Continuous Integration and Continuous Deployment (or Delivery). It is a set of practices that automate the process of integrating code changes, testing them, and deploying them to production.' },
@@ -365,11 +365,11 @@ const blog5 = {
     { type: 'subheading', text: '2. Use Containerization' },
     { type: 'list', items: ['Consistent environments', 'Easy scaling', 'Faster deployments'] },
     { type: 'subheading', text: '3. Implement Continuous Testing' },
-    { type: 'list', items: ['Unit tests', 'Integration tests', 'End-to-end tests'] },
+    { type: 'list', items: ['Unit tests', 'Integration tests', 'End to end tests'] },
     { type: 'subheading', text: '4. Monitor and Improve' },
     { type: 'list', items: ['Build success rates', 'Deployment frequency', 'Error tracking'] },
 
-    { type: 'heading', text: 'Real-World Example' },
+    { type: 'heading', text: 'Real World Example' },
     { type: 'paragraph', text: 'Imagine a startup deploying updates manually. Each release takes hours and often introduces bugs.' },
     { type: 'bold', text: 'After implementing a CI/CD pipeline using Skilltrixa practices:' },
     { type: 'list', items: ['Deployment time reduced by 70%', 'Bugs decreased significantly', 'Team productivity increased'] },
@@ -378,8 +378,8 @@ const blog5 = {
     { type: 'list', items: ['Keep pipelines simple and maintainable', 'Use version control for configurations', 'Automate testing and deployment', 'Monitor performance continuously', 'Use rollback strategies for failures'] },
 
     { type: 'heading', text: 'Conclusion' },
-    { type: 'paragraph', text: 'Building CI/CD pipelines that actually work requires more than just tools—it requires a deep understanding of processes, automation, and continuous improvement. Developers must focus on creating systems that are reliable, scalable, and efficient.' },
-    { type: 'paragraph', text: 'With platforms like Skilltrixa, developers can learn how to design and implement real-world DevOps pipelines that deliver consistent results. As technology continues to evolve, mastering CI/CD will become even more important.' },
+    { type: 'paragraph', text: 'Building CI/CD pipelines that actually work requires more than just tools, it requires a deep understanding of processes, automation, and continuous improvement. Developers must focus on creating systems that are reliable, scalable, and efficient.' },
+    { type: 'paragraph', text: 'With platforms like Skilltrixa, developers can learn how to design and implement real world DevOps pipelines that deliver consistent results. As technology continues to evolve, mastering CI/CD will become even more important.' },
   ],
 }
 
@@ -399,7 +399,7 @@ const blog6 = {
   content: [
     { type: 'heading', text: 'Introduction' },
     { type: 'paragraph', text: 'Mobile app development has undergone a major transformation in recent years. Businesses today expect faster delivery, lower costs, and high-performance applications that work seamlessly across platforms. Traditionally, developers had to build separate apps for Android and iOS, which increased both time and cost. However, frameworks like Flutter have changed this landscape completely.' },
-    { type: 'paragraph', text: 'Flutter, developed by Google, allows developers to create cross-platform mobile applications using a single codebase. Platforms like Skilltrixa are helping developers understand and master Flutter through structured courses and real-world projects.' },
+    { type: 'paragraph', text: 'Flutter, developed by Google, allows developers to create cross-platform mobile applications using a single codebase. Platforms like Skilltrixa are helping developers understand and master Flutter through structured courses and real world projects.' },
 
     { type: 'heading', text: 'Why Flutter?' },
     { type: 'list', items: ['Single Codebase: Write once and run on Android, iOS, web, and desktop', 'Faster Development Cycle: Reduce development time significantly', 'Cost Efficiency: Lower cost compared to native development', 'Consistent UI: Same look and feel across platforms'] },
@@ -419,8 +419,8 @@ const blog6 = {
     { type: 'list', items: ['Install Flutter SDK', 'Set up Android Studio or VS Code', 'Create a new project', 'Run your application'] },
     { type: 'code', language: 'dart', text: 'void main() {\n  runApp(MyApp());\n}' },
 
-    { type: 'heading', text: 'Real-World Use Cases' },
-    { type: 'list', items: ['E-commerce Apps — Smooth UI, fast performance, real-time updates', 'Social Media Apps — Interactive features, cross-platform consistency', 'Fintech Applications — Secure transactions, high-speed performance', 'Startup MVPs — Faster development, cost-effective solutions'] },
+    { type: 'heading', text: 'Real World Use Cases' },
+    { type: 'list', items: ['E-commerce Apps, Smooth UI, fast performance, real-time updates', 'Social Media Apps, Interactive features, cross-platform consistency', 'Fintech Applications, Secure transactions, high-speed performance', 'Startup MVPs, Faster development, cost-effective solutions'] },
 
     { type: 'heading', text: 'Best Practices for Flutter Development' },
     { type: 'subheading', text: '1. Maintain Clean Code' },
@@ -431,11 +431,11 @@ const blog6 = {
     { type: 'list', items: ['Provider', 'Riverpod', 'Bloc'] },
 
     { type: 'heading', text: 'Key Takeaways' },
-    { type: 'list', items: ['Flutter allows cross-platform development with a single codebase', 'It offers high performance and flexible UI design', 'Learning Dart is essential', 'Real-world practice is key to mastery', 'Skilltrixa provides structured learning paths for faster growth'] },
+    { type: 'list', items: ['Flutter allows cross-platform development with a single codebase', 'It offers high performance and flexible UI design', 'Learning Dart is essential', 'Real world practice is key to mastery', 'Skilltrixa provides structured learning paths for faster growth'] },
 
     { type: 'heading', text: 'Conclusion' },
     { type: 'paragraph', text: 'Flutter has revolutionized mobile app development by making it faster, more efficient, and cost-effective. Whether you are a beginner or an experienced developer, Flutter provides the tools needed to build modern, high-performance applications.' },
-    { type: 'paragraph', text: 'With platforms like Skilltrixa, developers can accelerate their learning journey and gain practical experience that prepares them for real-world challenges. By mastering Flutter, you can stay ahead in the competitive tech industry and build applications that truly stand out.' },
+    { type: 'paragraph', text: 'With platforms like Skilltrixa, developers can accelerate their learning journey and gain practical experience that prepares them for real world challenges. By mastering Flutter, you can stay ahead in the competitive tech industry and build applications that truly stand out.' },
   ],
 }
 
@@ -454,7 +454,7 @@ const blog7 = {
     'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1400&q=88',
   content: [
     { type: 'heading', text: 'What is Web3?' },
-    { type: 'paragraph', text: 'The internet is evolving rapidly, and one of the most significant transformations is the rise of Web3. Unlike traditional web systems that rely on centralized platforms, Web3 introduces a decentralized ecosystem where users have more control over their data, identity, and digital assets. Platforms like Skilltrixa are helping developers understand and adapt to this shift by providing practical learning resources and real-world insights.' },
+    { type: 'paragraph', text: 'The internet is evolving rapidly, and one of the most significant transformations is the rise of Web3. Unlike traditional web systems that rely on centralized platforms, Web3 introduces a decentralized ecosystem where users have more control over their data, identity, and digital assets. Platforms like Skilltrixa are helping developers understand and adapt to this shift by providing practical learning resources and real world insights.' },
     { type: 'paragraph', text: 'Web3 represents the next phase of the internet, built on blockchain technology. It focuses on decentralization, transparency, and user ownership. In Web2, companies control platforms and user data. In Web3, control is distributed across networks, removing the need for intermediaries.' },
 
     { type: 'heading', text: 'Key Components of Web3' },
@@ -481,9 +481,9 @@ const blog7 = {
     { type: 'list', items: ['Blockchain architecture', 'Cryptography basics', 'Gas fees and transactions', 'Wallet integration'] },
 
     { type: 'heading', text: 'Challenges in Web3 Development' },
-    { type: 'list', items: ['Scalability — Blockchain networks can be slower compared to centralized systems.', 'Complexity — Web3 development involves new concepts that can be difficult for beginners.', 'Security Risks — Smart contract bugs can lead to financial losses.', 'User Experience — dApps often have complex interfaces.'] },
+    { type: 'list', items: ['Scalability, Blockchain networks can be slower compared to centralized systems.', 'Complexity, Web3 development involves new concepts that can be difficult for beginners.', 'Security Risks, Smart contract bugs can lead to financial losses.', 'User Experience, dApps often have complex interfaces.'] },
 
-    { type: 'heading', text: 'Real-World Applications of Web3' },
+    { type: 'heading', text: 'Real World Applications of Web3' },
     { type: 'list', items: ['Finance (DeFi): Peer-to-peer lending and trading', 'Gaming: Play-to-earn models', 'Art and NFTs: Digital ownership of artwork', 'Supply Chain: Transparent tracking systems', 'Identity Management: Secure digital identities'] },
 
     { type: 'heading', text: 'How to Start with Web3' },
@@ -491,7 +491,7 @@ const blog7 = {
 
     { type: 'heading', text: 'Conclusion' },
     { type: 'paragraph', text: 'Web3 is transforming the digital world by introducing decentralization, transparency, and user empowerment. From smart contracts to decentralized applications, the opportunities in this space are vast and growing.' },
-    { type: 'paragraph', text: 'However, learning Web3 requires the right guidance and resources. This is where Skilltrixa plays a crucial role. By offering structured learning, practical examples, and real-world insights, Skilltrixa helps developers build the skills needed to succeed in the Web3 ecosystem.' },
+    { type: 'paragraph', text: 'However, learning Web3 requires the right guidance and resources. This is where Skilltrixa plays a crucial role. By offering structured learning, practical examples, and real world insights, Skilltrixa helps developers build the skills needed to succeed in the Web3 ecosystem.' },
     { type: 'paragraph', text: 'If you want to future-proof your career and become part of the next generation of internet developers, now is the perfect time to start your Web3 journey with Skilltrixa.' },
   ],
 }
@@ -552,7 +552,7 @@ const blog8 = {
 
     { type: 'heading', text: 'Conclusion' },
     { type: 'paragraph', text: 'Database design is the backbone of any successful application. It directly impacts performance, scalability, and user experience. By following best practices such as normalization, indexing, and proper schema design, developers can build efficient and reliable systems.' },
-    { type: 'paragraph', text: 'However, mastering database design requires continuous learning and practical experience. This is where Skilltrixa plays a crucial role. By offering structured learning paths, real-world examples, and hands-on projects, Skilltrixa helps developers build strong database skills and create scalable applications.' },
+    { type: 'paragraph', text: 'However, mastering database design requires continuous learning and practical experience. This is where Skilltrixa plays a crucial role. By offering structured learning paths, real world examples, and hands on projects, Skilltrixa helps developers build strong database skills and create scalable applications.' },
   ],
 }
 
@@ -570,7 +570,7 @@ const blog9 = {
   image:
     'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1400&q=88',
   content: [
-    { type: 'paragraph', text: 'In modern application development, APIs play a critical role in connecting frontend and backend systems. Whether you are building a web app, mobile app, or enterprise system, choosing the right API architecture directly impacts performance, scalability, and developer experience. Two of the most popular API approaches today are REST and GraphQL. Understanding their differences is essential, and platforms like Skilltrixa help developers master these technologies with real-world examples.' },
+    { type: 'paragraph', text: 'In modern application development, APIs play a critical role in connecting frontend and backend systems. Whether you are building a web app, mobile app, or enterprise system, choosing the right API architecture directly impacts performance, scalability, and developer experience. Two of the most popular API approaches today are REST and GraphQL. Understanding their differences is essential, and platforms like Skilltrixa help developers master these technologies with real world examples.' },
 
     { type: 'heading', text: 'What is REST?' },
     { type: 'paragraph', text: 'REST, or Representational State Transfer, is a widely used architectural style for building APIs. It relies on standard HTTP methods such as GET, POST, PUT, and DELETE to perform operations on resources.' },
@@ -608,30 +608,30 @@ const blog9 = {
 
     { type: 'heading', text: 'Conclusion' },
     { type: 'paragraph', text: 'REST and GraphQL are both powerful API strategies, each with its own strengths and limitations. REST is simple, stable, and widely adopted, making it ideal for many applications. GraphQL offers flexibility and efficiency, making it suitable for complex systems.' },
-    { type: 'paragraph', text: 'The key is not to choose one blindly but to understand your project requirements and select the approach that fits best. With proper guidance and hands-on experience, developers can master both technologies. Skilltrixa plays an important role in helping developers learn and apply these concepts effectively.' },
+    { type: 'paragraph', text: 'The key is not to choose one blindly but to understand your project requirements and select the approach that fits best. With proper guidance and hands on experience, developers can master both technologies. Skilltrixa plays an important role in helping developers learn and apply these concepts effectively.' },
   ],
 }
 
 // ─── BLOG 10 ── Full-Stack Roadmap ────────────────
 const blog10 = {
-  id: 'full-stack-development-roadmap-for-2026',
+  id: 'full stack-development-roadmap-for-2026',
   title: 'Full-Stack Development Roadmap for 2026',
   category: 'webdev',
   excerpt:
-    'Becoming a full-stack developer in 2026 requires mastering frontend, backend, databases, and deployment tools. This roadmap from Skilltrixa guides you step-by-step toward becoming an industry-ready full-stack developer.',
+    'Becoming a full stack developer in 2026 requires mastering frontend, backend, databases, and deployment tools. This roadmap from Skilltrixa guides you step-by-step toward becoming an industry ready full stack developer.',
   author: 'SkillTrixa',
   date: '2026-04-21',
   readTime: '10 min read',
-  tags: ['full-stack', 'roadmap', 'web development', 'frontend', 'backend', 'skilltrixa'],
+  tags: ['full stack', 'roadmap', 'web development', 'frontend', 'backend', 'skilltrixa'],
   image:
     'https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=1400&q=88',
   content: [
-    { type: 'paragraph', text: 'Full-stack development continues to be one of the most in-demand skills in the tech industry. Companies are looking for developers who can build complete applications from frontend interfaces to backend systems and databases. In 2026, the demand for full-stack developers is expected to grow even further as businesses seek professionals who can handle multiple layers of development efficiently.' },
-    { type: 'paragraph', text: 'However, becoming a full-stack developer requires a clear roadmap. With so many technologies available, beginners often feel overwhelmed about where to start and what to learn next. This is where Skilltrixa helps by offering a structured path to learn the right skills in the right order.' },
+    { type: 'paragraph', text: 'Full stack development continues to be one of the most in demand skills in the tech industry. Companies are looking for developers who can build complete applications from frontend interfaces to backend systems and databases. In 2026, the demand for full stack developers is expected to grow even further as businesses seek professionals who can handle multiple layers of development efficiently.' },
+    { type: 'paragraph', text: 'However, becoming a full stack developer requires a clear roadmap. With so many technologies available, beginners often feel overwhelmed about where to start and what to learn next. This is where Skilltrixa helps by offering a structured path to learn the right skills in the right order.' },
 
     { type: 'heading', text: 'Step 1: Learn Frontend Development' },
-    { type: 'paragraph', text: 'Frontend development is the first step in your full-stack journey. It involves building the user interface of websites and applications that users interact with.' },
-    { type: 'list', items: ['HTML — provides the structure of a webpage', 'CSS — handles styling', 'JavaScript — adds interactivity'] },
+    { type: 'paragraph', text: 'Frontend development is the first step in your full stack journey. It involves building the user interface of websites and applications that users interact with.' },
+    { type: 'list', items: ['HTML, provides the structure of a webpage', 'CSS, handles styling', 'JavaScript, adds interactivity'] },
     { type: 'bold', text: 'Frontend Frameworks to Learn:' },
     { type: 'list', items: ['React.js', 'Vue.js', 'Angular'] },
     { type: 'paragraph', text: 'React.js is currently the most popular choice due to its flexibility and strong community support.' },
@@ -649,7 +649,7 @@ const blog10 = {
     { type: 'list', items: ['MySQL', 'PostgreSQL'] },
     { type: 'bold', text: 'NoSQL Databases:' },
     { type: 'list', items: ['MongoDB', 'Firebase'] },
-    { type: 'paragraph', text: 'Modern full-stack developers should understand both. Use SQL for structured relational data and NoSQL for flexible scalable applications.' },
+    { type: 'paragraph', text: 'Modern full stack developers should understand both. Use SQL for structured relational data and NoSQL for flexible scalable applications.' },
 
     { type: 'heading', text: 'Step 5: Learn APIs' },
     { type: 'list', items: ['REST APIs', 'GraphQL', 'Authentication APIs'] },
@@ -665,24 +665,24 @@ const blog10 = {
     { type: 'list', items: ['CI/CD pipelines', 'Docker containers', 'Cloud hosting'] },
 
     { type: 'heading', text: 'Step 9: Build Real Projects' },
-    { type: 'paragraph', text: 'The best way to learn full-stack development is by building projects.' },
+    { type: 'paragraph', text: 'The best way to learn full stack development is by building projects.' },
     { type: 'list', items: ['Blog platform', 'E-commerce website', 'Social media app', 'Dashboard application'] },
 
     { type: 'heading', text: 'Step 10: Learn System Design' },
     { type: 'list', items: ['Scalability', 'Load balancing', 'Caching', 'Microservices'] },
 
     { type: 'heading', text: 'Skilltrixa Advantage' },
-    { type: 'paragraph', text: 'The journey to becoming a full-stack developer can be confusing without guidance. This is where Skilltrixa makes the difference by providing:' },
-    { type: 'list', items: ['Structured learning paths', 'Hands-on projects', 'Mentor support', 'Career guidance', 'Industry-relevant skills'] },
+    { type: 'paragraph', text: 'The journey to becoming a full stack developer can be confusing without guidance. This is where Skilltrixa makes the difference by providing:' },
+    { type: 'list', items: ['Structured learning paths', 'Hands on projects', 'Mentor support', 'Career guidance', 'Industry relevant skills'] },
 
     { type: 'heading', text: 'Conclusion' },
-    { type: 'paragraph', text: 'Becoming a full-stack developer in 2026 requires dedication and the right roadmap. From frontend development to backend systems, databases, APIs, security, and deployment, every step builds toward becoming an industry-ready developer.' },
-    { type: 'paragraph', text: 'The key is learning technologies in the correct sequence and applying them through real projects. With Skilltrixa, learners get structured guidance, practical experience, and career-focused support that make this journey easier and faster.' },
-    { type: 'paragraph', text: 'If you follow this roadmap consistently, becoming a successful full-stack developer in 2026 is absolutely achievable.' },
+    { type: 'paragraph', text: 'Becoming a full stack developer in 2026 requires dedication and the right roadmap. From frontend development to backend systems, databases, APIs, security, and deployment, every step builds toward becoming an industry ready developer.' },
+    { type: 'paragraph', text: 'The key is learning technologies in the correct sequence and applying them through real projects. With Skilltrixa, learners get structured guidance, practical experience, and career focused support that make this journey easier and faster.' },
+    { type: 'paragraph', text: 'If you follow this roadmap consistently, becoming a successful full stack developer in 2026 is absolutely achievable.' },
   ],
 }
 
-/* ── Featured blog (Blog 1 — Generative AI) ── */
+/* ── Featured blog (Blog 1, Generative AI) ── */
 export const FEATURED_BLOG = blog1
 
 /* ── All blog posts (for grid, excluding featured) ── */

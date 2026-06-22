@@ -90,13 +90,14 @@ export default function PlacementMarquee({ reduceMotion, sectionClassName }) {
     >
       <div className="placement-section-head page-inner">
         <h2 id="placement-heading" className="placement-section-title">
-          Companies where our learners get placed
+          We prepare you for the companies you want to crack
         </h2>
         <p className="placement-section-lead">
-          A glimpse of teams and brands — from global tech to India&apos;s fastest-growing product companies.
+          Our tests, projects, and interviews mirror how these teams actually hire, from global
+          product companies to India&apos;s fastest growing startups.
         </p>
         <p className="sr-only">
-          Placement and hiring presence includes organisations such as: {names}.
+          Our training and interview prep is modelled on hiring patterns at companies such as: {names}.
         </p>
       </div>
 

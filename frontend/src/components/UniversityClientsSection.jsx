@@ -85,10 +85,10 @@ export default function UniversityClientsSection() {
         <header className="u-clients-head">
           <p className="u-sec-eyebrow u-sec-eyebrow--dark">Our clients</p>
           <h2 id="u-clients-heading" className="u-sec-title u-clients-heading">
-            Trusted on campus — across India&apos;s leading universities
+            Trusted on campus, across India&apos;s leading universities
           </h2>
           <p className="u-sec-lead u-clients-lead">
-            Partner institutions where Skilltrixa helps students prove role-readiness — from foundational
+            Partner institutions where Skilltrixa helps students prove role readiness, from foundational
             coding to placements.
           </p>
         </header>

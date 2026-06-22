@@ -35,13 +35,13 @@ const HIGHLIGHTS = [
     id: 'curriculum',
     icon: 'curriculum',
     title: 'Custom curriculum',
-    text: 'Built around your tech stack, role ladder, and onboarding milestones — not a generic syllabus.',
+    text: 'Built around your tech stack, role ladder, and onboarding milestones, not a generic syllabus.',
   },
   {
     id: 'projects',
     icon: 'projects',
-    title: 'Hands-on projects',
-    text: 'Sprint-style assignments that mirror real product, data, and engineering work your teams ship.',
+    title: 'Hands on projects',
+    text: 'Sprint style assignments that mirror real product, data, and engineering work your teams ship.',
   },
   {
     id: 'measurable',
@@ -163,20 +163,20 @@ export default function CompanyTrainingSection() {
         <header className="u-corp-head">
           <p className="u-sec-eyebrow u-sec-eyebrow--dark">For corporates</p>
           <h2 id="u-corp-heading" className="u-sec-title u-corp-title">
-            Company-specific training programs
+            Company specific training programs
           </h2>
           <p className="u-sec-lead u-corp-lead">
-            Skilltrixa runs private, company-specific training cohorts for your
+            Skilltrixa runs private, company specific training cohorts for your
             hiring outcomes. We map the curriculum to your stack and role
-            ladder, deliver hands-on projects, and run continuous assessments so
-            students become interview-ready with measurable progress your team
+            ladder, deliver hands on projects, and run continuous assessments so
+            students become interview ready with measurable progress your team
             can trust.
           </p>
         </header>
 
         <ul
           className="u-corp-highlights"
-          aria-label="What our company-specific training delivers"
+          aria-label="What our company specific training delivers"
         >
           {HIGHLIGHTS.map((h) => (
             <li key={h.id} className="u-corp-highlight">

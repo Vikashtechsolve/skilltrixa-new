@@ -12,7 +12,7 @@ export default function ProgramsOverview() {
             Pick your track
           </h2>
           <p className="programs-overview-lead">
-            Four courses. Same focus: skills you can prove, and support till you are interview ready.
+            Six career tracks with one focus: skills you can prove, and support until you are interview ready.
           </p>
         </header>
 

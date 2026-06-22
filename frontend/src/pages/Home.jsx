@@ -17,10 +17,10 @@ import './Home.css'
 const SLIDE_MS = 5200;
 
 const HOME_PROGRAMS_LD = buildItemListLd('Skilltrixa Programs', [
-  { name: 'Full Stack Development', path: '/programs/full-stack', description: 'MERN-based full stack program with real projects and placement support.' },
-  { name: 'Data Science', path: '/programs/data-science', description: 'Python, Pandas, statistics and ML fundamentals with capstone projects.' },
-  { name: 'AI / Machine Learning', path: '/programs/ai-ml', description: 'Machine learning, deep learning, neural networks and modern AI tools.' },
-  { name: 'Generative AI', path: '/programs/gen-ai', description: 'Prompt engineering, LLMs, chatbots and AI automation.' },
+  { name: 'Full Stack Development', path: '/programs/full-stack', description: 'MERN based full stack program with real projects and placement support.' },
+  { name: 'Data Science', path: '/programs/data-science', description: 'Python, Pandas, statistics, and ML basics with capstone projects.' },
+  { name: 'AI and Machine Learning', path: '/programs/ai-ml', description: 'Machine learning, deep learning, neural networks, and modern AI tools.' },
+  { name: 'Generative AI', path: '/programs/gen-ai', description: 'Prompt engineering, LLMs, chatbots, and AI automation.' },
 ])
 
 export default function Home() {
@@ -39,9 +39,9 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Skilltrixa — Learn Skills. Get Job-Ready. | Training & Placement"
-        description="Skilltrixa offers job-ready training programs in Full Stack Development, Data Science, AI/ML and Generative AI, with mentorship, real projects, university partnerships and placement support."
-        keywords="Skilltrixa, training institute, placement training, full stack course, data science course, AI ML course, generative AI course, university tie-ups"
+        title="Skilltrixa | Learn Skills. Get Job Ready. Training and Placement"
+        description="Skilltrixa offers practical training in Full Stack Development, Data Science, AI and ML, and Generative AI, with mentors, real projects, and placement support."
+        keywords="Skilltrixa, training institute, placement training, full stack course, data science course, AI ML course, generative AI course, university partnership"
         path="/"
         jsonLd={HOME_PROGRAMS_LD}
       />
@@ -58,15 +58,15 @@ export default function Home() {
       >
         <div className="home-hero-grid page-inner">
           <div className="home-hero-copy">
-            <p className="home-hero-eyebrow">For students &amp; universities</p>
+            <p className="home-hero-eyebrow">For students and universities</p>
             <h1 id="home-hero-heading" className="home-hero-title">
-              From Campus to Corporate — We Make Students Job-Ready
+              From Campus to Corporate: We Make Students Job Ready
             </h1>
 
             <div
               className="hero-slider"
               role="region"
-              aria-label="How we make students job-ready"
+              aria-label="How we make students job ready"
             >
               <div className="hero-slider-track">
                 {HERO_SLIDES.map((slide, i) => (
@@ -97,8 +97,8 @@ export default function Home() {
               <Link to="/programs" className="home-hero-btn home-hero-btn--primary">
                 Explore programs
               </Link>
-              <Link to="/universities" className="home-hero-btn home-hero-btn--ghost">
-                University tie-ups
+              <Link to="/our-promise" className="home-hero-btn home-hero-btn--ghost">
+                Our Promise
               </Link>
             </div>
           </div>

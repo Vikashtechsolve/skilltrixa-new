@@ -8,13 +8,13 @@ import './BlogDetail.css'
 /* ── categories (UI constant) ── */
 const BLOG_CATEGORIES = [
   { id: 'all', label: 'All' },
-  { id: 'ai-ml', label: 'AI / Machine Learning' },
+  { id: 'ai-ml', label: 'AI and Machine Learning' },
   { id: 'mern', label: 'MERN Stack' },
   { id: 'frontend', label: 'Frontend Frameworks' },
   { id: 'backend', label: 'Backend Technologies' },
-  { id: 'devops', label: 'DevOps / Cloud' },
+  { id: 'devops', label: 'DevOps and Cloud' },
   { id: 'mobile', label: 'Mobile Development' },
-  { id: 'web3', label: 'Web3 / Blockchain' },
+  { id: 'web3', label: 'Web3 and Blockchain' },
   { id: 'database', label: 'Database Design' },
   { id: 'api', label: 'API Development' },
   { id: 'webdev', label: 'Web Development' },

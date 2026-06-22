@@ -18,9 +18,8 @@ export default function PrivacyPolicyPage() {
       <div className="page-inner">
         <h1>Privacy Policy</h1>
         <p>
-          This page is provided for general information. If you need your privacy policy
-          text finalized (including your exact data processing details), share it with the
-          team and we will replace the placeholders.
+          This page explains how Skilltrixa collects, uses, and protects your information.
+          Contact us if you need more details about data handling.
         </p>
 
         <section>
@@ -43,7 +42,7 @@ export default function PrivacyPolicyPage() {
         <section>
           <h2>3. Contact</h2>
           <p>
-            For privacy-related questions, contact us at{' '}
+            For privacy related questions, contact us at{' '}
             <a href="mailto:support@skilltrixa.com">support@skilltrixa.com</a>.
           </p>
         </section>

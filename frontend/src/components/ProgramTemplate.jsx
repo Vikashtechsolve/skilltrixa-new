@@ -465,7 +465,7 @@ export default function ProgramTemplate({ program, path }) {
         </div>
       </section>
 
-      {/* ═══ 2  ABOUT — What makes Skilltrixa different ═══ */}
+      {/* ═══ 2  ABOUT, What makes Skilltrixa different ═══ */}
       <section className="fsd-section fsd-different" aria-labelledby="fsd-about-heading">
         <div className="fsd-section-inner fsd-different-inner">
           <div className="fsd-different-header">
@@ -482,7 +482,7 @@ export default function ProgramTemplate({ program, path }) {
             <div
               className="fsd-bento"
               role="group"
-              aria-label="Pillar visuals — select a focus area to highlight"
+              aria-label="Pillar visuals, select a focus area to highlight"
             >
               <div className="fsd-bento-glow" aria-hidden />
               <button
@@ -490,7 +490,7 @@ export default function ProgramTemplate({ program, path }) {
                 className={`fsd-bento-tile fsd-bento-tile--main${activePillar === 0 ? ' is-active' : ''}`}
                 onClick={() => setActivePillar(0)}
                 aria-pressed={activePillar === 0}
-                aria-label={`${program.about.pillars[0].title} — show story`}
+                aria-label={`${program.about.pillars[0].title}, show story`}
               >
                 <img
                   src={program.about.pillars[0].image}
@@ -507,7 +507,7 @@ export default function ProgramTemplate({ program, path }) {
                   className={`fsd-bento-tile fsd-bento-tile--sub${activePillar === 1 ? ' is-active' : ''}`}
                   onClick={() => setActivePillar(1)}
                   aria-pressed={activePillar === 1}
-                  aria-label={`${program.about.pillars[1].title} — show story`}
+                  aria-label={`${program.about.pillars[1].title}, show story`}
                 >
                   <img
                     src={program.about.pillars[1].image}
@@ -523,7 +523,7 @@ export default function ProgramTemplate({ program, path }) {
                   className={`fsd-bento-tile fsd-bento-tile--sub${activePillar === 2 ? ' is-active' : ''}`}
                   onClick={() => setActivePillar(2)}
                   aria-pressed={activePillar === 2}
-                  aria-label={`${program.about.pillars[2].title} — show story`}
+                  aria-label={`${program.about.pillars[2].title}, show story`}
                 >
                   <img
                     src={program.about.pillars[2].image}
@@ -1134,7 +1134,7 @@ export default function ProgramTemplate({ program, path }) {
                   Form filled successfully
                 </h3>
                 <p className="fsd-apply-done-text">
-                  Thanks — we have your details. This window will close in a moment.
+                  Thanks, we have your details. This window will close in a moment.
                 </p>
               </div>
             ) : (

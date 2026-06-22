@@ -1,37 +1,37 @@
 /**
- * AI / ML Program — content config consumed by ProgramTemplate.
+ * AI / ML Program: content config consumed by ProgramTemplate.
  * Visual layout / styling is identical to the Full Stack page; only the
  * text and program-specific details change.
  */
 export const aiMlProgram = {
   meta: {
-    title: 'Artificial Intelligence & Machine Learning Program | Skilltrixa',
+    title: 'Artificial Intelligence and Machine Learning Program | Skilltrixa',
     description:
-      'Learn AI / ML with Skilltrixa — machine learning, deep learning, neural networks, model training, and modern AI tools with real-world projects and placement support.',
+      'Learn AI and ML with Skilltrixa. Machine learning, deep learning, neural networks, and modern AI tools with real world projects and placement support.',
   },
 
   hero: {
-    kicker: 'Career-Ready Program',
-    title: { lead: 'Artificial Intelligence & Machine Learning', accent: 'Program' },
+    kicker: 'Career Ready Program',
+    title: { lead: 'Artificial Intelligence and Machine Learning', accent: 'Program' },
     subtitle:
-      'Go deep on machine learning, deep learning, neural networks, and modern AI tools. Train real models, ship an image classifier, and build a recommendation system — graduate ready to engineer ML systems in production.',
+      'Learn machine learning, deep learning, neural networks, and modern AI tools. Train real models, build an image classifier and a recommendation system, and graduate ready for ML engineering roles.',
     images: [
       '/hero/fsd-hero-1.png',
       '/hero/fsd-hero-2.png',
       '/hero/fsd-hero-3.png',
     ],
     batchDate: '8th June 2026',
-    batchSoft: 'Limited seats · Mentor-led cohort',
+    batchSoft: 'Limited seats · Mentor led cohort',
     badges: [
       { title: 'Deep ML curriculum', value: 'Classical ML, neural nets, and tooling' },
-      { title: 'Real-world projects', value: 'Train, evaluate, and deploy models' },
+      { title: 'Real world projects', value: 'Train, evaluate, and deploy models' },
       { title: 'Placement preparation', value: 'Resumes, mocks, and ML interviews' },
       { title: 'Mentorship support', value: 'Guidance from experienced ML engineers' },
       { title: 'Deep Learning depth', value: 'CNNs, RNNs, and transformer fundamentals' },
-      { title: 'Job-ready output', value: 'Reproducible pipelines and clean models' },
+      { title: 'Job ready output', value: 'Reproducible pipelines and clean models' },
     ],
     stats: [
-      { value: '3–6 Months', label: 'Course Duration' },
+      { value: '3 to 6 Months', label: 'Course Duration' },
       { value: 'Training + Internship', label: 'Program Schedule' },
       { value: 'Online', label: 'Mode' },
       { value: 'Beginner to Advanced', label: 'Level' },
@@ -44,18 +44,18 @@ export const aiMlProgram = {
     titleBrand: 'Skilltrixa',
     titleTail: 'Different',
     lead:
-      'Three ways we go beyond theory — curriculum that maps to how AI teams build, training led by people who have shipped, and a path to placement that does not end at the last lecture.',
+      'Three ways we go beyond theory: curriculum that maps to how AI teams build, training led by people who have shipped, and a path to placement that does not end at the last lecture.',
     pillars: [
       {
         id: 'industry',
-        title: 'Industry-Focused Learning',
-        text: 'We bridge the gap between academics and industry with a job-ready AI / ML curriculum built for real engineering and research roles.',
+        title: 'Industry Focused Learning',
+        text: 'We bridge the gap between academics and industry with a job ready AI and ML curriculum built for real engineering and research roles.',
         image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80',
         imageAlt: 'Team collaborating in a learning environment',
       },
       {
         id: 'expert',
-        title: 'Expert-Led Training',
+        title: 'Expert Led Training',
         text: 'Learn directly from experienced ML professionals working at top tech companies and shipping models at scale.',
         image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80',
         imageAlt: 'Mentor with students in a live session',
@@ -65,39 +65,39 @@ export const aiMlProgram = {
         title: 'Strong Placement Support',
         text: 'From career mentoring to industry connections and alumni support, we help you move from learning to earning.',
         image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=900&q=80',
-        imageAlt: 'Professional in a high-tech work environment',
+        imageAlt: 'Professional in a high tech work environment',
       },
     ],
   },
 
   why: {
     titleLead: 'Why Choose',
-    titleAccent: 'This Program ?',
-    lead: 'A career-focused AI / ML program built to take you from learning to hiring-ready.',
+    titleAccent: 'This Program?',
+    lead: 'A career focused AI and ML program built to take you from learning to interview ready.',
     cards: [
       {
-        heading: 'Job-Focused Curriculum',
-        text: 'Our curriculum is carefully designed around current industry requirements, ensuring you learn exactly what companies expect from ML and AI engineers — not outdated theory.',
+        heading: 'Job Focused Curriculum',
+        text: 'Our curriculum is carefully designed around current industry requirements, ensuring you learn exactly what companies expect from ML and AI engineers: not outdated theory.',
       },
       {
-        heading: 'Structure Growth Path',
-        text: 'Whether you choose the Mini Program (fast-track) or the Macro Program (deep mastery), the learning journey is structured to match your career goals and experience level.',
+        heading: 'Structured Growth Path',
+        text: 'Whether you choose the Mini Program (fast track) or the Macro Program (deep mastery), the learning journey is structured to match your career goals and experience level.',
       },
       {
-        heading: 'Industry-Experienced Mentor',
-        text: 'Learn directly from working professionals with real-world experience in training and shipping ML models, not just academic instructors.',
+        heading: 'Industry Experienced Mentors',
+        text: 'Learn directly from working professionals with real world experience in training and shipping ML models, not just academic instructors.',
       },
       {
         heading: 'Internship Experience Included',
-        text: 'Gain real industry exposure through mandatory internships that help you apply your learning in real-world environments and strengthen your resume.',
+        text: 'Gain real industry exposure through mandatory internships that help you apply your learning in real world environments and strengthen your resume.',
       },
       {
-        heading: 'Hands-On, Project-Driven Learning',
-        text: 'Every concept is backed by practical implementation, real-world projects, and portfolio-ready models that showcase your skills to recruiters.',
+        heading: 'Hands On, Project Driven Learning',
+        text: 'Every concept is backed by practical implementation, real world projects, and portfolio ready models that showcase your skills to recruiters.',
       },
       {
-        heading: 'Career Support & Placement Assistance',
-        text: 'From resume building and mock interviews to job referrals and hiring support — we help you transition from learner to professional.',
+        heading: 'Career Support and Placement Assistance',
+        text: 'From resume building and mock interviews to job referrals and hiring support: we help you transition from learner to professional.',
       },
     ],
   },
@@ -105,7 +105,7 @@ export const aiMlProgram = {
   tech: {
     eyebrow: 'Tech Stack',
     title: "Technologies & Skills You'll Learn",
-    lead: 'A comprehensive curriculum covering the most in-demand AI and ML skills used by top companies worldwide.',
+    lead: 'A comprehensive curriculum covering the most in demand AI and ML skills used by top companies worldwide.',
     cards: [
       {
         icon: 'layers',
@@ -147,12 +147,12 @@ export const aiMlProgram = {
       {
         n: 2,
         title: 'Complete Counselling',
-        text: 'Attend a one-on-one counselling session to understand your goals, choose the right program (Mini or Macro), and set clear career expectations.',
+        text: 'Attend a one to one counselling session to understand your goals, choose the right program (Mini or Macro), and set clear career expectations.',
       },
       {
         n: 3,
         title: 'Start Learning',
-        text: 'Enroll in the selected program and begin your structured, mentor-led journey toward becoming a job-ready ML engineer.',
+        text: 'Enroll in the selected program and begin your structured, mentor led journey toward becoming a job ready ML engineer.',
       },
     ],
   },
@@ -161,42 +161,42 @@ export const aiMlProgram = {
     eyebrow: 'Program Details',
     title: 'Program Structure',
     lead:
-      'A comprehensive, career-focused program designed to make you industry-ready — including a real ML model, an image classification project, and a recommendation system.',
+      'A comprehensive, career focused program designed to make you industry ready: including a real ML model, an image classification project, and a recommendation system.',
     badge: 'Macro Program',
-    h3: 'AI / ML — Macro Program',
+    h3: 'AI and ML: Macro Program',
     duration: '6 Months',
     mode: 'Offline / Online',
     projects: '3+ Capstone Projects',
     batchSize: 'Small Batches',
     features: [
-      'Live instructor-led classes',
-      'Hands-on project learning',
+      'Live instructor led classes',
+      'Hands on project learning',
       'Placement assistance',
       'Interview preparation',
       'Certificate on completion',
-      '1-on-1 mentorship',
+      'One to one mentorship',
     ],
   },
 
   features: {
     eyebrow: 'Why This Program',
     title: 'Course Features',
-    lead: 'Everything you need to go from beginner to job-ready ML Engineer.',
+    lead: 'Everything you need to go from beginner to job ready ML Engineer.',
     items: [
       {
         icon: 'video',
         heading: 'Live Classes',
-        text: 'Interactive, instructor-led sessions with real-time doubt solving and discussions.',
+        text: 'Interactive, instructor led sessions with real-time doubt solving and discussions.',
       },
       {
         icon: 'code',
         heading: 'Practical Training',
-        text: 'Learn by doing — every concept is reinforced through coding exercises and mini-projects.',
+        text: 'Learn by doing: every concept is reinforced through coding exercises and mini projects.',
       },
       {
         icon: 'briefcase',
         heading: 'Placement Support',
-        text: 'End-to-end placement assistance including resume building, referrals, and mock interviews.',
+        text: 'End to end placement assistance including resume building, referrals, and mock interviews.',
       },
       {
         icon: 'messagecircle',
@@ -205,12 +205,12 @@ export const aiMlProgram = {
       },
       {
         icon: 'heart',
-        heading: '1-on-1 Mentorship',
+        heading: 'One to One Mentorship',
         text: 'Personalized guidance from experienced industry mentors throughout your learning journey.',
       },
       {
         icon: 'globe',
-        heading: 'Industry-Aligned Curriculum',
+        heading: 'Industry Aligned Curriculum',
         text: 'Course content designed with inputs from hiring managers at leading tech companies.',
       },
     ],
@@ -247,16 +247,16 @@ export const aiMlProgram = {
     title: 'Fee Structure',
     lead: 'Invest in your future with our comprehensive Macro Program.',
     image: '/testimonials/fee_structure.jpg',
-    imageAlt: 'ML engineer working on a laptop in a modern co-working space',
+    imageAlt: 'ML engineer working on a laptop in a modern coworking space',
     name: 'Macro Program',
     price: '₹25,000',
     priceSuffix: '/ full program',
     includes: [
       '6 months of live training',
-      '3+ real-world projects',
+      '3+ real world projects',
       'Placement assistance',
       'Interview preparation',
-      '1-on-1 mentorship',
+      'One to one mentorship',
       'Certificate of completion',
       'Lifetime access to resources',
     ],
@@ -290,7 +290,7 @@ export const aiMlProgram = {
       duration: '6 months',
       salaryHike: 'First job',
       quote:
-        'I joined with zero deep learning knowledge. The structured curriculum, live projects, and internship gave me production experience — I cleared an AI role within weeks of finishing.',
+        'I joined with zero deep learning knowledge. The structured curriculum, live projects, and internship gave me production experience: I cleared an AI role within weeks of finishing.',
     },
     {
       id: 'neeraj',
@@ -308,10 +308,10 @@ export const aiMlProgram = {
 
   faq: {
     header: {
-      eyebrow: 'Help & clarity',
+      eyebrow: 'Help and clarity',
       titleHead: 'Frequently asked',
       titleAccent: 'questions',
-      deck: 'Straight answers for choosing the right track, schedules, and outcomes—before you apply.',
+      deck: 'Straight answers for choosing the right track, schedules, and outcomes, before you apply.',
     },
     tabs: [
       { id: 'overview', label: 'Program overview' },
@@ -343,7 +343,7 @@ export const aiMlProgram = {
         },
         {
           q: 'Will I get a certificate?',
-          a: 'Yes, upon successful completion of the Macro Program and internship, you will receive an industry-recognized certificate.',
+          a: 'Yes, upon successful completion of the Macro Program and internship, you will receive an industry recognized certificate.',
         },
       ],
     },
@@ -352,7 +352,7 @@ export const aiMlProgram = {
   cta: {
     title: 'Start Your Career as an ML Engineer',
     subcopy:
-      "Join Skilltrixa's AI / ML Program and build the deep learning and modeling skills top product teams are hiring for.",
+      "Join Skilltrixa's AI and ML Program and build the deep learning and modeling skills top product teams are hiring for.",
     buttonLabel: 'Apply Now',
   },
 }

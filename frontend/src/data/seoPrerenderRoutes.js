@@ -14,7 +14,7 @@ export const STATIC_SEO_ROUTES = [
   '/programs/gen-ai',
   '/programs/aptitude-training',
   '/programs/competitive-coding',
-  '/universities',
+  '/our-promise',
   '/about',
   '/contact-us',
   '/blogs',

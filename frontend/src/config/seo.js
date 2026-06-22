@@ -19,13 +19,13 @@ const envSite =
 /** Always https://www.skilltrixa.com (apex env values normalized — matches vercel.json 301). */
 export const SITE_URL = resolveCanonicalSiteOrigin(envSite)
 export const SITE_NAME = 'Skilltrixa'
-export const SITE_TAGLINE = 'Learn skills. Get job-ready.'
+export const SITE_TAGLINE = 'Learn skills. Get job ready.'
 export const SITE_LOCALE = 'en_IN'
 export const SITE_LANG = 'en'
 
-export const SITE_DEFAULT_TITLE = 'Skilltrixa — Learn Skills. Get Job-Ready.'
+export const SITE_DEFAULT_TITLE = 'Skilltrixa | Learn Skills. Get Job Ready.'
 export const SITE_DEFAULT_DESCRIPTION =
-  'Skilltrixa is a global training and placement institute offering job-ready programs in Full Stack Development, Data Science, AI/ML and Generative AI, with university partnerships, mentorship and placement support.'
+  'Skilltrixa is a training and placement institute offering practical programs in Full Stack Development, Data Science, AI and ML, and Generative AI, with mentor support and real projects.'
 export const SITE_DEFAULT_KEYWORDS =
   'Skilltrixa, training institute, placement training, full stack course, data science course, AI ML course, generative AI course, university partnership, skill development'
 

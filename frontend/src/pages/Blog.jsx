@@ -8,13 +8,13 @@ import './Blog.css'
 /* ── static categories (for backward compatibility) ── */
 const STATIC_CATEGORIES = [
   { id: 'all', label: 'All' },
-  { id: 'ai-ml', label: 'AI / Machine Learning' },
+  { id: 'ai-ml', label: 'AI and Machine Learning' },
   { id: 'mern', label: 'MERN Stack' },
   { id: 'frontend', label: 'Frontend Frameworks' },
   { id: 'backend', label: 'Backend Technologies' },
-  { id: 'devops', label: 'DevOps / Cloud' },
+  { id: 'devops', label: 'DevOps and Cloud' },
   { id: 'mobile', label: 'Mobile Development' },
-  { id: 'web3', label: 'Web3 / Blockchain' },
+  { id: 'web3', label: 'Web3 and Blockchain' },
   { id: 'database', label: 'Database Design' },
   { id: 'api', label: 'API Development' },
   { id: 'webdev', label: 'Web Development' },
@@ -175,7 +175,7 @@ export default function Blog() {
     <>
       <SEO
         title="Skilltrixa Blog | Career Tips, Skills & Training Insights"
-        description="Read Skilltrixa blogs on career growth, skill development, placement training and industry insights across Full Stack, Data Science, AI/ML and Generative AI."
+        description="Read Skilltrixa blogs on career growth, skill development, placement training and industry insights across Full Stack, Data Science, AI and ML and Generative AI."
         keywords="Skilltrixa blog, career blog, skill development blog, placement tips, training institute blog, full stack tutorials, AI ML blog"
         path="/blogs"
         jsonLd={blogIndexJsonLd}
@@ -189,8 +189,8 @@ export default function Blog() {
             Insights, Career Tips &amp; Industry Knowledge
           </h1>
           <p className="blog-hero-subtitle">
-            Stay ahead of the curve with expert-written articles on technology,
-            career growth, and skill development.
+            Expert articles on technology, career growth, and skill development
+            from the Skilltrixa team.
           </p>
           <div className="blog-search">
             <SearchIcon />
@@ -385,7 +385,7 @@ export default function Blog() {
         <div className="blog-cta-inner">
           <h2 id="blog-cta-heading">Boost Your Career with Skilltrixa</h2>
           <p>
-            Ready to level up your skills? Explore our industry-focused programs
+            Ready to level up your skills? Explore our industry focused programs
             and start your journey today.
           </p>
           <Link to="/programs" className="blog-cta-btn">

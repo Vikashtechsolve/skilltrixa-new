@@ -90,35 +90,32 @@ export default function WhyChooseUs() {
           <p className="why-choose-line">{d.line}</p>
         </header>
 
-        <div className="why-choose-bento" aria-label="Assessment types">
-          <div className="why-choose-bento-slab" aria-label={d.slab.headline}>
-            <div className="why-choose-bento-slab-noise" aria-hidden />
-            <p className="why-choose-bento-slab-kicker">{d.slab.kicker}</p>
-            <p className="why-choose-bento-slab-headline">{d.slab.headline}</p>
-            <p className="why-choose-bento-slab-line">{d.slab.oneLine}</p>
-            <ul className="why-choose-bento-slab-tags">
+        <div className="why-choose-layout">
+          <div className="why-choose-feature" aria-label={d.slab.headline}>
+            <div className="why-choose-feature-noise" aria-hidden />
+            <div className="why-choose-feature-body">
+              <p className="why-choose-feature-kicker">{d.slab.kicker}</p>
+              <p className="why-choose-feature-headline">{d.slab.headline}</p>
+              <p className="why-choose-feature-line">{d.slab.oneLine}</p>
+            </div>
+            <ul className="why-choose-feature-tags">
               {d.slabTags.map((tag) => (
-                <li key={tag} className="why-choose-bento-slab-tag">
+                <li key={tag} className="why-choose-feature-tag">
                   {tag}
                 </li>
               ))}
             </ul>
           </div>
 
-          <ul className="why-choose-bento-tilelist">
+          <ul className="why-choose-grid" aria-label="Assessment types">
             {d.bento.map((item) => (
-              <li
-                key={item.id}
-                className={`why-choose-bento-tile why-choose-bento-tile--${item.area}`}
-              >
-                <div className="why-choose-bento-tile-top">
-                  <div className="why-choose-bento-tile-icwrap" aria-hidden>
-                    <BentoIcon id={item.id} />
-                  </div>
-                  <div className="why-choose-bento-tile-copy">
-                    <h3 className="why-choose-bento-tile-title">{item.title}</h3>
-                    <p className="why-choose-bento-tile-hook">{item.hook}</p>
-                  </div>
+              <li key={item.id} className="why-choose-card">
+                <span className="why-choose-card-ic" aria-hidden>
+                  <BentoIcon id={item.id} />
+                </span>
+                <div className="why-choose-card-copy">
+                  <h3 className="why-choose-card-title">{item.title}</h3>
+                  <p className="why-choose-card-hook">{item.hook}</p>
                 </div>
               </li>
             ))}
