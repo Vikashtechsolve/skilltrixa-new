@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import SEO from '../components/SEO'
-import { buildBreadcrumbsLd } from '../config/seo'
+import { buildBreadcrumbsLd, CONTACT } from '../config/seo'
 import { API_BASE } from '../config/api'
 import './ContactUsPage.css'
 
@@ -157,7 +157,7 @@ export default function ContactUsPage() {
                 <span className="contact-detail-icon"><PhoneIcon /></span>
                 <div>
                   <p className="contact-detail-label">Phone</p>
-                  <a href="tel:+919876543210">+91 98765 43210</a>
+                  <a href={`tel:${CONTACT.phoneE164}`}>{CONTACT.phone}</a>
                 </div>
               </div>
 

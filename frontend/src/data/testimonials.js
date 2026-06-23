@@ -16,8 +16,8 @@ export const TESTIMONIALS = [
     location: 'Bengaluru',
     quote:
       'Mock interviews on the exact stack recruiters asked for changed everything. I stopped guessing and started clearing rounds. Skilltrixa weekly drills made placement season feel organised.',
-    image: u('photo-1571260899304-425eee4c7efc', 800),
-    imageSrcSet: `${u('photo-1571260899304-425eee4c7efc', 400, 80)} 400w, ${u('photo-1571260899304-425eee4c7efc', 800)} 800w`,
+    image: "https://www.sakshi.com/gallery_images/2024/10/25/Actress%20Satya%20Krishnan%20Daughter%20As%20a%20Heroine%20Ananya%20Krishnan%20Photos%20Goes%20Viral%20in%20Social%20Media%20%287%29.jpg",
+    imageSrcSet: "https://www.sakshi.com/gallery_images/2024/10/25/Actress%20Satya%20Krishnan%20Daughter%20As%20a%20Heroine%20Ananya%20Krishnan%20Photos%20Goes%20Viral%20in%20Social%20Media%20%287%29.jpg",
     imageAlt: 'Indian student with books, illustrative portrait for Ananya Krishnan',
   },
   {
@@ -29,13 +29,13 @@ export const TESTIMONIALS = [
     location: 'Pune',
     quote:
       'Theory and aptitude used to take too much of my prep time. The platform broke it into short sessions I could do between labs. By placement week I already knew my weak topics from the dashboard.',
-    image: u('photo-1637589308599-3478cc55510d', 800),
-    imageSrcSet: `${u('photo-1637589308599-3478cc55510d', 400, 80)} 400w, ${u('photo-1637589308599-3478cc55510d', 800)} 800w`,
+    image: "https://media.licdn.com/dms/image/v2/D5603AQFDu0dvJWh0Xw/profile-displayphoto-shrink_400_400/B56ZcC07GdGoAg-/0/1748099117871?e=2147483647&v=beta&t=qKS4dC2zFDBhebpnYPANq9SodFLHQeLvERT3Mq8cypA",
+    imageSrcSet: 'https://media.licdn.com/dms/image/v2/D5603AQFDu0dvJWh0Xw/profile-displayphoto-shrink_400_400/B56ZcC07GdGoAg-/0/1748099117871?e=2147483647&v=beta&t=qKS4dC2zFDBhebpnYPANq9SodFLHQeLvERT3Mq8cypA',
     imageAlt: 'Indian student at a laptop, illustrative portrait for Rohan Patel',
   },
   {
-    id: 'priya-s',
-    name: 'Priya Sharma',
+    id: 'shubh-b',
+    name: 'Shubh Bhoda',
     campus: 'BITS Pilani · EEE',
     role: 'Product Analyst',
     company: 'Flipkart',
@@ -68,8 +68,8 @@ export const TESTIMONIALS = [
     location: 'Bengaluru',
     quote:
       'Leaderboards looked gimmicky until I saw how they mirrored real shortlists. Practising with friends kept the pressure honest. I walked into the Razorpay round calmer than my internals.',
-    image: u('photo-1522661067900-ab829854a57f', 800),
-    imageSrcSet: `${u('photo-1522661067900-ab829854a57f', 400, 80)} 400w, ${u('photo-1522661067900-ab829854a57f', 800)} 800w`,
+    image: "https://www.gdgoenkauniversity.com/uploads/mentor/1709191987-Ms.-Shweta-Kumari.webp",
+    imageSrcSet: "https://www.gdgoenkauniversity.com/uploads/mentor/1709191987-Ms.-Shweta-Kumari.webp",
     imageAlt: 'Student at a chalkboard, illustrative portrait for Meera Joshi',
   },
 ]

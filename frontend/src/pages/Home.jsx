@@ -60,7 +60,7 @@ export default function Home() {
           <div className="home-hero-copy">
             <p className="home-hero-eyebrow">For students and universities</p>
             <h1 id="home-hero-heading" className="home-hero-title">
-              From Campus to Corporate: We Make Students Job Ready
+              From Campus to Corporate, We Make Students Job Ready
             </h1>
 
             <div

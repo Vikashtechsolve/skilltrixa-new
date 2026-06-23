@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { CONTACT } from '../config/seo'
 import { SKILLTRIXA_LOGIN_URL } from '../config/links'
 import './Footer.css'
 
@@ -193,8 +194,8 @@ export default function Footer() {
             </p>
             <p className="footer-contact-line">
               <span className="footer-contact-label">Phone</span>
-              <a href="tel:+919876543210" className="footer-contact-link">
-                +91 98765 43210
+              <a href={`tel:${CONTACT.phoneE164}`} className="footer-contact-link">
+                {CONTACT.phone}
               </a>
             </p>
             <p className="footer-contact-line footer-contact-line--address">

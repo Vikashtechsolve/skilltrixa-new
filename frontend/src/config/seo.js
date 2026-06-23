@@ -35,8 +35,8 @@ export const TWITTER_HANDLE = '@Skilltrixa01'
 
 export const CONTACT = {
   email: 'support@skilltrixa.com',
-  phone: '+91 98765 43210',
-  phoneE164: '+919876543210',
+  phone: '+91 92136 52596',
+  phoneE164: '+919213652596',
   address: {
     streetAddress:
       '423, Floor 4, Phoenix Resicom, Waghodia Rd, Near Vaikunth Char Rasta, Madhavpura',

@@ -1,7 +1,7 @@
+import { CONTACT } from '../config/seo'
 import './WhatsAppFloatButton.css'
 
-const WHATSAPP_URL =
-  'https://wa.me/919876543210?text=Hi%20Skilltrixa%2C%20I%20need%20help%20with%20your%20programs.'
+const WHATSAPP_URL = `https://wa.me/${CONTACT.phoneE164.replace('+', '')}?text=Hi%20Skilltrixa%2C%20I%20need%20help%20with%20your%20programs.`
 
 function WhatsAppIcon() {
   return (
